@@ -1,0 +1,5 @@
+---
+name: Romina
+id: romina
+device_trackers:
+  - device_tracker.romina

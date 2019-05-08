@@ -1,0 +1,24 @@
+---
+id: backyard_camera_battery
+alias: 'Backyard camera battery'
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.ring_jardin_trasero_battery
+    below: 25
+    for:
+      minutes: 5
+  - platform: numeric_state
+    entity_id: sensor.ring_jardin_trasero_battery
+    below: 10
+    for:
+      minutes: 5
+  - platform: numeric_state
+    entity_id: sensor.ring_jardin_trasero_battery
+    below: 5
+    for:
+      minutes: 5
+action:
+  - service: notify.html5
+    data:
+      title: 'Battery - Backyard camera'
+      message: "The backyard camera is at {{ states('sensor.ring_jardin_trasero_battery') }}% battery"

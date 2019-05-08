@@ -1,0 +1,7 @@
+---
+platform: mqtt
+name: Office Temperature
+unit_of_measurement: "°C"
+device_class: temperature
+state_topic: "stat/office_ac"
+value_template: "{{ value_json.current_temp }}"

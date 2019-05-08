@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  check-config:
+    image: homeassistant/home-assistant:latest
+    environment:
+      - TZ=America/Argentina/mendoza
+    ports:
+      - '8123:8123'
+    volumes:
+      - ./config:/config
+      - ./.stub/ssl:/ssl
+    command: python -m homeassistant --config /config/ --script check_config
+
+  yamllint:
+    image: sdesbure/yamllint
+    volumes:
+      - ./:/yaml
+    command: yamllint ./config

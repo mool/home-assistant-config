@@ -1,0 +1,3 @@
+---
+automation: !include_dir_list ../automations
+# automation: !include_dir_merge_list ../automations

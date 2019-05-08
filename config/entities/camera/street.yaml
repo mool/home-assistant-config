@@ -1,0 +1,7 @@
+---
+platform: generic
+name: Street
+still_image_url: http://192.168.100.221:9989/onvif/media_service/snapshot?channel=0&subtype=0
+stream_source: rtsp://admin:admin@192.168.100.221:554/
+username: !secret camera_street_username
+password: !secret camera_street_password

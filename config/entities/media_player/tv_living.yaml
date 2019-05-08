@@ -1,0 +1,6 @@
+---
+platform: samsungtv
+name: TV Living
+host: 192.168.100.71
+port: 8001
+mac: 38:01:95:AB:26:F9

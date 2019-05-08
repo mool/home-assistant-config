@@ -1,0 +1,5 @@
+---
+vacation:
+  name: Vacation
+  initial: false
+  icon: mdi:airplane

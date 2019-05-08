@@ -1,0 +1,23 @@
+---
+id: motion_detected_office_balcony
+alias: Motion Detected In The Office Balcony
+trigger:
+  - platform: state
+    entity_id: binary_sensor.ring_balcon_oficina_motion
+    to: 'on'
+condition:
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: input_boolean.away
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.bedtime
+      state: 'on'
+action:
+  - service: notify.html5
+    data:
+      title: 'Security - Office Balcony'
+      message: 'Motion detected in the Office Balcony'
+  - service: homeassistant.turn_on
+    entity_id: group.inside_lights

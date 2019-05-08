@@ -1,0 +1,12 @@
+---
+platform: mqtt
+name: Office Thermostat
+min_temp: 17
+max_temp: 31
+initial: 24
+power_command_topic: "cmnd/office_ac/power"
+mode_command_topic: "cmnd/office_ac/mode"
+fan_mode_command_topic: "cmnd/office_ac/fan"
+temperature_command_topic: "cmnd/office_ac/temp"
+current_temperature_topic: "stat/office_ac"
+current_temperature_template: "{{ value_json.current_temp }}"

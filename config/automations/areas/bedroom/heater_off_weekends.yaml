@@ -1,0 +1,16 @@
+---
+id: bedroom_outlet_off_weekends
+alias: 'Turn OFF the bedroom power outlet on weekends'
+hide_entity: true
+trigger:
+  - platform: time
+    at: '03:30:00'
+  - platform: time
+    at: '10:00:00'
+condition:
+  - condition: state
+    entity_id: binary_sensor.workday
+    state: "off"
+action:
+  - service: switch.turn_off
+    entity_id: switch.bedroom_outlet

@@ -1,0 +1,24 @@
+---
+id: balcony_camera_battery
+alias: 'Office balcony camera battery'
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.ring_balcon_oficina_battery
+    below: 25
+    for:
+      minutes: 5
+  - platform: numeric_state
+    entity_id: sensor.ring_balcon_oficina_battery
+    below: 10
+    for:
+      minutes: 5
+  - platform: numeric_state
+    entity_id: sensor.ring_balcon_oficina_battery
+    below: 5
+    for:
+      minutes: 5
+action:
+  - service: notify.html5
+    data:
+      title: 'Battery - Balcony camera'
+      message: "The office balcony camera is at {{ states('sensor.ring_balcon_oficina_battery') }}% battery"

@@ -1,0 +1,3 @@
+config/android
+config/known_devices.yaml
+config/secrets.yaml

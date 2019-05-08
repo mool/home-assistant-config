@@ -1,0 +1,7 @@
+---
+mqtt:
+  broker: 192.168.100.2
+  port: 1883
+  client_id: home-assistant-1
+  keepalive: 60
+  protocol: 3.1

@@ -1,0 +1,22 @@
+---
+id: disable_away
+alias: Disable Away
+trigger:
+  - platform: state
+    entity_id: person.pablo
+    to: home
+  - platform: state
+    entity_id: person.romina
+    to: home
+condition:
+  condition: state
+  entity_id: input_boolean.away
+  state: 'on'
+action:
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.away
+  - service: notify.html5
+    data:
+      title: 'Away Mode'
+      message: 'The away mode is OFF'

@@ -1,0 +1,17 @@
+---
+sensor.dark_sky_summary:
+  friendly_name: Conditions
+sensor.dark_sky_temperature:
+  friendly_name: Temperature
+sensor.dark_sky_daytime_high_temperature:
+  friendly_name: Daily High
+sensor.dark_sky_overnight_low_temperature:
+  friendly_name: Daily Low
+sensor.dark_sky_precip:
+  friendly_name: Precipitation
+sensor.dark_sky_precip_probability:
+  friendly_name: Precipitation Probability
+binary_sensor.door_window_sensor_158d0002766823:
+  friendly_name: Stair Window 1
+binary_sensor.motion_sensor_158d0002239c13:
+  friendly_name: Office Motion

@@ -1,0 +1,27 @@
+---
+title: office
+icon: mdi:tie
+cards:
+  - type: glance
+    title: Lights
+    entities:
+      - entity: switch.fibaro_office_switch_2
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: light.office_desk_leds
+        icon: mdi:led-strip
+        tap_action:
+          action: toggle
+  - type: horizontal-stack
+    cards:
+      - type: sensor
+        name: Temperature
+        entity: sensor.office_temperature
+      - type: sensor
+        name: Humidity
+        entity: sensor.office_humidity
+  - type: thermostat
+    entity: climate.office_thermostat
+  - type: media-control
+    entity: media_player.oficina

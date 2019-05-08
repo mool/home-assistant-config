@@ -1,0 +1,58 @@
+---
+title: lights
+icon: mdi:lightbulb
+cards:
+  - type: glance
+    title: Exterior Lights
+    entities:
+      - entity: switch.fibaro_office_switch
+        icon: mdi:lightbulb
+        tap_action:
+          action: toggle
+      - entity: switch.enerwave_living_switch_2
+        icon: mdi:lightbulb
+        tap_action:
+          action: toggle
+  - type: glance
+    title: Interior Lights
+    columns: 4
+    entities:
+      - entity: switch.fibaro_dinning_room_switch
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: switch.fibaro_dinning_room_switch_2
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: switch.fibaro_kitchen_switch
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: switch.fibaro_kitchen_switch_2
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: switch.enerwave_living_switch_1
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: light.living
+        icon: mdi:lamp
+        tap_action:
+          action: toggle
+      - entity: switch.fibaro_office_switch_2
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: light.office_desk_leds
+        icon: mdi:led-strip
+        tap_action:
+          action: toggle
+  - type: glance
+    title: Outlets
+    entities:
+      - entity: switch.bedroom_outlet
+        icon: mdi:power-socket-au
+        tap_action:
+          action: toggle

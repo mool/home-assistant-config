@@ -1,0 +1,10 @@
+---
+id: interior_lights_off_on_bedtime
+alias: 'Interior lights OFF on bedtime'
+trigger:
+  - platform: state
+    entity_id: input_boolean.bedtime
+    to: 'on'
+action:
+  - service: homeassistant.turn_off
+    entity_id: group.inside_lights

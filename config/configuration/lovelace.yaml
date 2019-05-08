@@ -1,0 +1,4 @@
+---
+# Lovelace component for confuring the UI.
+lovelace:
+  mode: yaml

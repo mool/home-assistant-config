@@ -1,0 +1,7 @@
+---
+http:
+  # Contains the URL that Home Assistant is available on the internet.
+  base_url: https://hassio.mool.online:8123
+  # SSL configuration
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem

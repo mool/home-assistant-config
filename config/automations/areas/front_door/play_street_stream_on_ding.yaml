@@ -1,0 +1,16 @@
+---
+id: play_street_stream_on_ring
+alias: Play street stream in the TV on ding
+trigger:
+  - platform: state
+    entity_id: binary_sensor.ring_puerta_principal_ding
+    to: 'on'
+condition:
+  - condition: state
+    entity_id: input_boolean.away
+    state: 'off'
+action:
+  - service: camera.play_stream
+    data:
+      entity_id: camera.street
+      media_player: media_player.fire_tv_living

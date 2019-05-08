@@ -1,0 +1,6 @@
+---
+platform: bluetooth_tracker
+consider_home: 120
+new_device_defaults:
+  track_new_devices: False
+  hide_if_away: False

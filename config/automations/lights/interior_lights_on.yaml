@@ -1,0 +1,18 @@
+---
+id: interior_lights_on
+alias: 'Interior lights ON before sunset'
+hide_entity: true
+trigger:
+  - platform: sun
+    event: sunset
+    offset: '-00:45:00'
+action:
+  - service: switch.turn_on
+    entity_id:
+      - switch.enerwave_living_switch
+      - switch.fibaro_kitchen_switch_2
+      - switch.fibaro_dinning_room_switch
+  - service: notify.html5
+    data:
+      title: 'Interior lights'
+      message: 'Turning ON the lights of the kitchen, living and dinning room'

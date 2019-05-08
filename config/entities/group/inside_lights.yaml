@@ -1,0 +1,13 @@
+---
+inside_lights:
+  name: Inside Lights
+  icon: mdi:lightbulb
+  entities:
+    - light.living
+    - light.office_desk_leds
+    - switch.fibaro_office_switch_2
+    - switch.fibaro_kitchen_switch
+    - switch.fibaro_kitchen_switch_2
+    - switch.enerwave_living_switch_1
+    - switch.fibaro_dinning_room_switch
+    - switch.fibaro_dinning_room_switch_2

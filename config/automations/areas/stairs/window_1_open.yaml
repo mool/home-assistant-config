@@ -1,0 +1,23 @@
+---
+id: stairs_window_1_open
+alias: Stairs Window 1 Opened
+trigger:
+  - platform: state
+    entity_id: binary_sensor.door_window_sensor_158d0002766823
+    to: 'on'
+condition:
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: input_boolean.away
+      state: 'on'
+    - condition: state
+      entity_id: input_boolean.bedtime
+      state: 'on'
+action:
+  - service: notify.html5
+    data:
+      title: 'Security - Stair window 1'
+      message: 'The stairs window 1 was opened'
+  - service: homeassistant.turn_on
+    entity_id: group.inside_lights

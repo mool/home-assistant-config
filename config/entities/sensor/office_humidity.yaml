@@ -1,0 +1,7 @@
+---
+platform: mqtt
+name: Office Humidity
+unit_of_measurement: "%"
+device_class: humidity
+state_topic: "stat/office_ac"
+value_template: "{{ value_json.current_humidity }}"

@@ -1,0 +1,79 @@
+---
+title: main
+icon: mdi:home
+cards:
+  - type: glance
+    title: Presence
+    entities:
+      - person.pablo
+      - person.romina
+  - type: entities
+    title: Home Modes
+    show_header_toggle: false
+    entities:
+      - entity: input_boolean.away
+      - entity: input_boolean.bedtime
+      - entity: input_boolean.vacation
+  - type: weather-forecast
+    entity: weather.dark_sky
+  - type: entity-filter
+    entities:
+      - entity: switch.fibaro_office_switch
+        icon: mdi:lightbulb
+        tap_action:
+          action: toggle
+      - entity: switch.enerwave_living_switch_2
+        icon: mdi:lightbulb
+        tap_action:
+          action: toggle
+      - entity: switch.fibaro_dinning_room_switch
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: switch.fibaro_dinning_room_switch_2
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: switch.fibaro_kitchen_switch
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: switch.fibaro_kitchen_switch_2
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: switch.enerwave_living_switch_1
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: light.living
+        icon: mdi:lamp
+        tap_action:
+          action: toggle
+      - entity: switch.fibaro_office_switch_2
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: light.office_desk_leds
+        icon: mdi:led-strip
+        tap_action:
+          action: toggle
+    show_empty: false
+    state_filter:
+      - "on"
+    card:
+      type: glance
+      title: Lights currently on
+  - type: horizontal-stack
+    cards:
+      - type: sensor
+        name: Latency
+        entity: sensor.speedtest_ping
+      - type: sensor
+        name: Download
+        entity: sensor.speedtest_download
+      - type: sensor
+        name: Upload
+        entity: sensor.speedtest_upload
+  - type: picture-entity
+    entity: camera.street

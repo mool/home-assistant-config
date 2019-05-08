@@ -1,0 +1,13 @@
+---
+alias: 'Set movie scene'
+trigger:
+  - platform: state
+    entity_id: media_player.fire_tv_living
+    from: 'off'
+condition:
+  - condition: state
+    entity_id: sun.sun
+    state: 'below_horizon'
+action:
+  - service: scene.turn_on
+    entity_id: scene.livingroom_movies

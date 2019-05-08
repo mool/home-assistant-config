@@ -1,0 +1,12 @@
+---
+id: desk_leds_off
+alias: 'Turn OFF desk leds'
+hide_entity: true
+trigger:
+  - platform: state
+    entity_id: switch.fibaro_office_switch_2
+    to: 'off'
+action:
+  - service: light.turn_off
+    entity_id:
+      - light.office_desk_leds

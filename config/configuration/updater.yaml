@@ -1,0 +1,5 @@
+---
+# Checks for available updates
+updater:
+  reporting: true
+  include_used_components: true
