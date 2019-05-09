@@ -9,6 +9,8 @@ __pycache__
 
 # Directory (contents) ignores
 config/.cloud
+config/.HA_VERSION
+config/.ring_cache.pickle
 config/.storage
 config/deps
 config/android
