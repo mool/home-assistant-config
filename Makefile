@@ -7,6 +7,6 @@ check_config: update_images
 lint: update_images
 	docker-compose run --rm yamllint
 
-all: lint check_config
+test: lint check_config
 
-.PHONY: check_config lint all
+.PHONY: check_config lint test
