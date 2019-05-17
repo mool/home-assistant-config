@@ -1,0 +1,10 @@
+---
+id: turn_off_office_lights_when_away
+alias: Turn off ofice lights when away
+trigger:
+  - platform: state
+    entity_id: input_boolean.away
+    to: 'on'
+action:
+  - service: switch.turn_off
+    entity_id: switch.fibaro_office_switch_2
