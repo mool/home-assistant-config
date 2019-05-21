@@ -9,7 +9,7 @@ trigger:
     at: '09:30:00'
 condition:
   - condition: state
-    entity_id: binary_sensor.workday
+    entity_id: binary_sensor.workday_sensor
     state: "off"
 action:
   - service: switch.turn_on
