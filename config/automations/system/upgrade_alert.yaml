@@ -1,0 +1,18 @@
+---
+alias: system_upgrade_alert
+trigger:
+  platform: state
+  entity_id: sensor.version_available
+condition:
+  - condition: template
+    value_template: >-
+      {{
+        states('sensor.version_available')
+        !=
+        states('sensor.version_current')
+      }}
+action:
+  - service: notify.html5
+    data:
+      message: 'New System Upgrade'
+      title: "There is a Home Assistant version, {{ states('sensor.version_available') }} just got released!"
