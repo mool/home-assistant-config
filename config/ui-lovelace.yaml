@@ -4,4 +4,5 @@ views:
   - !include lovelace/views/lights.yaml
   - !include lovelace/views/media.yaml
   - !include lovelace/views/office.yaml
+  - !include lovelace/views/bedroom.yaml
   - !include lovelace/views/devices_health.yaml

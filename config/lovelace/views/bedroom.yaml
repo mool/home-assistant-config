@@ -1,0 +1,19 @@
+---
+title: bedroom
+icon: mdi:hotel
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: sensor
+        name: Temperature
+        entity: sensor.esphome_bedroom_temperature
+      - type: sensor
+        name: Humidity
+        entity: sensor.esphome_bedroom_humidity
+  - type: glance
+    title: Outlets
+    entities:
+      - entity: switch.bedroom_outlet
+        icon: mdi:power-socket-au
+        tap_action:
+          action: toggle
