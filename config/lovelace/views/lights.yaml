@@ -56,3 +56,7 @@ cards:
         icon: mdi:power-socket-au
         tap_action:
           action: toggle
+      - entity: switch.sonoff_2
+        icon: mdi:power-socket-au
+        tap_action:
+          action: toggle
