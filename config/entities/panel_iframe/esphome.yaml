@@ -1,0 +1,5 @@
+---
+esphome:
+  title: ESPHome
+  icon: mdi:memory
+  url: !secret panel_iframe_esphome_url
