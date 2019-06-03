@@ -1,0 +1,27 @@
+---
+title: living
+icon: mdi:television-classic
+cards:
+  - type: glance
+    title: Lights
+    entities:
+      - entity: switch.fibaro_dinning_room_switch
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: switch.fibaro_dinning_room_switch_2
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: switch.enerwave_living_switch_1
+        icon: mdi:ceiling-light
+        tap_action:
+          action: toggle
+      - entity: light.living
+        icon: mdi:lamp
+        tap_action:
+          action: toggle
+  - type: thermostat
+    entity: climate.comedor
+  - type: media-control
+    entity: media_player.fire_tv_living
