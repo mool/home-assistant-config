@@ -1,0 +1,4 @@
+---
+platform: bgh_smart
+username: !secret bgh_username
+password: !secret bgh_password

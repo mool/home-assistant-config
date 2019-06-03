@@ -1,0 +1,8 @@
+{
+  "domain": "bgh_smart",
+  "name": "BGH Smart",
+  "documentation": "https://github.com/mool/bgh_smart",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": ["pybgh==0.1.3"]
+}
