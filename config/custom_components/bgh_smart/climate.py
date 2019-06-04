@@ -10,11 +10,11 @@ from homeassistant.components.climate import ClimateDevice, PLATFORM_SCHEMA
 
 from homeassistant.components.climate.const import (
     SUPPORT_TARGET_TEMPERATURE, SUPPORT_OPERATION_MODE,
-    SUPPORT_FAN_MODE,
-    SUPPORT_ON_OFF,
+    SUPPORT_FAN_MODE, SUPPORT_ON_OFF,
+    ATTR_OPERATION_MODE,
     STATE_HEAT, STATE_COOL, STATE_FAN_ONLY, STATE_DRY, STATE_AUTO)
 from homeassistant.const import (
-    ATTR_ENTITY_ID, ATTR_STATE, ATTR_TEMPERATURE, ATTR_OPERATION_MODE,
+    ATTR_ENTITY_ID, ATTR_STATE, ATTR_TEMPERATURE,
     CONF_USERNAME, CONF_PASSWORD,
     STATE_ON, STATE_OFF, STATE_UNKNOWN, TEMP_CELSIUS, TEMP_FAHRENHEIT)
 
@@ -57,11 +57,6 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
 
     # Setup connection with devices/cloud
     client = pybgh.BghClient(username, password)
-    devices = []
-    for home in client.get_homes():
-        home_devices = client.get_devices(home['HomeID'])
-        for _device_id, device in home_devices.items():
-            devices.append(device)
 
     # Verify that passed in configuration works
     if not client.token:
@@ -69,6 +64,12 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
         return
 
     # Add devices
+    devices = []
+    for home in client.get_homes():
+        home_devices = client.get_devices(home['HomeID'])
+        for _device_id, device in home_devices.items():
+            devices.append(device)
+
     add_entities(BghHVAC(device, client) for device in devices)
 
 class BghHVAC(ClimateDevice):
@@ -103,6 +104,7 @@ class BghHVAC(ClimateDevice):
         self._min_temp = 17
         self._max_temp = 30
 
+        # Sometimes the API doesn't answer with the raw_data
         if self._device['raw_data']:
             self._current_temperature = self._device['data']['temperature']
             self._target_temperature = self._device['data']['target_temperature']
@@ -166,12 +168,12 @@ class BghHVAC(ClimateDevice):
 
     @property
     def is_on(self):
-        """Return true if on."""
+        """Return true if the unit is on."""
         return self._power
 
     @property
     def current_fan_mode(self):
-        """Return whether the fan is on."""
+        """Return the current fan mode."""
         return self._fan_speed
 
     @property
@@ -179,7 +181,14 @@ class BghHVAC(ClimateDevice):
         """List of available fan modes."""
         return self._fan_list
 
-    ####### TO DO
+    def set_mode(self):
+        """Push the settings to the unit."""
+        self._client.set_mode(
+            self._device_id,
+            self._mode,
+            self._target_temperature,
+            self._fan_speed)
+
     def set_temperature(self, **kwargs):
         """Set new target temperature."""
         temperature = kwargs.get(ATTR_TEMPERATURE)
@@ -191,7 +200,7 @@ class BghHVAC(ClimateDevice):
         if operation_mode:
             self._mode = operation_mode
 
-        self._client.set_mode(self._device_id, self._mode, self._target_temperature, self._fan_speed)
+        self.set_mode()
 
     def set_operation_mode(self, operation_mode):
         """Set new target operation mode."""
@@ -201,16 +210,17 @@ class BghHVAC(ClimateDevice):
         else:
             self._power = True
 
-        self._client.set_mode(self._device_id, operation_mode, self._target_temperature, self._fan_speed)
+        self.set_mode()
 
     def set_fan_mode(self, fan_mode):
         """Set new target fan mode."""
-        return true
+        self._fan_speed = fan_mode
+        self.set_mode()
 
     def turn_on(self):
         """Turn device on."""
         self._power = True
-        self._client.set_mode(self._device_id, self._mode, self._target_temperature, self._fan_speed)
+        self.set_mode()
 
     def turn_off(self):
         """Turn device off."""
