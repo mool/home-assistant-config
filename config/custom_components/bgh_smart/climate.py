@@ -183,7 +183,15 @@ class BghHVAC(ClimateDevice):
     def set_temperature(self, **kwargs):
         """Set new target temperature."""
         temperature = kwargs.get(ATTR_TEMPERATURE)
-        self._client.set_mode(self._device_id, self._mode, temperature, self._fan_speed)
+        operation_mode = kwargs.get(ATTR_OPERATION_MODE)
+
+        if temperature:
+            self._target_temperature = temperature
+
+        if operation_mode:
+            self._mode = operation_mode
+
+        self._client.set_mode(self._device_id, self._mode, self._target_temperature, self._fan_speed)
 
     def set_operation_mode(self, operation_mode):
         """Set new target operation mode."""
