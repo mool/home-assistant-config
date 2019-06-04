@@ -1,0 +1,17 @@
+---
+id: ac_on_workday
+alias: 'Turn ON the AC on workdays'
+hide_entity: true
+trigger:
+  - platform: time
+    at: '08:30:00'
+condition:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: "on"
+action:
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.comedor
+      temperature: 28
+      operation_mode: heat
