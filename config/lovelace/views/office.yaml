@@ -5,7 +5,7 @@ cards:
   - type: glance
     title: Lights
     entities:
-      - entity: switch.fibaro_office_switch_2
+      - entity: light.office
         icon: mdi:ceiling-light
         tap_action:
           action: toggle

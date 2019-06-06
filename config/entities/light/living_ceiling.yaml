@@ -1,0 +1,4 @@
+---
+platform: switch
+name: Living Room
+entity_id: switch.enerwave_living_switch_1

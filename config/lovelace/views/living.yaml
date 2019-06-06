@@ -5,19 +5,19 @@ cards:
   - type: glance
     title: Lights
     entities:
-      - entity: switch.fibaro_dinning_room_switch
+      - entity: light.dinning_room_1
         icon: mdi:ceiling-light
         tap_action:
           action: toggle
-      - entity: switch.fibaro_dinning_room_switch_2
+      - entity: light.dinning_room_2
         icon: mdi:ceiling-light
         tap_action:
           action: toggle
-      - entity: switch.enerwave_living_switch_1
+      - entity: light.living_room
         icon: mdi:ceiling-light
         tap_action:
           action: toggle
-      - entity: light.living
+      - entity: light.living_lamp
         icon: mdi:lamp
         tap_action:
           action: toggle

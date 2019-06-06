@@ -5,11 +5,11 @@ cards:
   - type: glance
     title: Exterior Lights
     entities:
-      - entity: switch.fibaro_office_switch
+      - entity: light.balcony
         icon: mdi:lightbulb
         tap_action:
           action: toggle
-      - entity: switch.enerwave_living_switch_2
+      - entity: light.front_door
         icon: mdi:lightbulb
         tap_action:
           action: toggle
@@ -17,31 +17,31 @@ cards:
     title: Interior Lights
     columns: 4
     entities:
-      - entity: switch.fibaro_dinning_room_switch
+      - entity: light.dinning_room_1
         icon: mdi:ceiling-light
         tap_action:
           action: toggle
-      - entity: switch.fibaro_dinning_room_switch_2
+      - entity: light.dinning_room_2
         icon: mdi:ceiling-light
         tap_action:
           action: toggle
-      - entity: switch.fibaro_kitchen_switch
+      - entity: light.kitchen_1
         icon: mdi:ceiling-light
         tap_action:
           action: toggle
-      - entity: switch.fibaro_kitchen_switch_2
+      - entity: light.kitchen_2
         icon: mdi:ceiling-light
         tap_action:
           action: toggle
-      - entity: switch.enerwave_living_switch_1
+      - entity: light.living_room
         icon: mdi:ceiling-light
         tap_action:
           action: toggle
-      - entity: light.living
+      - entity: light.living_lamp
         icon: mdi:lamp
         tap_action:
           action: toggle
-      - entity: switch.fibaro_office_switch_2
+      - entity: light.office
         icon: mdi:ceiling-light
         tap_action:
           action: toggle

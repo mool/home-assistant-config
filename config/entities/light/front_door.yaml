@@ -1,0 +1,4 @@
+---
+platform: switch
+name: Front Door
+entity_id: switch.enerwave_living_switch_2

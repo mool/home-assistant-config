@@ -1,0 +1,6 @@
+---
+platform: group
+name: Kitchen
+entities:
+  - light.kitchen_1
+  - light.kitchen_2

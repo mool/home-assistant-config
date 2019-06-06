@@ -1,0 +1,4 @@
+---
+platform: switch
+name: Kitchen 1
+entity_id: switch.fibaro_kitchen_switch
