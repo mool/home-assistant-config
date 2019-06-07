@@ -1,7 +1,7 @@
 ---
 platform: androidtv
-name: Fire TV Living
-host: 192.168.100.73
+name: Fire TV Bedroom
+host: 192.168.100.74
 device_class: firetv
 adbkey: "/config/android/adbkey"
 get_sources: false

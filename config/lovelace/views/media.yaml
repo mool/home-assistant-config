@@ -3,9 +3,9 @@ title: Media
 icon: mdi:youtube-tv
 cards:
   - type: media-control
-    entity: media_player.fire_tv_living
+    entity: media_player.fire_tv_bedroom
   - type: media-control
-    entity: media_player.plex_plex_y6loadj9tku2sustgkl0g9nt
+    entity: media_player.fire_tv_living
   - type: media-control
     entity: media_player.comedor
   - type: media-control
