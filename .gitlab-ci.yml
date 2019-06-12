@@ -1,0 +1,37 @@
+---
+image: docker:latest
+
+stages:
+  - preflight
+  - homeassistant
+
+yamllint:
+  image: sdesbure/yamllint
+  stage: preflight
+  tags:
+    - docker
+  before_script:
+    - yamllint --version
+  script:
+    - yamllint .
+
+homeassistant:
+  image:
+    name: homeassistant/home-assistant:latest
+    entrypoint: [""]
+  stage: homeassistant
+  tags:
+    - docker
+  variables:
+    PYTHONPATH: "/usr/src/app:$PYTHONPATH"
+  before_script:
+    - python -m homeassistant --version
+    - cp -R ./.stub/ssl /
+    - cp -R ./.stub/android /config/
+    - cp ./.stub/secrets.yaml ./config/
+  script:
+    - |
+      python -m homeassistant \
+        --config ./config/ \
+        --script check_config \
+        --info all
