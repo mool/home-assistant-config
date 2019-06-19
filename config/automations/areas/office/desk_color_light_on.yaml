@@ -1,0 +1,15 @@
+---
+id: desk_color_light_on
+alias: 'Turn ON desk color light'
+hide_entity: true
+trigger:
+  - platform: state
+    entity_id: light.office_desk_light
+    to: 'on'
+  - platform: state
+    entity_id: switch.fibaro_office_switch_2
+    to: 'on'
+action:
+  - service: light.turn_on
+    entity_id:
+      - light.office_desk_color_light

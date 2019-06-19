@@ -6,5 +6,5 @@ trigger:
     entity_id: input_boolean.away
     to: 'on'
 action:
-  - service: switch.turn_off
-    entity_id: switch.fibaro_office_switch_2
+  - service: homeassistant.turn_off
+    entity_id: group.office_lights
