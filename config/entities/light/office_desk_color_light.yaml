@@ -2,5 +2,5 @@
 platform: flux_led
 devices:
   192.168.100.60:
-    name: Office Desk Leds
+    name: Office Desk Color Light
     mode: rgb
