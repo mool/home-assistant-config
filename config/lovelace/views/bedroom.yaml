@@ -17,3 +17,7 @@ cards:
         icon: mdi:power-socket-au
         tap_action:
           action: toggle
+      - entity: light.bedroom_lamp
+        icon: mdi:lamp
+        tap_action:
+          action: toggle

@@ -1,0 +1,4 @@
+---
+platform: switch
+name: Bedroom Lamp
+entity_id: switch.bedroom_lamp

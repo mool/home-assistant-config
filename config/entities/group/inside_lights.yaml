@@ -10,3 +10,4 @@ inside_lights:
     - light.office
     - light.office_desk_light
     - light.office_desk_color_light
+    - light.bedroom_lamp
