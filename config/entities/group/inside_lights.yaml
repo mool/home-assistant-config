@@ -8,4 +8,6 @@ inside_lights:
     - light.living_lamp
     - light.living_room
     - light.office
-    - light.office_desk_leds
+    - light.office_desk_light
+    - light.office_desk_color_light
+    - light.bedroom_lamp

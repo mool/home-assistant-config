@@ -3,4 +3,5 @@ office_lights:
   name: Lights
   entities:
     - switch.fibaro_office_switch_2
-    - light.office_desk_leds
+    - light.office_desk_light
+    - light.office_desk_color_light

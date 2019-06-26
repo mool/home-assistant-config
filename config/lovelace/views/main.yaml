@@ -50,11 +50,19 @@ cards:
         icon: mdi:lamp
         tap_action:
           action: toggle
+      - entity: light.bedroom_lamp
+        icon: mdi:lamp
+        tap_action:
+          action: toggle
       - entity: light.office
         icon: mdi:ceiling-light
         tap_action:
           action: toggle
-      - entity: light.office_desk_leds
+      - entity: light.office_desk_light
+        icon: mdi:led-strip
+        tap_action:
+          action: toggle
+      - entity: light.office_desk_color_light
         icon: mdi:led-strip
         tap_action:
           action: toggle
