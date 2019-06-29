@@ -1,23 +1,19 @@
 ---
-id: motion_detected_office
-alias: Motion Detected In The Office
+id: motion_detected_office_presence
+alias: Motion Detected In The Office Presence
 trigger:
   - platform: state
     entity_id: binary_sensor.motion_sensor_158d0002239c13
     to: 'on'
 condition:
-  condition: or
-  conditions:
-    - condition: state
-      entity_id: input_boolean.away
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.bedtime
-      state: 'on'
+  condition: state
+  entity_id: person.pablo
+  state: 'home'
 action:
-  - service: notify.html5
+  - service: light.turn_on
     data:
-      title: 'Security - Office'
-      message: 'Motion detected in the Office'
-  - service: homeassistant.turn_on
-    entity_id: group.inside_lights
+      entity_id:
+        - light.office_desk_light
+        - light.office_desk_color_light
+        - light.office
+      transition: 3
