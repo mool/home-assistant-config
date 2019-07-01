@@ -1,0 +1,7 @@
+---
+platform: generic
+name: F. Alvarez South
+still_image_url: http://10.1.80.98:8000/cgi-bin/snapshot.cgi?channel=3
+stream_source: !secret camera_dorrego_url_3
+username: !secret camera_dorrego_username
+password: !secret camera_dorrego_password
