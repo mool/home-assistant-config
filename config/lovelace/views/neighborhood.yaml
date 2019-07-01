@@ -1,0 +1,12 @@
+---
+title: neighborhood
+icon: mdi:office-building
+cards:
+  - type: picture-entity
+    entity: camera.espora_east
+  - type: picture-entity
+    entity: camera.espora_west
+  - type: picture-entity
+    entity: camera.f_alvarez_north
+  - type: picture-entity
+    entity: camera.f_alvarez_south

@@ -7,3 +7,4 @@ views:
   - !include lovelace/views/office.yaml
   - !include lovelace/views/bedroom.yaml
   - !include lovelace/views/devices_health.yaml
+  - !include lovelace/views/neighborhood.yaml
