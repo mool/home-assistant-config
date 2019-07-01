@@ -1,0 +1,4 @@
+---
+climate.office_thermostat:
+  name: Office Thermostat
+  room: Office

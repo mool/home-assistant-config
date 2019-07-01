@@ -1,0 +1,7 @@
+---
+light.living_lamp:
+  name: Living Room Lamp
+  aliases:
+    - Lamp
+    - Living Lamp
+  room: Living Room

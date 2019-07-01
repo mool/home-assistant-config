@@ -1,2 +1,5 @@
 ---
 cloud:
+  google_actions:
+    entity_config: !include_dir_merge_named ../assistants/google
+    filter: !include ../assistants/filter.yaml

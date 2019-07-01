@@ -1,0 +1,6 @@
+---
+light.kitchen:
+  name: Kitchen
+  aliases:
+    - Kitchen Light
+  room: Kitchen
