@@ -1,0 +1,7 @@
+---
+light.office:
+  name: Office
+  aliases:
+    - Ceiling
+    - Office Light
+  room: Office

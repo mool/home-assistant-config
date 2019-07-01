@@ -1,0 +1,7 @@
+---
+light.office_desk_color_light:
+  name: Desk Color Light
+  aliases:
+    - Desk Color
+    - Office Desk Color Light
+  room: Office
