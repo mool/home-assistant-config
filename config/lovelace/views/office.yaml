@@ -19,12 +19,20 @@ cards:
           action: toggle
   - type: horizontal-stack
     cards:
-      - type: sensor
-        name: Temperature
-        entity: sensor.office_temperature
-      - type: sensor
-        name: Humidity
-        entity: sensor.office_humidity
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.office_temperature
+        line_color: red
+        line_width: 5
+        font_size: 75
+        animate: true
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.office_humidity
+        line_color: blue
+        line_width: 5
+        font_size: 75
+        animate: true
   - type: thermostat
     entity: climate.office_thermostat
   - type: media-control
