@@ -4,12 +4,20 @@ icon: mdi:hotel
 cards:
   - type: horizontal-stack
     cards:
-      - type: sensor
-        name: Temperature
-        entity: sensor.esphome_bedroom_temperature
-      - type: sensor
-        name: Humidity
-        entity: sensor.esphome_bedroom_humidity
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.esphome_bedroom_temperature
+        line_color: red
+        line_width: 5
+        font_size: 75
+        animate: true
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.esphome_bedroom_humidity
+        line_color: blue
+        line_width: 5
+        font_size: 75
+        animate: true
   - type: glance
     title: Outlets
     entities:
