@@ -9,20 +9,26 @@ cards:
       - type: section
         label: Kitchen
       - entity: light.kitchen_1
+        icon: mdi:spotlight-beam
         toogle: true
       - entity: light.kitchen_2
+        icon: mdi:spotlight-beam
         toogle: true
       - type: section
         label: Dinning Room
       - entity: light.dinning_room_1
+        icon: mdi:ceiling-light
         toogle: true
       - entity: light.dinning_room_2
+        icon: mdi:spotlight-beam
         toogle: true
       - type: section
         label: Living Room
       - entity: light.living_room
+        icon: mdi:spotlight-beam
         toogle: true
       - entity: light.living_lamp
+        icon: mdi:lamp
         toogle: true
   - type: thermostat
     entity: climate.comedor
