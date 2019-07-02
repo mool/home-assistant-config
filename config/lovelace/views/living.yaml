@@ -2,25 +2,28 @@
 title: living
 icon: mdi:television-classic
 cards:
-  - type: glance
+  - type: entities
     title: Lights
+    show_header_toggle: true
     entities:
+      - type: section
+        label: Kitchen
+      - entity: light.kitchen_1
+        toogle: true
+      - entity: light.kitchen_2
+        toogle: true
+      - type: section
+        label: Dinning Room
       - entity: light.dinning_room_1
-        icon: mdi:ceiling-light
-        tap_action:
-          action: toggle
+        toogle: true
       - entity: light.dinning_room_2
-        icon: mdi:ceiling-light
-        tap_action:
-          action: toggle
+        toogle: true
+      - type: section
+        label: Living Room
       - entity: light.living_room
-        icon: mdi:ceiling-light
-        tap_action:
-          action: toggle
+        toogle: true
       - entity: light.living_lamp
-        icon: mdi:lamp
-        tap_action:
-          action: toggle
+        toogle: true
   - type: thermostat
     entity: climate.comedor
   - type: media-control
