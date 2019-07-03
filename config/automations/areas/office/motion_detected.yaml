@@ -3,7 +3,7 @@ id: motion_detected_office_presence
 alias: Motion Detected In The Office Presence
 trigger:
   - platform: state
-    entity_id: binary_sensor.motion_sensor_158d0002239c13
+    entity_id: binary_sensor.motion_sensor_office
     to: 'on'
 condition:
   condition: state

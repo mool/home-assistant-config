@@ -1,9 +1,9 @@
 ---
-id: stairs_window_1_open
-alias: Stairs Window 1 Opened
+id: stairs_window_2_open
+alias: Stairs Window 2 Opened
 trigger:
   - platform: state
-    entity_id: binary_sensor.stair_window_1
+    entity_id: binary_sensor.stair_window_2
     to: 'on'
 condition:
   condition: or
@@ -17,7 +17,7 @@ condition:
 action:
   - service: notify.html5
     data:
-      title: 'Security - Stair window 1'
-      message: 'The stairs window 1 was opened'
+      title: 'Security - Stair window 2'
+      message: 'The stairs window 2 was opened'
   - service: homeassistant.turn_on
     entity_id: group.inside_lights

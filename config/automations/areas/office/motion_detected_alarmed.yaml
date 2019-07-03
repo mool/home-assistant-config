@@ -3,7 +3,7 @@ id: motion_detected_office_alarmed
 alias: Motion Detected In The Office Alarmed
 trigger:
   - platform: state
-    entity_id: binary_sensor.motion_sensor_158d0002239c13
+    entity_id: binary_sensor.motion_sensor_office
     to: 'on'
 condition:
   condition: or
