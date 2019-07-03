@@ -50,5 +50,5 @@ cards:
         name: false
       'off':
         name: false
-  - type: media-control
+  - type: custom:mini-media-player
     entity: media_player.oficina
