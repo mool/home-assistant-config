@@ -32,5 +32,20 @@ cards:
         toogle: true
   - type: custom:simple-thermostat
     entity: climate.comedor
+    decimals: 0
+    step_size: 1
+    modes:
+      auto:
+        name: false
+      cool:
+        name: false
+      dry:
+        name: false
+      fan_only:
+        name: false
+      heat:
+        name: false
+      'off':
+        name: false
   - type: media-control
     entity: media_player.fire_tv_living
