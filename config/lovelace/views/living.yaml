@@ -30,7 +30,7 @@ cards:
       - entity: light.living_lamp
         icon: mdi:lamp
         toogle: true
-  - type: thermostat
+  - type: custom:simple-thermostat
     entity: climate.comedor
   - type: media-control
     entity: media_player.fire_tv_living

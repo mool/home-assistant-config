@@ -33,7 +33,7 @@ cards:
         line_width: 5
         font_size: 75
         animate: true
-  - type: thermostat
+  - type: custom:simple-thermostat
     entity: climate.office_thermostat
   - type: media-control
     entity: media_player.oficina
