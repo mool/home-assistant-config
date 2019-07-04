@@ -1,0 +1,8 @@
+---
+platform: template
+sensors:
+  stair_window_1_battery:
+    friendly_name: "Stair Window 1 Battery"
+    unit_of_measurement: '%'
+    value_template: "{{ state_attr('binary_sensor.stair_window_1', 'battery_level') | round(0) }}"
+    device_class: "battery"

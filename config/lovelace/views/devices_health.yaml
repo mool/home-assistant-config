@@ -2,24 +2,9 @@
 title: Devices Health
 icon: mdi:gauge
 cards:
-  - type: glance
-    title: Door and Window Sensors
-    entities:
-      - binary_sensor.office_door
-      - binary_sensor.stair_window_1
-      - binary_sensor.stair_window_2
   - type: entities
-    title: Motion Sensors
-    entities:
-      - binary_sensor.ring_puerta_principal_motion
-      - binary_sensor.ring_jardin_trasero_motion
-      - binary_sensor.ring_balcon_oficina_motion
-      - binary_sensor.ring_techo_comedor_motion
-      - binary_sensor.ring_comedor_motion
-      - binary_sensor.motion_sensor_office
-  - type: entities
+    title: Ring Cameras - Battery Status
     show_header_toggle: false
-    name: Ring Cameras - Battery Status
     entities:
       - sensor.ring_puerta_principal_battery
       - sensor.ring_jardin_trasero_battery
@@ -27,11 +12,18 @@ cards:
       - sensor.ring_techo_comedor_battery
       - sensor.ring_comedor_battery
   - type: entities
+    title: Ring Cameras - Signal Status
     show_header_toggle: false
-    name: Ring Cameras - Signal Status
     entities:
       - sensor.ring_puerta_principal_wifi_signal_category
       - sensor.ring_jardin_trasero_wifi_signal_category
       - sensor.ring_balcon_oficina_wifi_signal_category
       - sensor.ring_techo_comedor_wifi_signal_category
       - sensor.ring_comedor_wifi_signal_category
+  - type: entities
+    title: Xiaomi Devices - Battery Status
+    show_header_toggle: false
+    entities:
+      - sensor.stair_window_1_battery
+      - sensor.stair_window_2_battery
+      - sensor.office_door_battery
