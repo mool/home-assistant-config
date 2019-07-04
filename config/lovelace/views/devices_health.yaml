@@ -27,3 +27,4 @@ cards:
       - sensor.stair_window_1_battery
       - sensor.stair_window_2_battery
       - sensor.office_door_battery
+      - sensor.bedroom_switch_battery

@@ -1,0 +1,8 @@
+---
+platform: template
+sensors:
+  bedroom_switch_battery:
+    friendly_name: "Bedroom Switch Battery"
+    unit_of_measurement: '%'
+    value_template: "{{ state_attr('binary_sensor.bedroom_switch', 'battery_level') | round(0) }}"
+    device_class: "battery"
