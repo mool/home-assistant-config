@@ -1,0 +1,22 @@
+---
+title: Security
+icon: mdi:shield-home
+cards:
+  - type: glance
+    title: Door and Window Sensors
+    entities:
+      - binary_sensor.office_door
+      - binary_sensor.stair_window_1
+      - binary_sensor.stair_window_2
+  - type: entities
+    title: Motion Sensors
+    show_header_toggle: false
+    entities:
+      - binary_sensor.ring_puerta_principal_motion
+      - binary_sensor.ring_jardin_trasero_motion
+      - binary_sensor.ring_balcon_oficina_motion
+      - binary_sensor.ring_techo_comedor_motion
+      - binary_sensor.ring_comedor_motion
+      - binary_sensor.motion_sensor_office
+  - type: picture-entity
+    entity: camera.street
