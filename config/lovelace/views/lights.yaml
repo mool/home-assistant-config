@@ -2,69 +2,63 @@
 title: lights
 icon: mdi:lightbulb
 cards:
-  - type: glance
-    title: Exterior Lights
+  - type: entities
+    title: Exterior
     entities:
       - entity: light.balcony
         icon: mdi:lightbulb
-        tap_action:
-          action: toggle
+        toogle: true
       - entity: light.front_door
         icon: mdi:lightbulb
-        tap_action:
-          action: toggle
-  - type: glance
-    title: Interior Lights
-    columns: 4
+        toogle: true
+  - type: entities
+    title: Ground Floor
+    show_header_toggle: true
     entities:
+      - type: section
+        label: Kitchen
+      - entity: light.kitchen_1
+        icon: mdi:spotlight-beam
+        toogle: true
+      - entity: light.kitchen_2
+        icon: mdi:spotlight-beam
+        toogle: true
+      - type: section
+        label: Dinning Room
       - entity: light.dinning_room_1
         icon: mdi:ceiling-light
-        tap_action:
-          action: toggle
+        toogle: true
       - entity: light.dinning_room_2
-        icon: mdi:ceiling-light
-        tap_action:
-          action: toggle
-      - entity: light.kitchen_1
-        icon: mdi:ceiling-light
-        tap_action:
-          action: toggle
-      - entity: light.kitchen_2
-        icon: mdi:ceiling-light
-        tap_action:
-          action: toggle
+        icon: mdi:spotlight-beam
+        toogle: true
+      - type: section
+        label: Living Room
       - entity: light.living_room
-        icon: mdi:ceiling-light
-        tap_action:
-          action: toggle
+        icon: mdi:spotlight-beam
+        toogle: true
       - entity: light.living_lamp
         icon: mdi:lamp
-        tap_action:
-          action: toggle
+        toogle: true
+      - type: section
+        label: Bedroom
       - entity: light.bedroom_lamp
         icon: mdi:lamp
-        tap_action:
-          action: toggle
-      - entity: light.office
-        icon: mdi:ceiling-light
-        tap_action:
-          action: toggle
-      - entity: light.office_desk_light
-        icon: mdi:led-strip
-        tap_action:
-          action: toggle
-      - entity: light.office_desk_color_light
-        icon: mdi:led-strip
-        tap_action:
-          action: toggle
-  - type: glance
-    title: Outlets
-    entities:
+        toogle: true
       - entity: switch.bedroom_outlet
         icon: mdi:power-socket-au
-        tap_action:
-          action: toggle
-      - entity: switch.sonoff_2
-        icon: mdi:power-socket-au
-        tap_action:
-          action: toggle
+        toggle: true
+  - type: entities
+    title: Top Floor
+    show_header_toggle: true
+    entities:
+      - type: section
+        label: Office
+      - entity: light.office
+        icon: mdi:ceiling-light
+        toggle: true
+      - entity: light.office_desk_light
+        icon: mdi:led-strip
+        toggle: true
+      - entity: light.office_desk_color_light
+        icon: mdi:led-strip
+        toggle: true
