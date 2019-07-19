@@ -9,10 +9,11 @@ import homeassistant.helpers.config_validation as cv
 from homeassistant.components.climate import ClimateDevice, PLATFORM_SCHEMA
 
 from homeassistant.components.climate.const import (
-    SUPPORT_TARGET_TEMPERATURE, SUPPORT_OPERATION_MODE,
-    SUPPORT_FAN_MODE, SUPPORT_ON_OFF,
-    ATTR_OPERATION_MODE,
-    STATE_HEAT, STATE_COOL, STATE_FAN_ONLY, STATE_DRY, STATE_AUTO)
+    SUPPORT_TARGET_TEMPERATURE,
+    SUPPORT_FAN_MODE,
+    ATTR_HVAC_MODE,
+    HVAC_MODE_HEAT, HVAC_MODE_COOL, HVAC_MODE_FAN_ONLY, HVAC_MODE_DRY,
+    HVAC_MODE_AUTO, HVAC_MODE_OFF)
 from homeassistant.const import (
     ATTR_ENTITY_ID, ATTR_STATE, ATTR_TEMPERATURE,
     CONF_USERNAME, CONF_PASSWORD,
@@ -31,12 +32,12 @@ FAN_MEDIUM = 'medium'
 FAN_HIGH = 'high'
 
 MAP_MODE_ID = {
-    0: STATE_OFF,
-    1: STATE_COOL,
-    2: STATE_HEAT,
-    3: STATE_DRY,
-    4: STATE_FAN_ONLY,
-    254: STATE_AUTO
+    0: HVAC_MODE_OFF,
+    1: HVAC_MODE_COOL,
+    2: HVAC_MODE_HEAT,
+    3: HVAC_MODE_DRY,
+    4: HVAC_MODE_FAN_ONLY,
+    254: HVAC_MODE_AUTO
 }
 
 MAP_FAN_MODE_ID = {
@@ -88,16 +89,14 @@ class BghHVAC(ClimateDevice):
         self._current_temperature = None
         self._target_temperature = None
         self._mode = STATE_UNKNOWN
-        self._power = False
         self._fan_speed = STATE_UNKNOWN
 
         self._parse_data()
 
-        self._operation_list = [STATE_AUTO, STATE_COOL, STATE_HEAT, STATE_DRY,
-                                STATE_FAN_ONLY, STATE_OFF]
-        self._fan_list = [FAN_AUTO, FAN_LOW, FAN_MEDIUM, FAN_HIGH]
-        self._support = (SUPPORT_TARGET_TEMPERATURE | SUPPORT_OPERATION_MODE |
-                         SUPPORT_FAN_MODE)
+        self._hvac_modes = [HVAC_MODE_AUTO, HVAC_MODE_COOL, HVAC_MODE_HEAT,
+                            HVAC_MODE_DRY, HVAC_MODE_FAN_ONLY, HVAC_MODE_OFF]
+        self._fan_modes = [FAN_AUTO, FAN_LOW, FAN_MEDIUM, FAN_HIGH]
+        self._support = (SUPPORT_TARGET_TEMPERATURE | SUPPORT_FAN_MODE)
 
     def _parse_data(self):
         """Parse the data in self._device"""
@@ -109,7 +108,6 @@ class BghHVAC(ClimateDevice):
             self._current_temperature = self._device['data']['temperature']
             self._target_temperature = self._device['data']['target_temperature']
             self._mode = MAP_MODE_ID[self._device['data']['mode_id']]
-            self._power = self._mode != 'off'
             self._fan_speed = MAP_FAN_MODE_ID[self._device['data']['fan_speed']]
 
     def update(self):
@@ -155,31 +153,24 @@ class BghHVAC(ClimateDevice):
         return self._support
 
     @property
-    def current_operation(self):
+    def hvac_mode(self):
         """Return the current mode of operation if unit is on."""
-        if self._power:
-            return self._mode
-        return STATE_OFF
+        return self._mode
 
     @property
-    def operation_list(self):
+    def hvac_modes(self):
         """List of available operation modes."""
-        return self._operation_list
+        return self._hvac_modes
 
     @property
-    def is_on(self):
-        """Return true if the unit is on."""
-        return self._power
-
-    @property
-    def current_fan_mode(self):
+    def fan_mode(self):
         """Return the current fan mode."""
         return self._fan_speed
 
     @property
-    def fan_list(self):
+    def fan_modes(self):
         """List of available fan modes."""
-        return self._fan_list
+        return self._fan_modes
 
     def set_mode(self):
         """Push the settings to the unit."""
@@ -192,7 +183,7 @@ class BghHVAC(ClimateDevice):
     def set_temperature(self, **kwargs):
         """Set new target temperature."""
         temperature = kwargs.get(ATTR_TEMPERATURE)
-        operation_mode = kwargs.get(ATTR_OPERATION_MODE)
+        operation_mode = kwargs.get(ATTR_HVAC_MODE)
 
         if temperature:
             self._target_temperature = temperature
@@ -202,27 +193,12 @@ class BghHVAC(ClimateDevice):
 
         self.set_mode()
 
-    def set_operation_mode(self, operation_mode):
+    def set_hvac_mode(self, operation_mode):
         """Set new target operation mode."""
         self._mode = operation_mode
-        if operation_mode == STATE_OFF:
-            self._power = False
-        else:
-            self._power = True
-
         self.set_mode()
 
     def set_fan_mode(self, fan_mode):
         """Set new target fan mode."""
         self._fan_speed = fan_mode
         self.set_mode()
-
-    def turn_on(self):
-        """Turn device on."""
-        self._power = True
-        self.set_mode()
-
-    def turn_off(self):
-        """Turn device off."""
-        self._power = False
-        self._client.set_mode(self._device_id, STATE_OFF, self._target_temperature, self._fan_speed)
