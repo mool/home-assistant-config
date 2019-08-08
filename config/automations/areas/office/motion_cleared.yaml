@@ -6,7 +6,7 @@ trigger:
     entity_id: binary_sensor.motion_sensor_office
     to: 'off'
     for:
-      minutes: 10
+      minutes: 5
 condition:
   condition: state
   entity_id: person.pablo
