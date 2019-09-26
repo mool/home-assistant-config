@@ -5,9 +5,6 @@ trigger:
   - platform: state
     entity_id: person.pablo
     to: home
-  - platform: state
-    entity_id: person.romina
-    to: home
 condition:
   condition: state
   entity_id: input_boolean.away

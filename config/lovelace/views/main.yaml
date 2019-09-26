@@ -6,7 +6,6 @@ cards:
     title: Presence
     entities:
       - person.pablo
-      - person.romina
   - type: entities
     title: Home Modes
     show_header_toggle: false
