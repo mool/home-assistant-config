@@ -3,8 +3,10 @@ inside_lights:
   name: Inside Lights
   icon: mdi:lightbulb
   entities:
-    - light.dinning_room
-    - light.kitchen
+    - light.dinning_room_1
+    - light.dinning_room_2
+    - light.kitchen_1
+    - light.kitchen_2
     - light.living_lamp
     - light.living_room
     - light.office
