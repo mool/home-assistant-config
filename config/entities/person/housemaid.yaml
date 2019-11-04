@@ -1,0 +1,5 @@
+---
+name: Housemaid
+id: housemaid
+device_trackers:
+  - device_tracker.vanesa

@@ -5,10 +5,30 @@ trigger:
   - platform: state
     entity_id: person.pablo
     to: not_home
+  - platform: state
+    entity_id: person.dad
+    to: not_home
+  - platform: state
+    entity_id: person.mom
+    to: not_home
+  - platform: state
+    entity_id: person.vanesa
+    to: not_home
 condition:
-  condition: state
-  entity_id: person.pablo
-  state: not_home
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: person.pablo
+      state: not_home
+    - condition: state
+      entity_id: person.dad
+      state: not_home
+    - condition: state
+      entity_id: person.mom
+      state: not_home
+    - condition: state
+      entity_id: person.housemaid
+      state: not_home
 action:
   - service: input_boolean.turn_on
     data:
