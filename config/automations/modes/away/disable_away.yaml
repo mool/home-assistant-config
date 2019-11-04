@@ -5,6 +5,15 @@ trigger:
   - platform: state
     entity_id: person.pablo
     to: home
+  - platform: state
+    entity_id: person.dad
+    to: home
+  - platform: state
+    entity_id: person.mom
+    to: home
+  - platform: state
+    entity_id: person.vanesa
+    to: home
 condition:
   condition: state
   entity_id: input_boolean.away
