@@ -2,13 +2,17 @@
 title: main
 icon: mdi:home
 cards:
-  - type: glance
-    title: Presence
+  - type: entity-filter
     entities:
-      - person.pablo
-      - person.dad
-      - person.mom
-      - person.housemaid
+      - entity: person.pablo
+      - entity: person.dad
+      - entity: person.mom
+      - entity: person.housemaid
+    state_filter:
+      - "home"
+    card:
+      type: glance
+      title: Presence
   - type: entities
     title: Home Modes
     show_header_toggle: false
