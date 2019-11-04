@@ -6,6 +6,8 @@ cards:
     title: Presence
     entities:
       - person.pablo
+      - person.dad
+      - person.mom
       - person.housemaid
   - type: entities
     title: Home Modes

@@ -1,0 +1,5 @@
+---
+name: Dad
+id: dad
+device_trackers:
+  - device_tracker.dad
