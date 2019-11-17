@@ -3,15 +3,15 @@ id: interior_lights_off_on_vacation
 alias: 'Interior lights OFF on vacation'
 hide_entity: true
 trigger:
-  - platform: time
-    at: '01:00:00'
+  platform: time
+  at: '01:00:00'
 condition:
   - condition: state
     entity_id: input_boolean.vacation
     state: 'on'
 action:
   - service: homeassistant.turn_off
-    entity_id: group.interior_lights
+    entity_id: group.inside_lights
   - service: notify.html5
     data:
       title: 'Interior lights'
