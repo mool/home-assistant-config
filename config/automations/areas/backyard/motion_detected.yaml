@@ -19,5 +19,11 @@ action:
     data:
       title: 'Security - Backyard'
       message: 'Motion detected in the Backyard'
+      data:
+        push:
+          sound:
+            name: US-EN-Morgan-Freeman-Motion-Detected.wav
+            critical: 1
+            volume: 1.0
   - service: homeassistant.turn_on
     entity_id: group.inside_lights

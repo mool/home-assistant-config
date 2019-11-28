@@ -19,5 +19,11 @@ action:
     data:
       title: 'Security - Stair window 2'
       message: 'The stairs window 2 was opened'
+      data:
+        push:
+          sound:
+            name: US-EN-Daisy-Office-Window-Open.wav
+            critical: 1
+            volume: 1.0
   - service: homeassistant.turn_on
     entity_id: group.inside_lights

@@ -19,5 +19,11 @@ action:
     data:
       title: 'Security - Roof'
       message: 'Motion detected in the Roof'
+      data:
+        push:
+          sound:
+            name: US-EN-Morgan-Freeman-Motion-Detected.wav
+            critical: 1
+            volume: 1.0
   - service: homeassistant.turn_on
     entity_id: group.inside_lights
