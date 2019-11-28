@@ -18,7 +18,7 @@ trigger:
     for:
       minutes: 5
 action:
-  - service: notify.html5
+  - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Battery - Balcony camera'
       message: "The office balcony camera is at {{ states('sensor.ring_balcon_oficina_battery') }}% battery"

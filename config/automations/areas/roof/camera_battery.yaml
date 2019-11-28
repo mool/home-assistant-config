@@ -18,7 +18,7 @@ trigger:
     for:
       minutes: 5
 action:
-  - service: notify.html5
+  - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Battery - Roof camera'
       message: "The roof camera is at {{ states('sensor.ring_techo_comedor_battery') }}% battery"

@@ -12,7 +12,7 @@ condition:
 action:
   - service: homeassistant.turn_off
     entity_id: group.inside_lights
-  - service: notify.html5
+  - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Interior lights'
       message: 'Turning OFF the interior lights - Vacation mode'

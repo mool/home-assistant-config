@@ -18,7 +18,7 @@ trigger:
     for:
       minutes: 5
 action:
-  - service: notify.html5
+  - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Battery - Backyard camera'
       message: "The backyard camera is at {{ states('sensor.ring_jardin_trasero_battery') }}% battery"
