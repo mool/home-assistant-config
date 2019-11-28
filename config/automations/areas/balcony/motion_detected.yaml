@@ -15,7 +15,7 @@ condition:
       entity_id: input_boolean.bedtime
       state: 'on'
 action:
-  - service: notify.html5
+  - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Security - Office Balcony'
       message: 'Motion detected in the Office Balcony'

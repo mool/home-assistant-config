@@ -8,7 +8,7 @@ action:
   - service: hassio.addon_restart
     data:
       addon: core_letsencrypt
-  - service: notify.html5
+  - service: notify.mobile_app_iphone_de_pablo
     data:
       message: 'The SSL certificate was renewed'
       title: 'SSL certificate renewal'

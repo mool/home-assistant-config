@@ -11,7 +11,7 @@ action:
     entity_id:
       - switch.fibaro_office_switch
       - switch.enerwave_living_switch_2
-  - service: notify.html5
+  - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Exterior lights'
       message: 'The exterior lights are OFF'

@@ -12,7 +12,7 @@ condition:
         states('sensor.version_current')
       }}
 action:
-  - service: notify.html5
+  - service: notify.mobile_app_iphone_de_pablo
     data:
       message: 'New System Upgrade'
       title: "There is a Home Assistant version, {{ states('sensor.version_available') }} just got released!"

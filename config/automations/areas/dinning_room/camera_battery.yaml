@@ -18,7 +18,7 @@ trigger:
     for:
       minutes: 5
 action:
-  - service: notify.html5
+  - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Battery - Dinning room camera'
       message: "The dinning room camera is at {{ states('sensor.ring_comedor_battery') }}% battery"

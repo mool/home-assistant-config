@@ -12,7 +12,7 @@ action:
       - switch.enerwave_living_switch
       - switch.fibaro_kitchen_switch_2
       - switch.fibaro_dinning_room_switch
-  - service: notify.html5
+  - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Interior lights'
       message: 'Turning ON the lights of the kitchen, living and dinning room'
