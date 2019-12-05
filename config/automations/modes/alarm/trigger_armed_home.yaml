@@ -1,0 +1,25 @@
+id: trigger_armed_home
+alias: 'Trigger alarm while armed away'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.ring_balcon_oficina_motion
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.ring_jardin_trasero_motion
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.ring_techo_comedor_motion
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.stair_window_1
+    to: 'on'
+  - platform: state
+    entity_id: binary_sensor.stair_window_2
+    to: 'on'
+condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: armed_home
+action:
+  service: alarm_control_panel.alarm_trigger
+  entity_id: alarm_control_panel.home_alarm
