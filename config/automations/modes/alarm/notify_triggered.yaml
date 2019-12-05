@@ -1,0 +1,18 @@
+---
+id: notify_alarm_triggered
+alias: 'Send notification when alarm is triggered'
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: 'triggered'
+action:
+  - service: notify.mobile_app_iphone_de_pablo
+    data:
+      title: 'ALARM - Alert!'
+      message: "The alarm has been triggered {{ states('sensor.date_time') }}"
+      data:
+        push:
+          sound:
+            name: US-EN-Morgan-Freeman-Motion-Detected.wav
+            critical: 1
+            volume: 1.0
