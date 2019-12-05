@@ -1,0 +1,10 @@
+platform: manual
+name: Home Alarm
+code_arm_required: false
+pending_time: 0
+delay_time: 30
+trigger_time: 10
+disarmed:
+  trigger_time: 0
+armed_home:
+  delay_time: 0
