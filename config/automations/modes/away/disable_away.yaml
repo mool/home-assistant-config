@@ -22,6 +22,9 @@ action:
   - service: input_boolean.turn_off
     data:
       entity_id: input_boolean.away
+  - service: alarm_control_panel.alarm_disarm
+    data:
+      entity_id: alarm_control_panel.home_alarm
   - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Away Mode'
