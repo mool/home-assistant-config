@@ -1,3 +1,4 @@
+---
 id: trigger_armed_home
 alias: 'Trigger alarm while armed away'
 trigger:
