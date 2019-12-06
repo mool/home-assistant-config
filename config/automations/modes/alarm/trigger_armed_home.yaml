@@ -1,6 +1,6 @@
 ---
 id: trigger_armed_home
-alias: 'Trigger alarm while armed away'
+alias: 'Trigger alarm while armed home'
 trigger:
   - platform: state
     entity_id: binary_sensor.ring_balcon_oficina_motion
