@@ -1,0 +1,11 @@
+---
+id: alarm_disarm_home_on_bedtime
+alias: 'Disarm alarm on bedtime off'
+trigger:
+  - platform: state
+    entity_id: input_boolean.bedtime
+    to: 'off'
+action:
+  - service: alarm_control_panel.alarm_disarm
+    data:
+      entity_id: alarm_control_panel.home_alarm
