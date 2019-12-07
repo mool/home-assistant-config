@@ -3,25 +3,7 @@ id: trigger_armed_away
 alias: 'Trigger alarm while armed away'
 trigger:
   - platform: state
-    entity_id: binary_sensor.motion_sensor_office
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.ring_balcon_oficina_motion
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.ring_comedor_motion
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.ring_jardin_trasero_motion
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.ring_techo_comedor_motion
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.stair_window_1
-    to: 'on'
-  - platform: state
-    entity_id: binary_sensor.stair_window_2
+    entity_id: group.alarm_away_sensors
     to: 'on'
 condition:
   - condition: state

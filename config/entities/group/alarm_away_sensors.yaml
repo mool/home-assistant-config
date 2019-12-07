@@ -1,0 +1,11 @@
+---
+alarm_away_sensors:
+  name: alarm_away_sensors
+  entities:
+    - binary_sensor.motion_sensor_office
+    - binary_sensor.ring_balcon_oficina_motion
+    - binary_sensor.ring_comedor_motion
+    - binary_sensor.ring_jardin_trasero_motion
+    - binary_sensor.ring_techo_comedor_motion
+    - binary_sensor.stair_window_1
+    - binary_sensor.stair_window_2
