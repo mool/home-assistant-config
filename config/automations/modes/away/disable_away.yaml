@@ -25,7 +25,3 @@ action:
   - service: alarm_control_panel.alarm_disarm
     data:
       entity_id: alarm_control_panel.home_alarm
-  - service: notify.mobile_app_iphone_de_pablo
-    data:
-      title: 'Away Mode'
-      message: 'The away mode is OFF'
