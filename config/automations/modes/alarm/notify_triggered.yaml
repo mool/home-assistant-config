@@ -9,7 +9,13 @@ action:
   - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'ALARM - Alert!'
-      message: "The alarm has been triggered {{ states('sensor.date_time') }}"
+      message: >
+        {{ states('sensor.time') }} - Sensors triggered:
+        {%- for item in expand('group.alarm_away_sensors') %}
+          {%- if is_state(item.entity_id, 'on') -%}
+            {{ " " + item.name }}{% if not loop.last %},{% endif %}
+          {%- endif -%}
+        {% endfor %}
       data:
         push:
           sound:
