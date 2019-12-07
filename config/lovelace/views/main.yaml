@@ -13,6 +13,8 @@ cards:
     card:
       type: glance
       title: Presence
+  - type: alarm-panel
+    entity: alarm_control_panel.home_alarm
   - type: entities
     title: Home Modes
     show_header_toggle: false
