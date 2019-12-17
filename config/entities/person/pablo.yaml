@@ -4,3 +4,4 @@ id: pablo
 user_id: de8333bde21e4f31ab7c0b5aeca6a528
 device_trackers:
   - device_tracker.pablo
+  - device_tracker.iphone_pablo
