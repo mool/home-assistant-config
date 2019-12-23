@@ -9,9 +9,6 @@ trigger:
     entity_id: person.dad
     to: home
   - platform: state
-    entity_id: person.mom
-    to: home
-  - platform: state
     entity_id: person.vanesa
     to: home
 condition:
