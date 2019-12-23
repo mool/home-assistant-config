@@ -1,5 +1,0 @@
----
-name: Mom
-id: mom
-device_trackers:
-  - device_tracker.mom
