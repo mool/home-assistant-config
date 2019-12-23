@@ -1,6 +1,6 @@
 ---
 platform: androidtv
-name: Fire TV Living
+name: Nvidia Shield
 host: 192.168.100.74
 device_class: androidtv
 adbkey: "/config/android/adbkey"
