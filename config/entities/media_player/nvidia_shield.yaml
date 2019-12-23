@@ -1,0 +1,8 @@
+---
+platform: androidtv
+name: Nvidia Shield
+host: 192.168.100.74
+device_class: androidtv
+adbkey: "/config/android/adbkey"
+adb_server_ip: 127.0.0.1
+adb_server_port: 5037
