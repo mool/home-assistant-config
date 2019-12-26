@@ -1,0 +1,14 @@
+---
+id: trigger_armed_home
+alias: 'Trigger alarm while armed home'
+trigger:
+  - platform: state
+    entity_id: group.alarm_home_sensors
+    to: 'on'
+condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: armed_home
+action:
+  service: alarm_control_panel.alarm_trigger
+  entity_id: alarm_control_panel.home_alarm

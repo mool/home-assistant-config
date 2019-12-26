@@ -9,9 +9,6 @@ trigger:
     entity_id: person.dad
     to: home
   - platform: state
-    entity_id: person.mom
-    to: home
-  - platform: state
     entity_id: person.vanesa
     to: home
 condition:
@@ -22,7 +19,6 @@ action:
   - service: input_boolean.turn_off
     data:
       entity_id: input_boolean.away
-  - service: notify.mobile_app_iphone_de_pablo
+  - service: alarm_control_panel.alarm_disarm
     data:
-      title: 'Away Mode'
-      message: 'The away mode is OFF'
+      entity_id: alarm_control_panel.home_alarm

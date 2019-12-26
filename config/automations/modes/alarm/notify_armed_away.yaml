@@ -1,0 +1,12 @@
+---
+id: notify_alarm_armed_away
+alias: 'Send notification when alarm is Armed Away'
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: 'armed_away'
+action:
+  - service: notify.mobile_app_iphone_de_pablo
+    data:
+      title: 'ALARM - Armed'
+      message: "The alarm is armed in Away mode {{ states('sensor.date_time') }}"
