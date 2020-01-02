@@ -20,19 +20,4 @@ homeassistant:
 hacs:
   token: !secret hacs_token
 
-scene:
-  - name: Livingroom normal
-    entities:
-      light.living_lamp:
-        state: 'off'
-        transition: 5
-      light.living_room:
-        state: 'on'
-  - name: Livingroom movies
-    entities:
-      light.living_lamp:
-        state: 'on'
-        transition: 5
-        brightness_pct: 60
-      light.living_room:
-        state: 'off'
+scene: !include_dir_list scenes
