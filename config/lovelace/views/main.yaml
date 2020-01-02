@@ -22,6 +22,7 @@ cards:
       - entity: input_boolean.away
       - entity: input_boolean.bedtime
       - entity: input_boolean.vacation
+      - entity: input_boolean.movies
   - type: weather-forecast
     entity: weather.dark_sky
   - type: entity-filter

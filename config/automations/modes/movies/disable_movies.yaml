@@ -1,0 +1,11 @@
+---
+id: disable_movies
+alias: Disable Movies Mode
+trigger:
+  - platform: state
+    entity_id: input_boolean.movies
+    to: 'off'
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.movies_before
