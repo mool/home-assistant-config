@@ -1,0 +1,8 @@
+---
+platform: rest
+name: ShellyEM1 Total
+resource: http://192.168.10.65/status
+value_template: '{{ value_json.emeters.0.total | float /1000 }}'
+# no point updating faster than this. The Shelly only updates this every 5 minutes
+scan_interval: 300
+unit_of_measurement: kWh

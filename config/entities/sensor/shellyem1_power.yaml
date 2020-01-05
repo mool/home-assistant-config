@@ -1,0 +1,7 @@
+---
+platform: mqtt
+name: ShellyEM1 Watts
+state_topic: "shellies/shellyem-B9EB3C/emeter/0/power"
+qos: 0
+unit_of_measurement: W
+icon: mdi:flash-circle
