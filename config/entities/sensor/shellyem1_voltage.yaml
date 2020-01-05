@@ -1,0 +1,7 @@
+---
+platform: mqtt
+name: ShellyEM1 Volts
+state_topic: "shellies/shellyem-B9E17C/emeter/0/voltage"
+qos: 0
+unit_of_measurement: V
+icon: mdi:flash-circle
