@@ -1,0 +1,17 @@
+---
+id: alarm_arm_home
+alias: 'Arm alarm in Home mode'
+trigger:
+  - platform: event
+    event_type: xiaomi_aqara.click
+    event_data:
+      entity_id: binary_sensor.bedroom_switch
+      click_type: double
+action:
+  - service: alarm_control_panel.alarm_arm_home
+    data:
+      entity_id: alarm_control_panel.home_alarm
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.cocina
+      message: "The alarm has been armed. Good night!"
