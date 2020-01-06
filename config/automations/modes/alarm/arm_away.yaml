@@ -1,6 +1,6 @@
 ---
-id: enable_away
-alias: Enable Away
+id: alarm_arm_away
+alias: Alarm Arm Away
 trigger:
   - platform: state
     entity_id: person.pablo
@@ -24,9 +24,6 @@ condition:
       entity_id: person.housemaid
       state: not_home
 action:
-  - service: input_boolean.turn_on
-    data:
-      entity_id: input_boolean.away
   - service: alarm_control_panel.alarm_arm_away
     data:
       entity_id: alarm_control_panel.home_alarm

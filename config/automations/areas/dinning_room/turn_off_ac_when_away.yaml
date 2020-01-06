@@ -1,20 +1,16 @@
 ---
-id: turn_off_ac_when_away_or_bedtime
-alias: Turn off AC when away or bed time
+id: turn_off_dinning_room_ac_when_away
+alias: Turn off the Dinning Room AC when away
 trigger:
   - platform: state
     entity_id: alarm_control_panel.home_alarm
     from: 'disarmed'
     to: 'armed_away'
-  - platform: state
-    entity_id: alarm_control_panel.home_alarm
-    from: 'disarmed'
-    to: 'armed_home'
 condition:
   condition: template
   value_template: "{{ not is_state('climate.office_thermostat', 'off') }}"
 action:
   - service: climate.set_operation_mode
     data:
-      entity_id: climate.office_thermostat
+      entity_id: climate.comedor
       operation_mode: 'off'
