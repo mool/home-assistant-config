@@ -6,7 +6,6 @@ cards:
     entities:
       - entity: person.pablo
       - entity: person.dad
-      - entity: person.mom
       - entity: person.housemaid
     state_filter:
       - "home"
@@ -21,8 +20,6 @@ cards:
     entities:
       - entity: input_boolean.vacation
       - entity: input_boolean.movies
-  - type: weather-forecast
-    entity: weather.dark_sky
   - type: entity-filter
     entities:
       - entity: light.balcony
@@ -79,6 +76,22 @@ cards:
     card:
       type: glance
       title: Lights currently on
+  - type: horizontal-stack
+    cards:
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.daily_energy
+        line_color: green
+        line_width: 5
+        font_size: 75
+        animate: true
+      - type: custom:mini-graph-card
+        entities:
+          - sensor.monthly_energy
+        line_color: green
+        line_width: 5
+        font_size: 75
+        animate: true
   - type: horizontal-stack
     cards:
       - type: sensor
