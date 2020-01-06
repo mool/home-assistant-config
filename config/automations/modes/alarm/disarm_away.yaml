@@ -13,8 +13,8 @@ trigger:
     to: home
 condition:
   condition: state
-    entity_id: alarm_control_panel.home_alarm
-    to: 'armed_away'
+  entity_id: alarm_control_panel.home_alarm
+  state: 'armed_away'
 action:
   - service: alarm_control_panel.alarm_disarm
     data:
