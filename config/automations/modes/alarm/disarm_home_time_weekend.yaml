@@ -1,6 +1,6 @@
 ---
-id: disable_bedtime_weekend
-alias: Disable Bed Time Weekend
+id: alarm_disarm_home_weekend
+alias: Alarm Disarm Home Weekend
 trigger:
   - platform: time
     at: '10:30:00'
@@ -9,6 +9,6 @@ condition:
   entity_id: 'binary_sensor.workday_sensor'
   state: 'off'
 action:
-  - service: input_boolean.turn_off
+  - service: alarm_control_panel.alarm_disarm
     data:
-      entity_id: input_boolean.bedtime
+      entity_id: alarm_control_panel.home_alarm
