@@ -3,11 +3,13 @@ id: turn_off_ac_when_away_or_bedtime
 alias: Turn off AC when away or bed time
 trigger:
   - platform: state
-    entity_id: input_boolean.away
-    to: 'on'
+    entity_id: alarm_control_panel.home_alarm
+    from: 'disarmed'
+    to: 'armed_away'
   - platform: state
-    entity_id: input_boolean.bedtime
-    to: 'on'
+    entity_id: alarm_control_panel.home_alarm
+    from: 'disarmed'
+    to: 'armed_home'
 condition:
   condition: template
   value_template: "{{ not is_state('climate.office_thermostat', 'off') }}"
