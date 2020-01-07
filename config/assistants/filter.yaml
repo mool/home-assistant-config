@@ -1,5 +1,6 @@
 ---
 include_domains:
+  - alarm_control_panel
   - camera
   - climate
   - light
