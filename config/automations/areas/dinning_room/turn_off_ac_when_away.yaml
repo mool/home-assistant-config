@@ -10,7 +10,7 @@ condition:
   condition: template
   value_template: "{{ not is_state('climate.office_thermostat', 'off') }}"
 action:
-  - service: climate.set_operation_mode
+  - service: climate.set_hvac_mode
     data:
       entity_id: climate.comedor
       operation_mode: 'off'
