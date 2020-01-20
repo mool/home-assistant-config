@@ -1,0 +1,19 @@
+---
+id: toggle_dining_room_climate
+alias: Toggle Dining Room Climate
+trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: 'Dining Room Climate'
+action:
+  - service: climate.set_hvac_mode
+    data_template:
+      hvac_mode: >
+        {%- if is_state('climate.comedor','off') -%}
+          cool
+        {%- else -%}
+          off
+        {%- endif -%}
+    data:
+      entity_id: climate.comedor
