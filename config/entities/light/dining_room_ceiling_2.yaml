@@ -1,0 +1,4 @@
+---
+platform: switch
+name: Dining Room 2
+entity_id: switch.fibaro_dining_room_switch_2

@@ -1,6 +1,6 @@
 ---
-id: turn_off_dinning_room_ac_when_away
-alias: Turn off the Dinning Room AC when away
+id: turn_off_dining_room_ac_when_away
+alias: Turn off the Dining Room AC when away
 trigger:
   - platform: state
     entity_id: alarm_control_panel.home_alarm

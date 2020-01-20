@@ -5,8 +5,8 @@ include_domains:
   - climate
   - light
 exclude_entities:
-  - light.dinning_room_1
-  - light.dinning_room_2
+  - light.dining_room_1
+  - light.dining_room_2
   - light.kitchen_1
   - light.kitchen_2
   - light.gateway_light_7c49eb192d55

@@ -30,11 +30,11 @@ cards:
         icon: mdi:lightbulb
         tap_action:
           action: toggle
-      - entity: light.dinning_room_1
+      - entity: light.dining_room_1
         icon: mdi:ceiling-light
         tap_action:
           action: toggle
-      - entity: light.dinning_room_2
+      - entity: light.dining_room_2
         icon: mdi:ceiling-light
         tap_action:
           action: toggle
