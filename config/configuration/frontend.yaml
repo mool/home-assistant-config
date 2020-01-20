@@ -4,3 +4,4 @@
 frontend:
   # Version of the JavaScript to serve to clients.
   javascript_version: auto
+  themes: !include_dir_merge_named ../themes

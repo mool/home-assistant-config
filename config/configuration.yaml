@@ -17,7 +17,4 @@ homeassistant:
   # Load packages
   packages: !include_dir_named configuration
 
-hacs:
-  token: !secret hacs_token
-
 scene: !include_dir_list scenes
