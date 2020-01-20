@@ -12,11 +12,11 @@ cards:
     title: Motion Sensors
     show_header_toggle: false
     entities:
-      - binary_sensor.ring_puerta_principal_motion
-      - binary_sensor.ring_jardin_trasero_motion
-      - binary_sensor.ring_balcon_oficina_motion
-      - binary_sensor.ring_techo_comedor_motion
-      - binary_sensor.ring_comedor_motion
+      - binary_sensor.puerta_principal_motion
+      - binary_sensor.jardin_trasero_motion
+      - binary_sensor.balcon_oficina_motion
+      - binary_sensor.techo_comedor_motion
+      - binary_sensor.comedor_motion
       - binary_sensor.motion_sensor_office
   - type: picture-entity
     entity: camera.street

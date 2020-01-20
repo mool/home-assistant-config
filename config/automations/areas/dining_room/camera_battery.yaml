@@ -3,17 +3,17 @@ id: dining_room_camera_battery
 alias: 'Dining room camera battery'
 trigger:
   - platform: numeric_state
-    entity_id: sensor.ring_comedor_battery
+    entity_id: sensor.comedor_battery
     below: 25
     for:
       minutes: 5
   - platform: numeric_state
-    entity_id: sensor.ring_comedor_battery
+    entity_id: sensor.comedor_battery
     below: 10
     for:
       minutes: 5
   - platform: numeric_state
-    entity_id: sensor.ring_comedor_battery
+    entity_id: sensor.comedor_battery
     below: 5
     for:
       minutes: 5
@@ -21,4 +21,4 @@ action:
   - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Battery - Dining room camera'
-      message: "The dining room camera is at {{ states('sensor.ring_comedor_battery') }}% battery"
+      message: "The dining room camera is at {{ states('sensor.comedor_battery') }}% battery"

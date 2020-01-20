@@ -3,7 +3,7 @@ id: play_street_stream_on_ring
 alias: Play street stream in the TV on ding
 trigger:
   - platform: state
-    entity_id: binary_sensor.ring_puerta_principal_ding
+    entity_id: binary_sensor.puerta_principal_ding
     to: 'on'
 condition:
   - condition: state

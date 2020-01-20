@@ -3,17 +3,17 @@ id: balcony_camera_battery
 alias: 'Office balcony camera battery'
 trigger:
   - platform: numeric_state
-    entity_id: sensor.ring_balcon_oficina_battery
+    entity_id: sensor.balcon_oficina_battery
     below: 25
     for:
       minutes: 5
   - platform: numeric_state
-    entity_id: sensor.ring_balcon_oficina_battery
+    entity_id: sensor.balcon_oficina_battery
     below: 10
     for:
       minutes: 5
   - platform: numeric_state
-    entity_id: sensor.ring_balcon_oficina_battery
+    entity_id: sensor.balcon_oficina_battery
     below: 5
     for:
       minutes: 5
@@ -21,4 +21,4 @@ action:
   - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Battery - Balcony camera'
-      message: "The office balcony camera is at {{ states('sensor.ring_balcon_oficina_battery') }}% battery"
+      message: "The office balcony camera is at {{ states('sensor.balcon_oficina_battery') }}% battery"
