@@ -15,11 +15,11 @@ cards:
         icon: mdi:spotlight-beam
         toogle: true
       - type: section
-        label: Dinning Room
-      - entity: light.dinning_room_1
+        label: Dining Room
+      - entity: light.dining_room_1
         icon: mdi:ceiling-light
         toogle: true
-      - entity: light.dinning_room_2
+      - entity: light.dining_room_2
         icon: mdi:spotlight-beam
         toogle: true
       - type: section
@@ -34,20 +34,24 @@ cards:
     entity: climate.comedor
     decimals: 0
     step_size: 1
-    modes:
-      auto:
-        name: false
-      cool:
-        name: false
-      dry:
-        name: false
-      fan_only:
-        name: false
-      heat:
-        name: false
-      'off':
-        name: false
+    hvac: true
+    control:
+      hvac:
+        auto:
+          name: false
+        cool:
+          name: false
+        dry:
+          name: false
+        fan_only:
+          name: false
+        heat:
+          name: false
+        'off':
+          name: false
   - type: custom:mini-media-player
     entity: media_player.kitchen
   - type: custom:mini-media-player
     entity: media_player.fire_tv_living
+  - type: custom:mini-media-player
+    entity: media_player.nvidia_shield

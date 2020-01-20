@@ -11,3 +11,5 @@ sensor.dark_sky_precip:
   friendly_name: Precipitation
 sensor.dark_sky_precip_probability:
   friendly_name: Precipitation Probability
+person.pablo:
+  entity_picture: https://secure.gravatar.com/avatar/ff5782ff49f5a8a04f8e47df4f50a48c

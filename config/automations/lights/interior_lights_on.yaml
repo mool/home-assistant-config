@@ -11,8 +11,8 @@ action:
     entity_id:
       - switch.enerwave_living_switch
       - switch.fibaro_kitchen_switch_2
-      - switch.fibaro_dinning_room_switch
+      - switch.fibaro_dining_room_switch
   - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Interior lights'
-      message: 'Turning ON the lights of the kitchen, living and dinning room'
+      message: 'Turning ON the lights of the kitchen, living and dining room'

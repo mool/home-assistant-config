@@ -1,0 +1,6 @@
+---
+light.dining_room:
+  name: Dining Room
+  aliases:
+    - Dining Room Light
+  room: Dining Room

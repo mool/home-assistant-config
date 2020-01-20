@@ -1,0 +1,6 @@
+---
+name: Natalia
+latitude: !secret natalia_latitude
+longitude: !secret natalia_longitude
+radius: 40
+icon: mdi:office-building

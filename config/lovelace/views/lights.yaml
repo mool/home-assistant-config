@@ -24,11 +24,11 @@ cards:
         icon: mdi:spotlight-beam
         toogle: true
       - type: section
-        label: Dinning Room
-      - entity: light.dinning_room_1
+        label: Dining Room
+      - entity: light.dining_room_1
         icon: mdi:ceiling-light
         toogle: true
-      - entity: light.dinning_room_2
+      - entity: light.dining_room_2
         icon: mdi:spotlight-beam
         toogle: true
       - type: section

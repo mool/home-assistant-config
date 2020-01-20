@@ -37,18 +37,20 @@ cards:
     entity: climate.office_thermostat
     decimals: 0
     step_size: 1
-    modes:
-      auto:
-        name: false
-      cool:
-        name: false
-      dry:
-        name: false
-      fan_only:
-        name: false
-      heat:
-        name: false
-      'off':
-        name: false
+    hvac: true
+    control:
+      hvac:
+        auto:
+          name: false
+        cool:
+          name: false
+        dry:
+          name: false
+        fan_only:
+          name: false
+        heat:
+          name: false
+        'off':
+          name: false
   - type: custom:mini-media-player
     entity: media_player.oficina

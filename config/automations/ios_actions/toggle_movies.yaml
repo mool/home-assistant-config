@@ -1,6 +1,6 @@
 ---
-id: toogle_movies
-alias: Toogle movies mode
+id: toggle_movies
+alias: Toggle movies mode
 trigger:
   - platform: event
     event_type: ios.action_fired

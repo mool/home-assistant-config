@@ -11,7 +11,3 @@ action:
   - service: alarm_control_panel.alarm_arm_home
     data:
       entity_id: alarm_control_panel.home_alarm
-  - service: tts.google_translate_say
-    data:
-      entity_id: media_player.cocina
-      message: "The alarm has been armed. Good night!"

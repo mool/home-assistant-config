@@ -10,3 +10,7 @@ action:
     data:
       title: 'ALARM - Armed'
       message: "The alarm is armed in Home mode {{ states('sensor.date_time') }}"
+  - service: tts.google_translate_say
+    data:
+      entity_id: media_player.bedroom
+      message: "The alarm has been armed. Good night!"
