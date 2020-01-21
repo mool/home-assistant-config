@@ -20,3 +20,19 @@ cards:
       - binary_sensor.motion_sensor_office
   - type: picture-entity
     entity: camera.street
+  - type: horizontal-stack
+    cards:
+      - type: picture-entity
+        entity: camera.puerta_principal
+      - type: picture-entity
+        entity: camera.balcon_oficina
+  - type: horizontal-stack
+    cards:
+      - type: picture-entity
+        entity: camera.techo_comedor
+      - type: picture-entity
+        entity: camera.jardin_trasero
+  - type: horizontal-stack
+    cards:
+      - type: picture-entity
+        entity: camera.comedor
