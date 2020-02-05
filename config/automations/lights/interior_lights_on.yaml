@@ -1,7 +1,6 @@
 ---
 id: interior_lights_on
 alias: 'Interior lights ON before sunset'
-hide_entity: true
 trigger:
   - platform: sun
     event: sunset

@@ -1,7 +1,6 @@
 ---
 id: ac_on_workday
 alias: 'Turn ON the AC on workdays'
-hide_entity: true
 trigger:
   - platform: time
     at: '08:30:00'

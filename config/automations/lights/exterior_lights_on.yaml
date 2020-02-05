@@ -1,7 +1,6 @@
 ---
 id: exterior_lights_on
 alias: 'Exterior lights ON at sunset'
-hide_entity: true
 trigger:
   - platform: sun
     event: sunset
