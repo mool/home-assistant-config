@@ -1,7 +1,6 @@
 ---
 id: bedroom_outlet_on_workday
 alias: 'Turn ON the bedroom power outlet on workdays'
-hide_entity: true
 trigger:
   - platform: time
     at: '23:30:00'

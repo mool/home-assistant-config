@@ -1,7 +1,6 @@
 ---
 id: interior_lights_off_on_vacation
 alias: 'Interior lights OFF on vacation'
-hide_entity: true
 trigger:
   platform: time
   at: '01:00:00'
