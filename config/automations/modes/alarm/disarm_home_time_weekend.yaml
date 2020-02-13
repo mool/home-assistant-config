@@ -5,9 +5,14 @@ trigger:
   - platform: time
     at: '10:30:00'
 condition:
-  condition: state
-  entity_id: 'binary_sensor.workday_sensor'
-  state: 'off'
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_home
+    - condition: state
+      entity_id: 'binary_sensor.workday_sensor'
+      state: 'off'
 action:
   - service: alarm_control_panel.alarm_disarm
     data:
