@@ -11,6 +11,9 @@ cards:
       - entity: light.front_door
         icon: mdi:lightbulb
         toogle: true
+      - entity: light.backyard
+        icon: mdi:lightbulb
+        toogle: true
   - type: entities
     title: Ground Floor
     show_header_toggle: true
