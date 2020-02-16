@@ -3,5 +3,6 @@ outside_lights:
   name: Outside Lights
   icon: mdi:lightbulb
   entities:
+    - light.backyard
     - light.balcony
     - light.front_door

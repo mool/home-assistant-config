@@ -22,6 +22,10 @@ cards:
       - entity: input_boolean.movies
   - type: entity-filter
     entities:
+      - entity: light.backyard
+        icon: mdi:lightbulb
+        tap_action:
+          action: toggle
       - entity: light.balcony
         icon: mdi:lightbulb
         tap_action:
