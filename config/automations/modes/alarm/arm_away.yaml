@@ -2,9 +2,8 @@
 id: alarm_arm_away
 alias: Alarm Arm Away
 trigger:
-  - platform: state
-    entity_id: person.pablo
-    to: not_home
+  - platform: template
+    value_template: "{{states('person.pablo') != 'home'}}"
   - platform: state
     entity_id: person.dad
     to: not_home
@@ -14,9 +13,8 @@ trigger:
 condition:
   condition: and
   conditions:
-    - condition: state
-      entity_id: person.pablo
-      state: not_home
+    - condition: template
+      value_template: "{{states('person.pablo') != 'home'}}"
     - condition: state
       entity_id: person.dad
       state: not_home
