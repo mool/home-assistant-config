@@ -84,7 +84,7 @@ cards:
     cards:
       - type: custom:mini-graph-card
         entities:
-          - sensor.daily_energy
+          - sensor.shellyem1_watts
         line_color: green
         line_width: 5
         font_size: 75
