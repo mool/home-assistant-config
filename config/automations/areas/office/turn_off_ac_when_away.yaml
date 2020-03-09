@@ -4,11 +4,9 @@ alias: Turn off AC when away or bed time
 trigger:
   - platform: state
     entity_id: alarm_control_panel.home_alarm
-    from: 'disarmed'
     to: 'armed_away'
   - platform: state
     entity_id: alarm_control_panel.home_alarm
-    from: 'disarmed'
     to: 'armed_home'
 condition:
   condition: template
@@ -17,4 +15,4 @@ action:
   - service: climate.set_hvac_mode
     data:
       entity_id: climate.office_thermostat
-      operation_mode: 'off'
+      hvac_mode: 'off'

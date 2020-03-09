@@ -4,13 +4,12 @@ alias: Turn off the Dining Room AC when away
 trigger:
   - platform: state
     entity_id: alarm_control_panel.home_alarm
-    from: 'disarmed'
     to: 'armed_away'
 condition:
   condition: template
-  value_template: "{{ not is_state('climate.office_thermostat', 'off') }}"
+  value_template: "{{ not is_state('climate.comedor', 'off') }}"
 action:
   - service: climate.set_hvac_mode
     data:
       entity_id: climate.comedor
-      operation_mode: 'off'
+      hvac_mode: 'off'
