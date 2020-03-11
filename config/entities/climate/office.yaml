@@ -5,8 +5,16 @@ min_temp: 17
 max_temp: 31
 initial: 24
 power_command_topic: "cmnd/office_ac/power"
+power_state_topic: "stat/office_ac"
+power_state_template: "{{ value_json.power }}"
 mode_command_topic: "cmnd/office_ac/mode"
+mode_state_topic: "stat/office_ac"
+mode_state_template: "{{ value_json.mode }}"
 fan_mode_command_topic: "cmnd/office_ac/fan"
+fan_mode_state_topic: "stat/office_ac"
+fan_mode_state_template: "{{ value_json.fan }}"
 temperature_command_topic: "cmnd/office_ac/temp"
+temperature_state_topic: "stat/office_ac"
+temperature_state_template: "{{ value_json.temp }}"
 current_temperature_topic: "stat/office_ac"
 current_temperature_template: "{{ value_json.current_temp }}"
