@@ -1,0 +1,19 @@
+---
+id: toggle_office_climate
+alias: Toggle Office Climate
+trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: 'Office Climate'
+action:
+  - service: climate.set_hvac_mode
+    data_template:
+      hvac_mode: >
+        {%- if is_state('climate.office_thermostat','off') -%}
+          cool
+        {%- else -%}
+          off
+        {%- endif -%}
+    data:
+      entity_id: climate.office_thermostat
