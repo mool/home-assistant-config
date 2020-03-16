@@ -3,3 +3,20 @@
 zwave:
   usb_path: /dev/ttyACM0
   network_key: "0x6A, 0xD3, 0xC9, 0x4A, 0x5F, 0x2F, 0x71, 0x05, 0x31, 0x25, 0x5C, 0x6E, 0x14, 0x43, 0x23, 0x15"
+  device_config:
+    switch.enerwave_living_switch_1:
+      polling_intensity: 2
+    switch.enerwave_living_switch_2:
+      polling_intensity: 2
+    switch.fibaro_dining_room_switch:
+      polling_intensity: 2
+    switch.fibaro_dining_room_switch_2:
+      polling_intensity: 2
+    switch.fibaro_kitchen_switch:
+      polling_intensity: 2
+    switch.fibaro_kitchen_switch_2:
+      polling_intensity: 2
+    switch.fibaro_office_switch:
+      polling_intensity: 2
+    switch.fibaro_office_switch_2:
+      polling_intensity: 2
