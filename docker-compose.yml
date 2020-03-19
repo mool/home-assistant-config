@@ -11,6 +11,7 @@ services:
     volumes:
       - ./config:/config
       - ./.stub/ssl:/ssl
+    entrypoint: ""
     command: python -m homeassistant --config /config/ --script check_config
 
   yamllint:

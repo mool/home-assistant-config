@@ -1,0 +1,27 @@
+---
+garden_irrigation:
+  sequence:
+    # Turn on the valve
+    - service: switch.turn_on
+      entity_id: switch.garden_irrigation
+
+    # Update last irrigated time
+    - service: input_datetime.set_datetime
+      data_template:
+        entity_id: input_datetime.last_irrigated_time
+        date: >
+          {{ as_timestamp(now()) | timestamp_custom("%Y-%m-%d") }}
+        time: >
+          {{ as_timestamp(now()) | timestamp_custom("%H:%M") }}
+
+    # Start the timer
+    - service: timer.start
+      entity_id: timer.garden_irrigation_duration
+      data_template:
+        duration: "00:{{ '%02i' | format(states('input_number.garden_irrigation_duration') | int ) }}:00"
+
+    - wait_template: "{{ is_state('timer.garden_irrigation_duration', 'idle') }}"
+
+    # Turn off the valve
+    - service: switch.turn_off
+      entity_id: switch.garden_irrigation

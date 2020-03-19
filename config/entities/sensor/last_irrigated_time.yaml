@@ -1,0 +1,7 @@
+---
+platform: template
+sensors:
+  last_irrigated_time:
+    friendly_name: "Last Irrigated Time"
+    value_template: >
+      {{ as_timestamp(states('input_datetime.last_irrigated_time')) | timestamp_custom("%B %d at %H:%M") }}
