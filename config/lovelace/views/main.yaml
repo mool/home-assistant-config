@@ -20,6 +20,21 @@ cards:
     entities:
       - entity: input_boolean.vacation
       - entity: input_boolean.movies
+  - type: entities
+    title: Garden Irrigation
+    show_header_toggle: false
+    header:
+      type: picture
+      image: "https://i.imgur.com/5WcBqHJ.png"
+    entities:
+      - input_boolean.garden_irrigation
+      - input_number.garden_irrigation_duration
+      - timer.garden_irrigation_duration
+      - sensor.last_irrigated_time
+      - entity: script.garden_irrigation
+        name: Garden Irrigation
+        type: call-service
+        service: script.garden_irrigation
   - type: entity-filter
     entities:
       - entity: light.backyard
