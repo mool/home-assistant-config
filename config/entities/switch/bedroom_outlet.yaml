@@ -1,0 +1,13 @@
+---
+platform: mqtt
+name: Bedroom Outlet
+state_topic: "stat/tasmota_7A80FD/RESULT"
+value_template: "{{ value_json.POWER }}"
+command_topic: "cmnd/tasmota_7A80FD/POWER"
+payload_on: "ON"
+payload_off: "OFF"
+availability_topic: "tele/tasmota_7A80FD/LWT"
+payload_available: "Online"
+payload_not_available: "Offline"
+qos: 1
+retain: false
