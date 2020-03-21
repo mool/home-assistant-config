@@ -2,8 +2,12 @@
 id: garden_irrigation
 alias: 'Garden Irrigation'
 trigger:
-  - platform: time
-    at: '09:00:00'
+  - platform: sun
+    event: sunrise
+    offset: '00:30:00'
+  - platform: sun
+    event: sunset
+    offset: '-04:0:00'
 condition:
   - condition: state
     entity_id: input_boolean.garden_irrigation
