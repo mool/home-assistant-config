@@ -14,6 +14,9 @@ cards:
       - entity: light.kitchen_2
         icon: mdi:spotlight-beam
         toogle: true
+      - entity: light.kitchen_leds
+        icon: mdi:led-strip
+        toogle: true
       - type: section
         label: Dining Room
       - entity: light.dining_room_1
