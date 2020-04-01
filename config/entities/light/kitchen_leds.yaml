@@ -2,5 +2,5 @@
 platform: flux_led
 devices:
   192.168.100.62:
-    name: Office Desk Color Light
-    mode: rgb
+    name: Kitchen LEDs
+    mode: rgbw
