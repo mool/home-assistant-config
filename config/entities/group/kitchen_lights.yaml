@@ -3,5 +3,6 @@ kitchen_lights:
   name: Kitchen Lights
   icon: mdi:lightbulb
   entities:
-    - switch.fibaro_kitchen_switch
-    - switch.fibaro_kitchen_switch_2
+    - light.kitchen_1
+    - light.kitchen_2
+    - light.kitchen_leds
