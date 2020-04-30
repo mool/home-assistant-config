@@ -1,0 +1,15 @@
+---
+id: disable_vacation_mode
+alias: Disable Vacation Mode
+trigger:
+  - platform: state
+    entity_id: person.pablo
+    to: home
+condition:
+  condition: state
+  entity_id: input_boolean.vacation
+  state: 'on'
+action:
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.vacation
