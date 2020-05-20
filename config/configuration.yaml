@@ -11,6 +11,9 @@ homeassistant:
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/Argentina/Mendoza
+  # URL for Home Assistant
+  external_url: https://hassio.mool.online:8123
+  internal_url: https://hassio.mool.online:8123
   # Customization file
   customize: !include customize.yaml
 

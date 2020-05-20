@@ -1,0 +1,25 @@
+---
+id: kitchen_sunset_transition
+alias: Kitchen Sunset Transition
+trigger:
+  - platform: time_pattern
+    minutes: "/2"
+condition:
+  condition: and
+  conditions:
+    - condition: template
+      value_template: "{{ state_attr('sun.sun', 'elevation') <= 10 }}"
+    - condition: template
+      value_template: "{{ state_attr('sun.sun', 'elevation') >= 0 }}"
+    - condition: or
+      conditions:
+        - condition: template
+          value_template: "{{ states.light.kitchen_leds.attributes.brightness < (255 - (25.5*states.sun.sun.attributes.elevation))|int }}"
+        - condition: template
+          value_template: "{{ states.light.kitchen_leds.attributes.brightness == null }}"
+action:
+  - service: light.turn_on
+    entity_id: light.kitchen_leds
+    data_template:
+      brightness: "{{ (255 - (25.5*states.sun.sun.attributes.elevation))|int }}"
+      white_value: "{{ (255 - (25.5*states.sun.sun.attributes.elevation))|int }}"
