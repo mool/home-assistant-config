@@ -7,6 +7,9 @@ trigger:
 condition:
   condition: and
   conditions:
+    - condition: time
+      after: "16:00:00"
+      before: "23:00:00"
     - condition: template
       value_template: "{{ state_attr('sun.sun', 'elevation') <= 10 }}"
     - condition: template
