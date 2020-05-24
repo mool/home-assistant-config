@@ -7,6 +7,9 @@ trigger:
 condition:
   condition: and
   conditions:
+    - condition: state
+      entity_id: input_boolean.vacation
+      state: "off"
     - condition: time
       after: "16:00:00"
       before: "23:00:00"
