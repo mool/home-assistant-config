@@ -3,11 +3,16 @@ id: ac_on_workday
 alias: 'Turn ON the AC on workdays'
 trigger:
   - platform: time
-    at: '08:30:00'
+    at: '08:50:00'
 condition:
-  - condition: state
-    entity_id: binary_sensor.workday_sensor
-    state: "on"
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: armed_home
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'on'
 action:
   - service: climate.set_temperature
     data:

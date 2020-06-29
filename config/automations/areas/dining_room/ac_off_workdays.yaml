@@ -3,11 +3,11 @@ id: ac_off_workday
 alias: 'Turn OFF the AC on workdays'
 trigger:
   - platform: time
-    at: '09:15:00'
+    at: '09:30:00'
 condition:
   - condition: state
     entity_id: binary_sensor.workday_sensor
-    state: "on"
+    state: 'on'
 action:
   - service: climate.set_operation_mode
     data:
