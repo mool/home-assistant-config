@@ -107,13 +107,5 @@ cards:
       - type: sensor
         name: Upload
         entity: sensor.speedtest_upload
-  - type: entities
-    title: Coronavirus
-    show_header_toggle: false
-    entities:
-      - sensor.argentina_coronavirus_confirmed
-      - sensor.argentina_coronavirus_current
-      - sensor.argentina_coronavirus_recovered
-      - sensor.argentina_coronavirus_deaths
   - type: picture-entity
     entity: camera.street
