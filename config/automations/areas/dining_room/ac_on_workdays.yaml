@@ -8,8 +8,8 @@ condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: alarm_control_panel.home_alarm
-      state: armed_home
+      entity_id: person.pablo
+      state: home
     - condition: state
       entity_id: binary_sensor.workday_sensor
       state: 'on'
@@ -18,4 +18,4 @@ action:
     data:
       entity_id: climate.comedor
       temperature: 28
-      operation_mode: heat
+      hvac_mode: heat
