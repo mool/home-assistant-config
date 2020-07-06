@@ -1,5 +1,5 @@
 ---
-title: living
+title: Living
 icon: mdi:television-classic
 cards:
   - type: entities
@@ -54,7 +54,5 @@ cards:
           name: false
   - type: custom:mini-media-player
     entity: media_player.kitchen
-  - type: custom:mini-media-player
-    entity: media_player.fire_tv_living
   - type: custom:mini-media-player
     entity: media_player.nvidia_shield

@@ -6,6 +6,7 @@ views:
   - !include lovelace/views/living.yaml
   - !include lovelace/views/office.yaml
   - !include lovelace/views/bedroom.yaml
+  - !include lovelace/views/backyard.yaml
   - !include lovelace/views/lights.yaml
   - !include lovelace/views/security.yaml
   - !include lovelace/views/devices_health.yaml

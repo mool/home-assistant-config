@@ -1,0 +1,26 @@
+---
+title: Backyard
+icon: mdi:flower
+cards:
+  - type: glance
+    title: Lights
+    entities:
+      - entity: light.office
+        icon: mdi:lightbulb
+        tap_action:
+          action: toggle
+  - type: entities
+    title: Garden Irrigation
+    show_header_toggle: false
+    header:
+      type: picture
+      image: "https://i.imgur.com/5WcBqHJ.png"
+    entities:
+      - input_boolean.garden_irrigation
+      - input_number.garden_irrigation_duration
+      - timer.garden_irrigation_duration
+      - sensor.last_irrigated_time
+      - entity: script.garden_irrigation
+        name: Garden Irrigation
+        type: call-service
+        service: script.garden_irrigation

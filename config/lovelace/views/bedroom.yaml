@@ -1,5 +1,5 @@
 ---
-title: bedroom
+title: Bedroom
 icon: mdi:hotel
 cards:
   - type: horizontal-stack
@@ -29,3 +29,5 @@ cards:
         icon: mdi:lamp
         tap_action:
           action: toggle
+  - type: custom:mini-media-player
+    entity: media_player.fire_tv_bedroom
