@@ -12,15 +12,6 @@ cards:
       - sensor.techo_comedor_battery
       - sensor.comedor_battery
   - type: entities
-    title: Ring Cameras - Signal Status
-    show_header_toggle: false
-    entities:
-      - sensor.puerta_principal_wifi_signal_category
-      - sensor.jardin_trasero_wifi_signal_category
-      - sensor.balcon_oficina_wifi_signal_category
-      - sensor.techo_comedor_wifi_signal_category
-      - sensor.comedor_wifi_signal_category
-  - type: entities
     title: Xiaomi Devices - Battery Status
     show_header_toggle: false
     entities:
