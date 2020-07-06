@@ -2,6 +2,26 @@
 title: Security
 icon: mdi:shield-home
 cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: picture-entity
+            entity: camera.street
+          - type: picture-entity
+            entity: camera.puerta_principal
+      - type: horizontal-stack
+        cards:
+          - type: picture-entity
+            entity: camera.balcon_oficina
+          - type: picture-entity
+            entity: camera.techo_comedor
+      - type: horizontal-stack
+        cards:
+          - type: picture-entity
+            entity: camera.jardin_trasero
+          - type: picture-entity
+            entity: camera.comedor
   - type: entities
     title: Door and Window Sensors
     show_header_toggle: false
@@ -19,21 +39,3 @@ cards:
       - binary_sensor.techo_comedor_motion
       - binary_sensor.comedor_motion
       - binary_sensor.motion_sensor_office
-  - type: horizontal-stack
-    cards:
-      - type: picture-entity
-        entity: camera.street
-      - type: picture-entity
-        entity: camera.puerta_principal
-  - type: horizontal-stack
-    cards:
-      - type: picture-entity
-        entity: camera.balcon_oficina
-      - type: picture-entity
-        entity: camera.techo_comedor
-  - type: horizontal-stack
-    cards:
-      - type: picture-entity
-        entity: camera.jardin_trasero
-      - type: picture-entity
-        entity: camera.comedor
