@@ -2,13 +2,11 @@
 title: Backyard
 icon: mdi:flower
 cards:
-  - type: glance
+  - type: entities
     title: Lights
     entities:
-      - entity: light.office
+      - entity: light.backyard
         icon: mdi:lightbulb
-        tap_action:
-          action: toggle
   - type: entities
     title: Garden Irrigation
     show_header_toggle: false
