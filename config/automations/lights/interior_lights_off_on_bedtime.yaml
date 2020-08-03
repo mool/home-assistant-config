@@ -9,3 +9,5 @@ trigger:
 action:
   - service: homeassistant.turn_off
     entity_id: group.inside_lights
+  - service: switch.turn_off
+    entity_id: switch.bedroom_outlet
