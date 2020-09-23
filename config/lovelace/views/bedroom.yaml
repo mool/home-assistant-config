@@ -1,6 +1,6 @@
 ---
 title: Bedroom
-icon: mdi:hotel
+icon: mdi:bed
 cards:
   - type: horizontal-stack
     cards:
