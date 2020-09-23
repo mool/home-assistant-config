@@ -1,0 +1,4 @@
+---
+auto_heating:
+  name: Auto Heating Enabled
+  icon: mdi:fire

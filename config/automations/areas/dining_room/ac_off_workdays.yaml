@@ -7,9 +7,14 @@ trigger:
 condition:
   condition: and
   conditions:
-    - condition: state
-      entity_id: climate.comedor
-      state: heat
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: climate.comedor
+          state: cool
+        - condition: state
+          entity_id: climate.comedor
+          state: heat
     - condition: state
       entity_id: binary_sensor.workday_sensor
       state: 'on'

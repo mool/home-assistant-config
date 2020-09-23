@@ -18,8 +18,10 @@ cards:
     title: Home Modes
     show_header_toggle: false
     entities:
-      - entity: input_boolean.vacation
+      - entity: input_boolean.auto_cooling
+      - entity: input_boolean.auto_heating
       - entity: input_boolean.movies
+      - entity: input_boolean.vacation
   - type: entity-filter
     entities:
       - entity: light.backyard
