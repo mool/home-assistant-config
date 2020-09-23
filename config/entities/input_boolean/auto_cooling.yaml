@@ -1,4 +1,4 @@
 ---
 auto_cooling:
-  name: Auto Heating Enabled
+  name: Auto Heating
   icon: mdi:snowflake
