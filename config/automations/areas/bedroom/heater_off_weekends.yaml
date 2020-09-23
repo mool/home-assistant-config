@@ -7,9 +7,14 @@ trigger:
   - platform: time
     at: '10:00:00'
 condition:
-  - condition: state
-    entity_id: binary_sensor.workday_sensor
-    state: "off"
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: switch.bedroom_outlet
+      state: 'on'
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: 'off'
 action:
   - service: switch.turn_off
     entity_id: switch.bedroom_outlet

@@ -11,10 +11,13 @@ condition:
   conditions:
     - condition: state
       entity_id: input_boolean.vacation
-      state: "off"
+      state: 'off'
     - condition: state
       entity_id: binary_sensor.workday_sensor
-      state: "off"
+      state: 'off'
+    - condition: state
+      entity_id: binary_sensor.auto_heating
+      state: 'on'
 action:
   - service: switch.turn_on
     entity_id: switch.bedroom_outlet

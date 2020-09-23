@@ -8,14 +8,38 @@ condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: person.pablo
-      state: home
+      entity_id: input_boolean.vacation
+      state: 'off'
     - condition: state
       entity_id: binary_sensor.workday_sensor
       state: 'on'
+    - condition: or
+      conditions:
+        - condition: state
+          entity_id: binary_sensor.auto_cooling
+          state: 'on'
+        - condition: state
+          entity_id: binary_sensor.auto_heating
+          state: 'on'
 action:
-  - service: climate.set_temperature
-    data:
-      entity_id: climate.comedor
-      temperature: 28
-      hvac_mode: heat
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.auto_cooling
+            state: 'on'
+        sequence:
+          - service: climate.set_temperature
+            data:
+              entity_id: climate.comedor
+              temperature: 27
+              hvac_mode: cool
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.auto_heating
+            state: 'on'
+        sequence:
+          - service: climate.set_temperature
+            data:
+              entity_id: climate.comedor
+              temperature: 28
+              hvac_mode: heat
