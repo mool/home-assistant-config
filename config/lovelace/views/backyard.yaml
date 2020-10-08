@@ -22,3 +22,6 @@ cards:
         name: Garden Irrigation
         type: call-service
         service: script.garden_irrigation
+      - entity: switch.garden_irrigation
+        name: Irrigation Faucet
+        icon: mdi:water-pump
