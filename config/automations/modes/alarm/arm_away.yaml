@@ -4,23 +4,19 @@ alias: Alarm Arm Away
 trigger:
   - platform: template
     value_template: "{{states('person.pablo') != 'home'}}"
-  - platform: state
-    entity_id: person.dad
-    to: not_home
-  - platform: state
-    entity_id: person.housemaid
-    to: not_home
+  - platform: template
+    value_template: "{{states('person.dad') != 'home'}}"
+  - platform: template
+    value_template: "{{states('person.housemaid') != 'home'}}"
 condition:
   condition: and
   conditions:
     - condition: template
       value_template: "{{states('person.pablo') != 'home'}}"
-    - condition: state
-      entity_id: person.dad
-      state: not_home
-    - condition: state
-      entity_id: person.housemaid
-      state: not_home
+    - condition: template
+      value_template: "{{states('person.dad') != 'home'}}"
+    - condition: template
+      value_template: "{{states('person.housemaid') != 'home'}}"
 action:
   - service: alarm_control_panel.alarm_arm_away
     data:
