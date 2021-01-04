@@ -5,6 +5,13 @@ trigger:
   - platform: sun
     event: sunset
     offset: '-00:45:00'
+  - platform: numeric_state
+    entity_id: sensor.xiaomi_gateway_illuminance
+    below: 600
+condition:
+  condition: time
+  before: '21:00:00'
+  after: '14:00:00'
 action:
   - service: switch.turn_on
     entity_id:
