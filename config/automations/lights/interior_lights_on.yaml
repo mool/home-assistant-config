@@ -15,7 +15,10 @@ condition:
       before: '21:00:00'
       after: '14:00:00'
     - condition: state
-      entity_id: group.inside_lights
+      entity_id:
+        - switch.enerwave_living_switch
+        - switch.fibaro_kitchen_switch_2
+        - switch.fibaro_dining_room_switch
       state: 'off'
 action:
   - service: switch.turn_on
