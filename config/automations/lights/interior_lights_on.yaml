@@ -9,9 +9,14 @@ trigger:
     entity_id: sensor.xiaomi_gateway_illuminance
     below: 600
 condition:
-  condition: time
-  before: '21:00:00'
-  after: '14:00:00'
+  condition: and
+  conditions:
+    - condition: time
+      before: '21:00:00'
+      after: '14:00:00'
+    - condition: state
+      entity_id: group.inside_lights
+      state: 'off'
 action:
   - service: switch.turn_on
     entity_id:
