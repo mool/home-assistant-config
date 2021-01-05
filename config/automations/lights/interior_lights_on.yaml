@@ -16,14 +16,14 @@ condition:
       after: '14:00:00'
     - condition: state
       entity_id:
-        - switch.enerwave_living_switch
+        - switch.enerwave_living_switch_1
         - switch.fibaro_kitchen_switch_2
         - switch.fibaro_dining_room_switch
       state: 'off'
 action:
   - service: switch.turn_on
     entity_id:
-      - switch.enerwave_living_switch
+      - switch.enerwave_living_switch_1
       - switch.fibaro_kitchen_switch_2
       - switch.fibaro_dining_room_switch
   - service: notify.mobile_app_iphone_de_pablo
