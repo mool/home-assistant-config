@@ -3,7 +3,7 @@ id: motion_cleared_office
 alias: Motion Cleared In The Office Presence
 trigger:
   - platform: state
-    entity_id: binary_sensor.motion_sensor_office
+    entity_id: binary_sensor.office_motion
     to: 'off'
     for:
       minutes: 5
