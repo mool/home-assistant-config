@@ -6,8 +6,8 @@ trigger:
     event: sunset
     offset: '-00:45:00'
   - platform: numeric_state
-    entity_id: sensor.xiaomi_gateway_illuminance
-    below: 600
+    entity_id: sensor.dining_room_illumination
+    below: 700
 condition:
   condition: and
   conditions:
