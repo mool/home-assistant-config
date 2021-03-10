@@ -38,4 +38,4 @@ cards:
       - binary_sensor.balcon_oficina_motion
       - binary_sensor.techo_comedor_motion
       - binary_sensor.comedor_motion
-      - binary_sensor.motion_sensor_office
+      - binary_sensor.office_motion
