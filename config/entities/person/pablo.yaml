@@ -1,7 +1,7 @@
 ---
 name: Pablo
 id: pablo
-user_id: de8333bde21e4f31ab7c0b5aeca6a528
+user_id: 7a526e02b79947c9a9ca105369220e79
 device_trackers:
   - device_tracker.pablo
-  - device_tracker.iphone_pablo
+  - device_tracker.iphone_de_pablo
