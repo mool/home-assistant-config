@@ -3,5 +3,5 @@ dining_room_lights:
   name: Dining Room Lights
   icon: mdi:lightbulb
   entities:
-    - switch.fibaro_dining_room_switch
-    - switch.fibaro_dining_room_switch_2
+    - light.dining_room_1
+    - light.dining_room_2
