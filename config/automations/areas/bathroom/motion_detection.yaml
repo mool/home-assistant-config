@@ -1,0 +1,41 @@
+---
+id: bathroom_motion
+alias: Bathroom Motion
+trigger:
+- platform: state
+  entity_id: binary_sensor.bathroom_motion
+  from: 'off'
+  to: 'on'
+condition: []
+action:
+- choose:
+  - conditions:
+    - condition: time
+      after: '21:00:00'
+      before: '07:00:00'
+    sequence:
+    - service: light.turn_on
+      data:
+        effect: "{% if is_state('alarm_control_panel.home_alarm', 'armed_home') %}Night light{% else %}Warm White{% endif %}"
+      target:
+        entity_id: light.bathroom_bulb
+  default:
+  - service: light.turn_on
+    data:
+      effect: Daylight
+    target:
+      entity_id: light.bathroom_bulb
+- wait_for_trigger:
+  - platform: state
+    entity_id: binary_sensor.bathroom_motion
+    from: 'on'
+    to: 'off'
+- delay:
+    hours: 0
+    minutes: 0
+    seconds: 5
+    milliseconds: 0
+- service: light.turn_off
+  target:
+    entity_id: light.bathroom_bulb
+mode: restart
