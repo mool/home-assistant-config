@@ -1,0 +1,44 @@
+---
+id: office_auto_climate
+alias: 'Office auto climate'
+trigger:
+  - platform: state
+    entity_id: binary_sensor.office_motion
+    to: 'on'
+    for:
+      minutes: 10
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_boolean.vacation
+      state: 'off'
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state:
+        - 'armed_home'
+        - 'disarmed'
+    - condition: state
+      entity_id: binary_sensor.auto_heating
+      state: 'on'
+action:
+  - service: climate.set_temperature
+    data:
+      entity_id: climate.office_thermostat
+      temperature: 28
+      hvac_mode: heat
+  - wait_for_trigger:
+      - platform: state
+        entity_id: binary_sensor.office_motion
+        from: 'on'
+        to: 'off'
+  - delay:
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
+  - service: climate.set_hvac_mode
+    data:
+      entity_id: climate.office_thermostat
+      hvac_mode: 'off'
+mode: restart
