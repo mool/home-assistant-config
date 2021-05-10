@@ -21,10 +21,10 @@ condition:
     - condition: or
       conditions:
         - condition: state
-          entity_id: binary_sensor.auto_cooling
+          entity_id: input_boolean.auto_cooling
           state: 'on'
         - condition: state
-          entity_id: binary_sensor.auto_heating
+          entity_id: input_boolean.auto_heating
           state: 'on'
 action:
   - choose:

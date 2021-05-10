@@ -19,7 +19,7 @@ condition:
         - 'armed_home'
         - 'disarmed'
     - condition: state
-      entity_id: binary_sensor.auto_heating
+      entity_id: input_boolean.auto_heating
       state: 'on'
 action:
   - service: climate.set_temperature
