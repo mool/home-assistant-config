@@ -12,9 +12,14 @@ trigger:
     entity_id: person.housemaid
     to: home
 condition:
-  condition: state
-  entity_id: alarm_control_panel.home_alarm
-  state: 'armed_away'
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: 'armed_away'
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: 'triggered'
 action:
   - service: alarm_control_panel.alarm_disarm
     data:
