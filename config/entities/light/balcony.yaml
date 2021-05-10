@@ -1,4 +1,4 @@
 ---
 platform: switch
 name: Balcony
-entity_id: switch.fibaro_office_switch
+entity_id: switch.fibaro_office_switch_1

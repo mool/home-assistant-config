@@ -6,8 +6,8 @@ trigger:
     event: sunset
     offset: '-00:45:00'
   - platform: numeric_state
-    entity_id: sensor.xiaomi_gateway_illuminance
-    below: 600
+    entity_id: sensor.dining_room_illumination
+    below: 700
 condition:
   condition: and
   conditions:
@@ -18,14 +18,14 @@ condition:
       entity_id:
         - switch.enerwave_living_switch_1
         - switch.fibaro_kitchen_switch_2
-        - switch.fibaro_dining_room_switch
+        - switch.fibaro_dining_room_switch_1
       state: 'off'
 action:
   - service: switch.turn_on
     entity_id:
       - switch.enerwave_living_switch_1
       - switch.fibaro_kitchen_switch_2
-      - switch.fibaro_dining_room_switch
+      - switch.fibaro_dining_room_switch_1
   - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Interior lights'

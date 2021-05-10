@@ -1,4 +1,4 @@
 ---
 platform: switch
 name: Dining Room 1
-entity_id: switch.fibaro_dining_room_switch
+entity_id: switch.fibaro_dining_room_switch_1
