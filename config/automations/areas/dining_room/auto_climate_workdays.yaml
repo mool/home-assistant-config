@@ -30,7 +30,7 @@ action:
   - choose:
       - conditions:
           - condition: state
-            entity_id: binary_sensor.auto_cooling
+            entity_id: input_boolean.auto_cooling
             state: 'on'
         sequence:
           - service: climate.set_temperature
@@ -40,7 +40,7 @@ action:
               hvac_mode: cool
       - conditions:
           - condition: state
-            entity_id: binary_sensor.auto_heating
+            entity_id: input_boolean.auto_heating
             state: 'on'
         sequence:
           - service: climate.set_temperature
