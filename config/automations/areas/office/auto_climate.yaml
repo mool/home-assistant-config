@@ -27,11 +27,17 @@ condition:
         minutes: 2
         seconds: 0
 action:
-  - service: climate.set_temperature
-    data:
-      entity_id: climate.office_thermostat
-      temperature: 30
-      hvac_mode: heat
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: climate.office_thermostat
+            state: 'off'
+        sequence:
+          - service: climate.set_temperature
+            data:
+              entity_id: climate.office_thermostat
+              temperature: 30
+              hvac_mode: heat
   - wait_for_trigger:
       - platform: state
         entity_id: binary_sensor.office_motion
