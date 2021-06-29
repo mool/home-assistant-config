@@ -1,0 +1,37 @@
+---
+id: office_motion
+alias: Office Motion
+trigger:
+  - platform: state
+    entity_id: binary_sensor.office_motion
+    to: 'on'
+condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state:
+      - 'armed_home'
+      - 'disarmed'
+action:
+  - service: light.turn_on
+    data:
+      entity_id:
+        - light.office_desk_light
+        - light.office_desk_color_light
+        - light.office
+      transition: 3
+  - wait_for_trigger:
+      - platform: state
+        entity_id: binary_sensor.office_motion
+        from: 'on'
+        to: 'off'
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  - service: light.turn_off
+    entity_id:
+      - light.office_desk_light
+      - light.office_desk_color_light
+      - light.office
+mode: restart

@@ -1,9 +1,9 @@
 ---
-id: ac_on_workday
-alias: 'Turn ON the AC on workdays'
+id: dining_room_auto_climate_on_workdays
+alias: 'Dining room auto climate on workdays'
 trigger:
   - platform: time
-    at: '08:50:00'
+    at: '09:00:00'
 condition:
   condition: and
   conditions:
@@ -11,21 +11,26 @@ condition:
       entity_id: input_boolean.vacation
       state: 'off'
     - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state:
+        - 'armed_home'
+        - 'disarmed'
+    - condition: state
       entity_id: binary_sensor.workday_sensor
       state: 'on'
     - condition: or
       conditions:
         - condition: state
-          entity_id: binary_sensor.auto_cooling
+          entity_id: input_boolean.auto_cooling
           state: 'on'
         - condition: state
-          entity_id: binary_sensor.auto_heating
+          entity_id: input_boolean.auto_heating
           state: 'on'
 action:
   - choose:
       - conditions:
           - condition: state
-            entity_id: binary_sensor.auto_cooling
+            entity_id: input_boolean.auto_cooling
             state: 'on'
         sequence:
           - service: climate.set_temperature
@@ -35,7 +40,7 @@ action:
               hvac_mode: cool
       - conditions:
           - condition: state
-            entity_id: binary_sensor.auto_heating
+            entity_id: input_boolean.auto_heating
             state: 'on'
         sequence:
           - service: climate.set_temperature
@@ -43,3 +48,12 @@ action:
               entity_id: climate.comedor
               temperature: 28
               hvac_mode: heat
+  - delay:
+      hours: 0
+      minutes: 40
+      seconds: 0
+      milliseconds: 0
+  - service: climate.set_hvac_mode
+    data:
+      entity_id: climate.comedor
+      hvac_mode: 'off'

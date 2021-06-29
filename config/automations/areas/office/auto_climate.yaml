@@ -1,0 +1,54 @@
+---
+id: office_auto_climate
+alias: 'Office auto climate'
+trigger:
+  - platform: state
+    entity_id: group.office_lights
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state:
+        - 'armed_home'
+        - 'disarmed'
+    - condition: state
+      entity_id: input_boolean.auto_heating
+      state: 'on'
+action:
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: climate.office_thermostat
+            state: 'off'
+        sequence:
+          - service: climate.set_temperature
+            data:
+              entity_id: climate.office_thermostat
+              temperature: 30
+              hvac_mode: heat
+  - wait_for_trigger:
+      - platform: state
+        entity_id: group.office_lights
+        from: 'on'
+        to: 'off'
+        for:
+          hours: 0
+          minutes: 10
+          seconds: 0
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: climate.office_thermostat
+            state: heat
+        sequence:
+          - service: climate.set_hvac_mode
+            data:
+              entity_id: climate.office_thermostat
+              hvac_mode: 'off'
+mode: restart
