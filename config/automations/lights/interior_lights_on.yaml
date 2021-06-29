@@ -28,7 +28,7 @@ action:
       - light.living_lamp
     data:
       brightness_pct: 100
-      color_temp: 256
+      color_temp: 280
   - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'Interior lights'
