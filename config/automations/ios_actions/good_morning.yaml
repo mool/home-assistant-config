@@ -12,6 +12,7 @@ action:
       entity_id: media_player.cocina
     data:
       shuffle: true
+  - delay: 0:1
   - service: media_player.play_media
     target:
       entity_id: media_player.cocina
