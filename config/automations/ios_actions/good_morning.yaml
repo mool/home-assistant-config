@@ -8,6 +8,11 @@ trigger:
     event_data:
       actionName: good_morning
 action:
+  - service: media_player.volume_set
+    target:
+      entity_id: media_player.cocina
+    data:
+      volume_level: 0.25
   - service: media_player.shuffle_set
     target:
       entity_id: media_player.cocina
