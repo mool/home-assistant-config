@@ -1,0 +1,20 @@
+---
+id: good_morning
+alias: Good Morning
+trigger:
+  - platform: event
+    event_type: ios.action_fired
+    event_data:
+      actionName: good_morning
+action:
+  - service: media_player.shuffle_set
+    target:
+      entity_id: media_player.cocina
+    data:
+      shuffle: true
+  - service: media_player.play_media
+    target:
+      entity_id: media_player.cocina
+    data:
+      media_content_type: music
+      media_content_id: 'https://open.spotify.com/playlist/3IBrsav3Sh8AImtaGoaP07?si=GgwmDU_kQIGZKfpHN-8JyQ'
