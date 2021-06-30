@@ -1,0 +1,27 @@
+---
+id: living_lamp_brightness
+alias: 'Dim living lamp when the TV is ON'
+trigger:
+  - platform: state
+    entity_id: media_player.living_tv
+    to: 'on'
+condition:
+  - condition: state
+    entity_id: light.living_lamp
+    state: 'on'
+action:
+  - service: light.turn_on
+    entity_id: light.living_lamp
+    data:
+      brightness_pct: 35
+      transition: 3
+  - wait_for_trigger:
+      - platform: state
+        entity_id: media_player.living_tv
+        from: 'on'
+        to: 'off'
+  - service: light.turn_on
+    entity_id: light.living_lamp
+    data:
+      brightness_pct: 100
+      transition: 3
