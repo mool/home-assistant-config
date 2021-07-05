@@ -1,11 +1,11 @@
 ---
-id: bedroom_auto_climate_weekends
-alias: 'Bedrooms auto climate on weekends'
+id: bedroom_auto_climate_workdays
+alias: 'Bedrooms auto climate on workdays'
 trigger:
   - platform: time
-    at: '23:30:00'
+    at: '00:30:00'
   - platform: time
-    at: '09:30:00'
+    at: '09:00:00'
 condition:
   condition: and
   conditions:
@@ -13,17 +13,14 @@ condition:
       entity_id: input_boolean.vacation
       state: 'off'
     - condition: state
-      entity_id: binary_sensor.workday_sensor
-      state: 'off'
-    - condition: state
-      entity_id: binary_sensor.auto_heating
+      entity_id: input_boolean.auto_heating
       state: 'on'
 action:
   - service: switch.turn_on
     entity_id: switch.bedroom_outlet
   - delay:
-      hours: 2
-      minutes: 30
+      hours: 0
+      minutes: 45
       seconds: 0
       milliseconds: 0
   - service: switch.turn_off
