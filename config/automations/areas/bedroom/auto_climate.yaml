@@ -1,5 +1,5 @@
 ---
-id: bedroom_auto_climate_workdays
+id: bedroom_auto_climate
 alias: 'Bedrooms auto climate on workdays'
 trigger:
   - platform: time
