@@ -1,6 +1,6 @@
 ---
 id: bedroom_auto_climate
-alias: 'Bedrooms auto climate on workdays'
+alias: 'Bedrooms auto climate'
 trigger:
   - platform: time
     at: '00:30:00'
