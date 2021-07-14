@@ -53,6 +53,6 @@ cards:
         'off':
           name: false
   - type: custom:mini-media-player
-    entity: media_player.kitchen
+    entity: media_player.cocina
   - type: custom:mini-media-player
     entity: media_player.nvidia_shield
