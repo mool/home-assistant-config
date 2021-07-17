@@ -5,3 +5,4 @@ user_id: 7a526e02b79947c9a9ca105369220e79
 device_trackers:
   - device_tracker.pablo
   - device_tracker.iphone_de_pablo
+  - device_tracker.iphone_de_pablo_icloud
