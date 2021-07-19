@@ -1,5 +1,6 @@
 ---
 title: Home Control Panel
+button_card_templates: !include lovelace/button_card_templates.yaml
 resources: !include_dir_list lovelace/resources
 views:
   - !include lovelace/views/main.yaml
