@@ -312,7 +312,7 @@ person:
     - base
     - circle
   state_display: >
-    [[[ return variables.state === 'home' ? 'Ja' : 'Nej'; ]]]
+    [[[ return variables.state === 'home' ? 'Home' : 'Away'; ]]]
   triggers_update: sensor.time
   styles:
     custom_fields:
