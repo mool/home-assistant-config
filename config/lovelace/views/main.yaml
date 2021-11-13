@@ -21,6 +21,7 @@ cards:
     entities:
       - entity: input_boolean.auto_cooling
       - entity: input_boolean.auto_heating
+      - entity: input_boolean.auto_mosquito_repellent
       - entity: input_boolean.movies
       - entity: input_boolean.vacation
   - type: entity-filter

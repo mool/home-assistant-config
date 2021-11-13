@@ -1,0 +1,43 @@
+---
+id: office_mosquito_repellent
+alias: 'Office mosquito repellent'
+trigger:
+  - platform: state
+    entity_id: group.office_lights
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state:
+        - 'armed_home'
+        - 'disarmed'
+    - condition: state
+      entity_id: input_boolean.auto_mosquito_repellent
+      state: 'on'
+action:
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: switch.office_outlet_1
+            state: 'off'
+        sequence:
+          - service: switch.turn_on
+            entity_id: switch.office_outlet_1
+  - wait_for_trigger:
+      - platform: state
+        entity_id: group.office_lights
+        from: 'on'
+        to: 'off'
+        for:
+          hours: 0
+          minutes: 5
+          seconds: 0
+  - service: switch.turn_off
+    entity_id: switch.office_outlet_1
+mode: restart
