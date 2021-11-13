@@ -87,7 +87,7 @@ cards:
     cards:
       - type: custom:mini-graph-card
         entities:
-          - sensor.shellyem1_watts
+          - sensor.shellyem_b9eb3c_channel_1_power
         line_color: green
         line_width: 5
         font_size: 75
