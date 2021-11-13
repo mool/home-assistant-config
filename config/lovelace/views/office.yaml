@@ -17,6 +17,10 @@ cards:
         icon: mdi:led-strip
         tap_action:
           action: toggle
+      - entity: switch.office_outlet_1
+        icon: mdi:bee
+        tap_action:
+          action: toggle
   - type: horizontal-stack
     cards:
       - type: custom:mini-graph-card
