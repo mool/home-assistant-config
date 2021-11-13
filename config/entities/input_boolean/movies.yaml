@@ -1,5 +1,0 @@
----
-movies:
-  name: Movies
-  initial: false
-  icon: mdi:television-play
