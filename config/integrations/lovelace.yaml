@@ -2,3 +2,11 @@
 # Lovelace component for confuring the UI.
 lovelace:
   mode: yaml
+  resources: !include_dir_list ../lovelace/resources
+  dashboards:
+    lovelace-minimalist:
+      mode: yaml
+      title: Minimalist
+      icon: mdi:script
+      show_in_sidebar: true
+      filename: ui-lovelace-minimalist.yaml
