@@ -1,0 +1,5 @@
+---
+name: Natalia
+id: natalia
+device_trackers:
+  - device_tracker.natidp
