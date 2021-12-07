@@ -1,6 +1,9 @@
 ---
 ignore: |
   config/custom_components/
+  config/themes/minimalist-desktop/
+  config/themes/minimalist-mobile/
+  config/minimalist-templates/
 rules:
   braces:
     level: error
