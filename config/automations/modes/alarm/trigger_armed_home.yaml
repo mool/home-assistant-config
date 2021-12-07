@@ -3,7 +3,7 @@ id: trigger_armed_home
 alias: 'Trigger alarm while armed home'
 trigger:
   - platform: state
-    entity_id: group.alarm_home_sensors
+    entity_id: group.exterior_sensors
     to: 'on'
 condition:
   - condition: state
