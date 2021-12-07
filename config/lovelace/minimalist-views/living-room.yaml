@@ -1,0 +1,87 @@
+---
+title: Living Room
+path: living_room
+icon: mdi:sofa
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        template: edge
+      - type: custom:button-card
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /lovelace-minimalist/main
+      - type: custom:button-card
+        template: edge
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Lights
+          - type: custom:button-card
+            template: edge
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_light
+            entity: light.dining_room_1
+          - type: custom:button-card
+            template: card_light
+            entity: light.dining_room_2
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_light
+            entity: light.living_room
+          - type: custom:button-card
+            template: card_light_slider_collapse
+            entity: light.living_lamp
+            variables:
+              ulm_card_light_slider_collapse_name: Livingroom Lamp
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Air Conditioner
+          - type: custom:button-card
+            template: edge
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: custom_card_tpx01_aircondition_with_buttons
+            variables:
+              entity: climate.comedor
+              name: A/C Livingroom
+          - type: custom:button-card
+            template: edge
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Media
+          - type: custom:button-card
+            template: edge
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: card_media_player_with_control
+            entity: media_player.nvidia_shield
+            name: Nvidia Shield
+          - type: custom:button-card
+            template: edge

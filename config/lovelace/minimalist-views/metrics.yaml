@@ -1,0 +1,82 @@
+---
+title: Metrics
+path: metrics
+icon: mdi:gauge
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        template: edge
+      - type: custom:button-card
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /lovelace-minimalist/main
+      - type: custom:button-card
+        template: edge
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Energy
+          - type: custom:button-card
+            template: edge
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_graph
+            variables:
+              ulm_card_graph_color: "green"
+              ulm_card_graph_name: Power
+              ulm_card_graph_entity: sensor.shellyem_b9eb3c_channel_1_power
+          - type: custom:button-card
+            template: card_graph
+            variables:
+              ulm_card_graph_color: "green"
+              ulm_card_graph_name: Monthly Energy
+              ulm_card_graph_entity: sensor.monthly_energy
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Internet
+          - type: custom:button-card
+            template: edge
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_graph
+            variables:
+              ulm_card_graph_color: "green"
+              ulm_card_graph_name: Latency
+              ulm_card_graph_entity: sensor.speedtest_ping
+          - type: custom:button-card
+            template: card_graph
+            variables:
+              ulm_card_graph_color: "green"
+              ulm_card_graph_name: Download
+              ulm_card_graph_entity: sensor.speedtest_download
+          - type: custom:button-card
+            template: card_graph
+            variables:
+              ulm_card_graph_color: "green"
+              ulm_card_graph_name: Upload
+              ulm_card_graph_entity: sensor.speedtest_upload
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Batteries
+          - type: custom:button-card
+            template: edge

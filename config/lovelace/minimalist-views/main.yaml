@@ -1,0 +1,134 @@
+---
+title: Main
+path: main
+icon: mdi:home
+cards:
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Presence
+          - type: custom:button-card
+            template: edge
+      - type: entity-filter
+        entities:
+          - entity: person.pablo
+          - entity: person.natalia
+          - entity: person.dad
+          - entity: person.housemaid
+        state_filter:
+          - "home"
+        card:
+          type: glance
+  - type: alarm-panel
+    entity: alarm_control_panel.home_alarm
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Rooms
+          - type: custom:button-card
+            template: edge
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_navigate
+            variables:
+              ulm_card_navigate_path: /lovelace-minimalist/kitchen
+              ulm_card_navigate_title: Kitchen
+              ulm_card_navigate_icon: mdi:chef-hat
+          - type: custom:button-card
+            template: card_navigate
+            variables:
+              ulm_card_navigate_path: /lovelace-minimalist/living_room
+              ulm_card_navigate_title: Living Room
+              ulm_card_navigate_icon: mdi:sofa
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_navigate
+            variables:
+              ulm_card_navigate_path: /lovelace-minimalist/office
+              ulm_card_navigate_title: Office
+              ulm_card_navigate_icon: mdi:desktop-mac
+          - type: custom:button-card
+            template: card_navigate
+            variables:
+              ulm_card_navigate_path: /lovelace-minimalist/bedroom
+              ulm_card_navigate_title: Bedroom
+              ulm_card_navigate_icon: mdi:bed
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_navigate
+            variables:
+              ulm_card_navigate_path: /lovelace-minimalist/backyard
+              ulm_card_navigate_title: Backyard
+              ulm_card_navigate_icon: mdi:flower
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Cameras
+          - type: custom:button-card
+            template: edge
+      - type: picture-entity
+        entity: camera.street
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Home Modes
+          - type: custom:button-card
+            template: edge
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_input_boolean
+            entity: input_boolean.auto_cooling
+          - type: custom:button-card
+            template: card_input_boolean
+            entity: input_boolean.auto_heating
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_input_boolean
+            entity: input_boolean.auto_mosquito_repellent
+          - type: custom:button-card
+            template: card_input_boolean
+            entity: input_boolean.vacation
+  - type: vertical-stack
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Miscellaneous
+          - type: custom:button-card
+            template: edge
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_navigate
+            variables:
+              ulm_card_navigate_path: /lovelace-minimalist/metrics
+              ulm_card_navigate_title: Metrics
+              ulm_card_navigate_icon: mdi:gauge
