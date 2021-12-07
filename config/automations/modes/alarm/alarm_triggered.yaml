@@ -1,0 +1,55 @@
+---
+id: alarm_triggered
+alias: Alarm triggered
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.home_alarm
+    to: triggered
+action:
+  - service: notify.mobile_app_iphone_de_pablo
+    data:
+      title: 'ALARM - Alert!'
+      message: >
+        {{ states('sensor.time') }} - Sensors triggered:
+        {%- for item in expand('group.exterior_sensors', 'group.interior_sensors') | selectattr('state', 'eq', 'on') %}
+          {{ " " + item.name }}{% if not loop.last %},{% endif %}
+        {% endfor %}
+      data:
+        push:
+          sound:
+            name: US-EN-Morgan-Freeman-Motion-Detected.wav
+            critical: 1
+            volume: 1.0
+  - service: scene.create
+    data:
+      scene_id: alarm_tmp
+      snapshot_entities:
+        - light.backyard
+        - light.bathroom
+        - light.bedroom_lamp
+        - light.dining_room_1
+        - light.dining_room_2
+        - light.kitchen_1
+        - light.kitchen_2
+        - light.kitchen_leds
+        - light.living_lamp
+        - light.living_room
+        - light.office
+        - light.office_desk_color_light
+        - light.office_desk_light
+  - service: homeassistant.turn_on
+    entity_id: group.interior_lights
+  - wait_for_trigger:
+      - platform: state
+        entity_id: alarm_control_panel.home_alarm
+        from: triggered
+        to:
+          - armed_home
+          - armed_away
+          - disarmed
+  - delay:
+      hours: 0
+      minutes: 5
+  - service: scene.turn_on
+    target:
+      entity_id: scene.alarm_tmp
