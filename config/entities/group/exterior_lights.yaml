@@ -1,6 +1,6 @@
 ---
-outside_lights:
-  name: Outside Lights
+exterior_lights:
+  name: Exterior Lights
   icon: mdi:lightbulb
   entities:
     - light.balcony
