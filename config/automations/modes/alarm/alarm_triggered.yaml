@@ -23,20 +23,8 @@ action:
   - service: scene.create
     data:
       scene_id: alarm_tmp
-      snapshot_entities:
-        - light.backyard
-        - light.bathroom
-        - light.bedroom_lamp
-        - light.dining_room_1
-        - light.dining_room_2
-        - light.kitchen_1
-        - light.kitchen_2
-        - light.kitchen_leds
-        - light.living_lamp
-        - light.living_room
-        - light.office
-        - light.office_desk_color_light
-        - light.office_desk_light
+      snapshot_entities: >-
+        {{ expand(state_attr('group.interior_lights', 'entity_id')) | map(attribute='entity_id') | list }}
   - service: homeassistant.turn_on
     entity_id: group.interior_lights
   - wait_for_trigger:
