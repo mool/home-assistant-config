@@ -75,17 +75,12 @@ cards:
             name: Media
           - type: custom:button-card
             template: edge
-      - type: horizontal-stack
-        cards:
-          - type: custom:button-card
-            template: edge
-          - type: custom:button-card
-            template: card_media_player_with_control
-            entity: media_player.living_tv
-            name: TV
-          - type: custom:button-card
-            template: card_media_player_with_control
-            entity: media_player.nvidia_shield
-            name: Nvidia Shield
-          - type: custom:button-card
-            template: edge
+      - type: custom:button-card
+        template: card_media_player_with_control
+        entity: media_player.living_tv
+        name: TV
+      - type: custom:button-card
+        template: card_media_player_with_controls
+        variables:
+          ulm_card_media_player_with_controls_name: Nvidia Shield
+          ulm_card_media_player_with_controls_entity: media_player.nvidia_shield

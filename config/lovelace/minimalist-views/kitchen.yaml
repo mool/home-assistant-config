@@ -48,13 +48,8 @@ cards:
             name: Media
           - type: custom:button-card
             template: edge
-      - type: horizontal-stack
-        cards:
-          - type: custom:button-card
-            template: edge
-          - type: custom:button-card
-            template: card_media_player_with_control
-            entity: media_player.cocina
-            name: Sonos Kitchen
-          - type: custom:button-card
-            template: edge
+      - type: custom:button-card
+        template: card_media_player_with_controls
+        variables:
+          ulm_card_media_player_with_controls_name: Sonos Kitchen
+          ulm_card_media_player_with_controls_entity: media_player.cocina
