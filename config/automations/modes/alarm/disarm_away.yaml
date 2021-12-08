@@ -3,23 +3,9 @@ id: alarm_disarm_away
 alias: Alarm Disable Away
 trigger:
   - platform: state
-    entity_id: person.pablo
+    entity_id: group.presence
+    from: away
     to: home
-  - platform: state
-    entity_id: person.dad
-    to: home
-  - platform: state
-    entity_id: person.housemaid
-    to: home
-condition:
-  condition: or
-  conditions:
-    - condition: state
-      entity_id: alarm_control_panel.home_alarm
-      state: 'armed_away'
-    - condition: state
-      entity_id: alarm_control_panel.home_alarm
-      state: 'triggered'
 action:
   - service: alarm_control_panel.alarm_disarm
     data:
