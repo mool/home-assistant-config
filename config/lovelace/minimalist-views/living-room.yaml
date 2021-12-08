@@ -81,6 +81,10 @@ cards:
             template: edge
           - type: custom:button-card
             template: card_media_player_with_control
+            entity: media_player.living_tv
+            name: TV
+          - type: custom:button-card
+            template: card_media_player_with_control
             entity: media_player.nvidia_shield
             name: Nvidia Shield
           - type: custom:button-card
