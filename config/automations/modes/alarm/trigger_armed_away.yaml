@@ -3,10 +3,12 @@ id: trigger_armed_away
 alias: 'Trigger alarm while armed away'
 trigger:
   - platform: state
-    entity_id: group.exterior_sensors
+    entity_id: >-
+      {{ expand(state_attr('group.exterior_sensors', 'entity_id')) | map(attribute='entity_id') | list }}
     to: 'on'
   - platform: state
-    entity_id: group.interior_sensors
+    entity_id: >-
+      {{ expand(state_attr('group.interior_sensors', 'entity_id')) | map(attribute='entity_id') | list }}
     to: 'on'
 condition:
   - condition: state
