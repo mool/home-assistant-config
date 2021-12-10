@@ -3,8 +3,12 @@ id: trigger_armed_home
 alias: 'Trigger alarm while armed home'
 trigger:
   - platform: state
-    entity_id: >-
-      {{ expand(state_attr('group.exterior_sensors', 'entity_id')) | map(attribute='entity_id') | list }}
+    entity_id:
+      - binary_sensor.balcon_oficina_motion
+      - binary_sensor.jardin_trasero_motion
+      - binary_sensor.techo_comedor_motion
+      - binary_sensor.stair_window_1
+      - binary_sensor.stair_window_2
     to: 'on'
 condition:
   - condition: state
