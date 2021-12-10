@@ -2,10 +2,8 @@
 id: alarm_arm_away
 alias: Alarm Arm Away
 trigger:
-  - platform: state
-    entity_id: group.presence
-    from: home
-    to: away
+  - platform: template
+    value_template: "{{states('group.presence') != 'home'}}"
 action:
   - service: alarm_control_panel.alarm_arm_away
     data:
