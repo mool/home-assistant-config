@@ -4,7 +4,6 @@ alias: Alarm Disable Away
 trigger:
   - platform: state
     entity_id: group.presence
-    from: away
     to: home
 action:
   - service: alarm_control_panel.alarm_disarm
