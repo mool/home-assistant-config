@@ -1,6 +1,6 @@
 ---
-id: notify_alarm_armed_home
-alias: 'Send notification when alarm is Armed Home'
+id: alarm_armed_home
+alias: Alarm armed home
 trigger:
   - platform: state
     entity_id: alarm_control_panel.home_alarm
@@ -9,7 +9,7 @@ action:
   - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'ALARM - Armed'
-      message: "The alarm is armed in Home mode {{ states('sensor.date_time') }}"
+      message: "{{ states('sensor.time') }} - Alarm armed in Home mode"
   - service: tts.google_translate_say
     data:
       entity_id: media_player.bedroom

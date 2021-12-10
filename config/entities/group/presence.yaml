@@ -1,0 +1,9 @@
+---
+presence:
+  name: Presence
+  icon: mdi:account-group
+  entities:
+    - person.dad
+    - person.housemaid
+    - person.natalia
+    - person.pablo

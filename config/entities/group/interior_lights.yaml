@@ -1,8 +1,11 @@
 ---
-inside_lights:
-  name: Inside Lights
+interior_lights:
+  name: Interior Lights
   icon: mdi:lightbulb
   entities:
+    - light.backyard
+    - light.bathroom
+    - light.bedroom_lamp
     - light.dining_room_1
     - light.dining_room_2
     - light.kitchen_1
@@ -11,7 +14,5 @@ inside_lights:
     - light.living_lamp
     - light.living_room
     - light.office
-    - light.office_desk_light
     - light.office_desk_color_light
-    - light.bedroom_lamp
-    - light.backyard
+    - light.office_desk_light

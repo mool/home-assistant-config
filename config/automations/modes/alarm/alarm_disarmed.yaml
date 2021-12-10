@@ -1,6 +1,6 @@
 ---
-id: notify_alarm_disarmed
-alias: 'Send notification when alarm is Disarmed'
+id: alarm_disarmed
+alias: Alarm disarmed
 trigger:
   - platform: state
     entity_id: alarm_control_panel.home_alarm
@@ -9,4 +9,4 @@ action:
   - service: notify.mobile_app_iphone_de_pablo
     data:
       title: 'ALARM - Disarmed'
-      message: "The alarm is Disarmed at {{ states('sensor.date_time') }}"
+      message: "{{ states('sensor.time') }} - The alarm is Disarmed"

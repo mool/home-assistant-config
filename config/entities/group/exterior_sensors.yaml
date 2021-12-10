@@ -1,6 +1,6 @@
 ---
-alarm_home_sensors:
-  name: alarm_home_sensors
+exterior_sensors:
+  name: Exterior Sensors
   entities:
     - binary_sensor.balcon_oficina_motion
     - binary_sensor.jardin_trasero_motion

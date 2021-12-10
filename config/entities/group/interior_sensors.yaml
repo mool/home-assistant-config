@@ -1,0 +1,7 @@
+---
+interior_sensors:
+  name: Interior Sensors
+  entities:
+    - binary_sensor.comedor_motion
+    - binary_sensor.office_door
+    - binary_sensor.office_motion
