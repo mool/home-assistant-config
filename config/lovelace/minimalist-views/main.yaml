@@ -42,12 +42,6 @@ cards:
           - type: custom:button-card
             template: card_navigate
             variables:
-              ulm_card_navigate_path: /lovelace-minimalist/kitchen
-              ulm_card_navigate_title: Kitchen
-              ulm_card_navigate_icon: mdi:chef-hat
-          - type: custom:button-card
-            template: card_navigate
-            variables:
               ulm_card_navigate_path: /lovelace-minimalist/living_room
               ulm_card_navigate_title: Living Room
               ulm_card_navigate_icon: mdi:sofa

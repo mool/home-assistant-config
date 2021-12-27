@@ -28,6 +28,19 @@ cards:
         cards:
           - type: custom:button-card
             template: card_light
+            entity: light.kitchen_1
+          - type: custom:button-card
+            template: card_light
+            entity: light.kitchen_2
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_light_slider_collapse
+            entity: light.kitchen_leds
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_light
             entity: light.dining_room_1
           - type: custom:button-card
             template: card_light
@@ -75,6 +88,11 @@ cards:
             name: Media
           - type: custom:button-card
             template: edge
+      - type: custom:button-card
+        template: card_media_player_with_controls
+        variables:
+          ulm_card_media_player_with_controls_name: Sonos Kitchen
+          ulm_card_media_player_with_controls_entity: media_player.cocina
       - type: custom:button-card
         template: card_media_player_with_control
         entity: media_player.living_tv
