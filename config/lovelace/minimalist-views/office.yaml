@@ -48,7 +48,7 @@ cards:
             template: card_light_slider_collapse
             entity: light.office_desk_light
           - type: custom:button-card
-            template: card_light_slider_collapse
+            template: card_light_slider_collapse_color
             entity: light.office_desk_color_light
   - type: vertical-stack
     cards:

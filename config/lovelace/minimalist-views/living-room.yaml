@@ -35,7 +35,7 @@ cards:
       - type: horizontal-stack
         cards:
           - type: custom:button-card
-            template: card_light_slider_collapse
+            template: card_light_slider_collapse_color
             entity: light.kitchen_leds
       - type: horizontal-stack
         cards:
@@ -51,10 +51,8 @@ cards:
             template: card_light
             entity: light.living_room
           - type: custom:button-card
-            template: card_light_slider_collapse
+            template: card_light_slider_collapse_color
             entity: light.living_lamp
-            variables:
-              ulm_card_light_slider_collapse_name: Livingroom Lamp
   - type: vertical-stack
     cards:
       - type: horizontal-stack
