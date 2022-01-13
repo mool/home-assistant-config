@@ -2,8 +2,29 @@
 title: Main
 path: main
 icon: mdi:home
+type: custom:grid-layout
+layout:
+  grid-gap: var(--custom-layout-card-padding)
+  grid-template-columns: repeat(2, 1fr) 40%
+  grid-template-rows: auto
+  grid-template-areas: |
+    "presence rooms cameras"
+    "modes    misc  cameras"
+  mediaquery:
+    '(max-width: 800px)':
+      grid-gap: calc(var(--custom-layout-card-padding) * 1.5)
+      grid-template-columns: 0 1fr 0
+      grid-template-rows: auto
+      grid-template-areas: |
+        ". presence ."
+        ". rooms    ."
+        ". cameras  ."
+        ". modes    ."
+        ". misc     ."
 cards:
   - type: vertical-stack
+    view_layout:
+      grid-area: presence
     cards:
       - type: horizontal-stack
         cards:
@@ -24,9 +45,11 @@ cards:
           - "home"
         card:
           type: glance
-  - type: alarm-panel
-    entity: alarm_control_panel.home_alarm
+      - type: alarm-panel
+        entity: alarm_control_panel.home_alarm
   - type: vertical-stack
+    view_layout:
+      grid-area: rooms
     cards:
       - type: horizontal-stack
         cards:
@@ -68,6 +91,8 @@ cards:
               ulm_card_navigate_title: Backyard
               ulm_card_navigate_icon: mdi:flower
   - type: vertical-stack
+    view_layout:
+      grid-area: cameras
     cards:
       - type: horizontal-stack
         cards:
@@ -81,6 +106,8 @@ cards:
       - type: picture-entity
         entity: camera.street
   - type: vertical-stack
+    view_layout:
+      grid-area: modes
     cards:
       - type: horizontal-stack
         cards:
@@ -108,6 +135,8 @@ cards:
             template: card_input_boolean
             entity: input_boolean.vacation
   - type: vertical-stack
+    view_layout:
+      grid-area: misc
     cards:
       - type: horizontal-stack
         cards:
