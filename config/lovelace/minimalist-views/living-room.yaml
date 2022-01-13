@@ -2,8 +2,30 @@
 title: Living Room
 path: living_room
 icon: mdi:sofa
+type: custom:grid-layout
+layout:
+  grid-gap: var(--custom-layout-card-padding)
+  grid-template-columns: repeat(2, 1fr) 40%
+  grid-template-rows: auto
+  grid-template-areas: |
+    "top    top     top"
+    "lights climate cameras"
+    "lights media   cameras"
+  mediaquery:
+    '(max-width: 800px)':
+      grid-gap: calc(var(--custom-layout-card-padding) * 1.5)
+      grid-template-columns: 0 1fr 0
+      grid-template-rows: auto
+      grid-template-areas: |
+        ". top     ."
+        ". lights  ."
+        ". climate ."
+        ". media   ."
+        ". cameras ."
 cards:
   - type: horizontal-stack
+    view_layout:
+      grid-area: top
     cards:
       - type: custom:button-card
         template: edge
@@ -12,8 +34,15 @@ cards:
         variables:
           ulm_chip_back_path: /lovelace-minimalist/main
       - type: custom:button-card
+        template: chip_icon_state
+        variables:
+          ulm_chip_icon_state_icon: '🌡️'
+          ulm_chip_icon_state_entity: sensor.corridor_temperature
+      - type: custom:button-card
         template: edge
   - type: vertical-stack
+    view_layout:
+      grid-area: lights
     cards:
       - type: horizontal-stack
         cards:
@@ -54,6 +83,8 @@ cards:
             template: card_light_slider_collapse_color
             entity: light.living_lamp
   - type: vertical-stack
+    view_layout:
+      grid-area: climate
     cards:
       - type: horizontal-stack
         cards:
@@ -76,6 +107,8 @@ cards:
           - type: custom:button-card
             template: edge
   - type: vertical-stack
+    view_layout:
+      grid-area: media
     cards:
       - type: horizontal-stack
         cards:
@@ -100,3 +133,18 @@ cards:
         variables:
           ulm_card_media_player_with_controls_name: Nvidia Shield
           ulm_card_media_player_with_controls_entity: media_player.nvidia_shield
+  - type: vertical-stack
+    view_layout:
+      grid-area: cameras
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Cameras
+          - type: custom:button-card
+            template: edge
+      - type: picture-entity
+        entity: camera.street
