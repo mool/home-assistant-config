@@ -120,11 +120,29 @@ cards:
             name: Media
           - type: custom:button-card
             template: edge
-      - type: custom:button-card
-        template: card_media_player_with_controls
-        variables:
-          ulm_card_media_player_with_controls_name: Sonos Kitchen
-          ulm_card_media_player_with_controls_entity: media_player.cocina
+      - type: custom:mini-media-player
+        artwork: cover
+        hide:
+          power: true
+          icon: true
+          shuffle: false
+        shortcuts:
+          columns: 4
+          buttons:
+            - icon: mdi:robot-excited
+              type: music
+              id: >-
+                https://open.spotify.com/playlist/0ZXVX604hmghJgqWCMsqcU?si=M2jfIBsMRiGLvdDzrSh7kg
+        speaker_group:
+          platform: sonos
+          show_group_count: true
+          entities:
+            - entity_id: media_player.oficina
+              name: Sonos Office
+            - entity_id: media_player.cocina
+              name: Sonos Kitchen
+        volume_stateless: false
+        entity: media_player.cocina
       - type: custom:button-card
         template: card_media_player_with_control
         entity: media_player.living_tv
