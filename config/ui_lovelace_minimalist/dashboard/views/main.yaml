@@ -45,8 +45,15 @@ cards:
           - "home"
         card:
           type: glance
-      - type: alarm-panel
+      - type: custom:mushroom-alarm-control-panel-card
         entity: alarm_control_panel.home_alarm
+        states:
+          - armed_home
+          - armed_away
+        name: Alarm
+        icon: mdi:shield-home
+        layout: horizontal
+
   - type: vertical-stack
     view_layout:
       grid-area: rooms
@@ -62,7 +69,7 @@ cards:
               - card_esh_room
               - yellow_on
             name: Living Room
-            entity: light.living_room
+            entity: light.living_room_lamp
             icon: mdi:sofa
             tap_action:
               action: navigate
