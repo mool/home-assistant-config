@@ -8,6 +8,7 @@ layout:
   grid-template-columns: repeat(2, 1fr) 40%
   grid-template-rows: auto
   grid-template-areas: |
+    "top      top   top"
     "presence rooms cameras"
     "modes    rooms cameras"
   mediaquery:
@@ -16,14 +17,15 @@ layout:
       grid-template-columns: 0 1fr 0
       grid-template-rows: auto
       grid-template-areas: |
+        ". top ."
         ". presence ."
         ". rooms    ."
         ". cameras  ."
         ". modes    ."
 cards:
-  - type: vertical-stack
+  - type: horizontal-stack
     view_layout:
-      grid-area: presence
+      grid-area: top
     cards:
       - type: 'custom:button-card'
         template: chip_presence_detection
@@ -31,41 +33,29 @@ cards:
           ulm_chip_presence_counter_residents: sensor.residents_counter
           ulm_chip_presence_counter_guests: sensor.guests_counter
 
+  - type: vertical-stack
+    view_layout:
+      grid-area: presence
+    cards:
       - type: horizontal-stack
         cards:
-          - type: custom:button-card
-            template: edge
-          - type: custom:button-card
-            template: title
-            name: Presence
-          - type: custom:button-card
-            template: edge
+        - type: "custom:button-card"
+          template: custom_card_imswel_person
+          variables:
+            ulm_card_imswel_person_entity: person.pablo
+            ulm_card_imswel_person_wifi_tracker: device_tracker.pablo
+            ulm_card_imswel_person_gps_tracker: device_tracker.iphone_de_pablo
+            ulm_card_imswel_person_findmy_script: script.find_my_phone_pablo
+            ulm_card_imswel_person_use_entity_picture: true
+            ulm_card_imswel_person_zones:
+              - zone.natalia
+              - zone.netlink
 
-      - type: "custom:button-card"
-        template: custom_card_imswel_person
-        variables:
-          ulm_card_imswel_person_entity: person.pablo
-          ulm_card_imswel_person_wifi_tracker: device_tracker.pablo
-          ulm_card_imswel_person_gps_tracker: device_tracker.iphone_de_pablo
-          ulm_card_imswel_person_findmy_script: script.find_my_phone_pablo
-          ulm_card_imswel_person_use_entity_picture: true
-          ulm_card_imswel_person_zones:
-            - zone.natalia
-            - zone.netlink
+        - type: 'custom:button-card'
+          template: card_person
+          variables:
+            ulm_card_person_entity: person.natalia
 
-      - type: 'custom:button-card'
-        template: card_person
-        variables:
-          ulm_card_person_entity: person.natalia
-
-      - type: entity-filter
-        entities:
-          - entity: person.dad
-          - entity: person.housemaid
-        state_filter:
-          - "home"
-        card:
-          type: glance
       - type: custom:mushroom-alarm-control-panel-card
         entity: alarm_control_panel.home_alarm
         states:
