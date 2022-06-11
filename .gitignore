@@ -12,8 +12,12 @@ config/.cloud
 config/.HA_VERSION
 config/.ring_cache.pickle
 config/.storage
-config/deps
 config/android
+config/deps
+config/custom_components
+config/esphome
+config/tts
+config/www/community
 
 # Specific file ignores
 config/.uuid
