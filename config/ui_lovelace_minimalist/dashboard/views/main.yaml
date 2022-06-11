@@ -25,6 +25,12 @@ cards:
     view_layout:
       grid-area: presence
     cards:
+      - type: 'custom:button-card'
+        template: chip_presence_detection
+        variables:
+          ulm_chip_presence_counter_residents: sensor.residents_counter
+          ulm_chip_presence_counter_guests: sensor.guests_counter
+
       - type: horizontal-stack
         cards:
           - type: custom:button-card
