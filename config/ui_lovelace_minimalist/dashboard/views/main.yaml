@@ -47,10 +47,13 @@ cards:
             - zone.natalia
             - zone.netlink
 
+      - type: 'custom:button-card'
+        template: card_person
+        variables:
+          ulm_card_person_entity: person.natalia
+
       - type: entity-filter
         entities:
-          - entity: person.pablo
-          - entity: person.natalia
           - entity: person.dad
           - entity: person.housemaid
         state_filter:
