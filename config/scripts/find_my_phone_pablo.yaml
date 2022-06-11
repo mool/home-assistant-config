@@ -1,0 +1,13 @@
+---
+find_my_phone_pablo:
+  sequence:
+    - service: notify.mobile_app_iphone_de_pablo
+      data:
+        title: "Find phone"
+        message: "Ping!"
+        data:
+          push:
+            sound:
+              name: default
+              critical: 1
+              volume: 1.0

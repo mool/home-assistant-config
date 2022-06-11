@@ -35,6 +35,19 @@ cards:
             name: Presence
           - type: custom:button-card
             template: edge
+
+      - type: "custom:button-card"
+        template: custom_card_imswel_person
+        variables:
+          ulm_card_imswel_person_entity: person.pablo
+          ulm_card_imswel_person_wifi_tracker: device_tracker.pablo
+          ulm_card_imswel_person_gps_tracker: device_tracker.iphone_de_pablo
+          ulm_card_imswel_person_findmy_script: script.find_my_phone_pablo
+          ulm_card_imswel_person_use_entity_picture: true
+          ulm_card_imswel_person_zones:
+            - zone.natalia
+            - zone.netlink
+
       - type: entity-filter
         entities:
           - entity: person.pablo
@@ -69,7 +82,7 @@ cards:
               - card_esh_room
               - yellow_on
             name: Living Room
-            entity: light.living_room_lamp
+            entity: light.living_lamp
             icon: mdi:sofa
             tap_action:
               action: navigate
