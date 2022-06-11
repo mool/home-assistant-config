@@ -9,7 +9,7 @@ layout:
   grid-template-rows: auto
   grid-template-areas: |
     "presence rooms cameras"
-    "modes    misc  cameras"
+    "modes    rooms cameras"
   mediaquery:
     '(max-width: 800px)':
       grid-gap: calc(var(--custom-layout-card-padding) * 1.5)
@@ -20,7 +20,6 @@ layout:
         ". rooms    ."
         ". cameras  ."
         ". modes    ."
-        ". misc     ."
 cards:
   - type: vertical-stack
     view_layout:
@@ -179,6 +178,7 @@ cards:
             template: edge
       - type: picture-entity
         entity: camera.street
+
   - type: vertical-stack
     view_layout:
       grid-area: modes
@@ -208,24 +208,3 @@ cards:
           - type: custom:button-card
             template: card_input_boolean
             entity: input_boolean.vacation
-  - type: vertical-stack
-    view_layout:
-      grid-area: misc
-    cards:
-      - type: horizontal-stack
-        cards:
-          - type: custom:button-card
-            template: edge
-          - type: custom:button-card
-            template: title
-            name: Miscellaneous
-          - type: custom:button-card
-            template: edge
-      - type: horizontal-stack
-        cards:
-          - type: custom:button-card
-            template: card_navigate
-            variables:
-              ulm_card_navigate_path: /lovelace-minimalist/metrics
-              ulm_card_navigate_title: Metrics
-              ulm_card_navigate_icon: mdi:gauge
