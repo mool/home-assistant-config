@@ -130,7 +130,7 @@ cards:
             icon: mdi:desktop-mac
             tap_action:
               action: navigate
-              navigation_path: /lovelace-minimalist/office
+              navigation_path: /ui-lovelace-minimalist/office
             label: '[[[ return states["sensor.office_sensor_temperature"].state + "°C" ]]]'
 
       - type: horizontal-stack
