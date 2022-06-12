@@ -1,0 +1,58 @@
+---
+title: Bedroom
+path: bedroom
+icon: mdi:bed
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/main
+      - type: custom:button-card
+        template: chip_icon_state
+        variables:
+          ulm_chip_icon_state_icon: '🌡️'
+          ulm_chip_icon_state_entity: sensor.esphome_bedroom_temperature
+      - type: custom:button-card
+        template: chip_icon_state
+        variables:
+          ulm_chip_icon_state_icon: '💧'
+          ulm_chip_icon_state_entity: sensor.esphome_bedroom_humidity
+      - type: custom:button-card
+        template: chip_presence_detection
+        variables:
+          ulm_chip_presence_counter_residents: sensor.residents_counter
+          ulm_chip_presence_counter_guests: sensor.guests_counter
+      - type: 'custom:button-card'
+        template: chip_alarm
+        entity: alarm_control_panel.home_alarm
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Lights
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_light
+            entity: light.bedroom_lamp
+          - type: custom:button-card
+            template: card_power_outlet
+            entity: switch.bedroom_outlet
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Media
+
+      - type: custom:button-card
+        template: card_media_player
+        entity: media_player.firetv_bedroom
+        name: Fire TV
+        variables:
+          ulm_card_media_player_enable_controls: true
+          ulm_card_media_player_enable_popup: true

@@ -156,7 +156,7 @@ cards:
             icon: mdi:bed-empty
             tap_action:
               action: navigate
-              navigation_path: /lovelace-minimalist/bedroom
+              navigation_path: /ui-lovelace-minimalist/bedroom
             label: '[[[ return states["sensor.esphome_bedroom_temperature"].state + "°C" ]]]'
 
       - type: horizontal-stack
