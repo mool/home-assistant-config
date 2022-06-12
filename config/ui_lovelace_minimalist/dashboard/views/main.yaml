@@ -145,8 +145,7 @@ cards:
             entity: light.bathroom_bulb
             icon: mdi:toilet
             tap_action:
-              action: navigate
-              navigation_path: /lovelace-minimalist/bathroom
+              action: more-info
             label: ''
           - type: custom:button-card
             template:
