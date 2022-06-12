@@ -1,0 +1,65 @@
+---
+title: Backyard
+path: backyard
+icon: mdi:flower
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/main
+      - type: custom:button-card
+        template: chip_presence_detection
+        variables:
+          ulm_chip_presence_counter_residents: sensor.residents_counter
+          ulm_chip_presence_counter_guests: sensor.guests_counter
+      - type: 'custom:button-card'
+        template: chip_alarm
+        entity: alarm_control_panel.home_alarm
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Lights
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_light
+            entity: light.backyard
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Garden Irrigation
+
+      - type: custom:button-card
+        template: card_input_boolean
+        entity: input_boolean.garden_irrigation
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_script
+            variables:
+              ulm_card_script_title: Trigger irrigation
+              ulm_card_script_icon: mdi:water-pump
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              service_data:
+                entity_id: script.garden_irrigation
+
+          - type: custom:button-card
+            template: card_power_outlet
+            entity: switch.garden_irrigation
+
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - input_number.garden_irrigation_duration
+          - timer.garden_irrigation_duration
+          - sensor.last_irrigated_time

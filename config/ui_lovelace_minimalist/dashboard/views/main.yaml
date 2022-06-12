@@ -170,7 +170,7 @@ cards:
             icon: mdi:flower
             tap_action:
               action: navigate
-              navigation_path: /lovelace-minimalist/backyard
+              navigation_path: /ui-lovelace-minimalist/backyard
             label: '[[[ return "Last irrigation: " + states["sensor.last_irrigated_time"].state ]]]'
 
   - type: vertical-stack
