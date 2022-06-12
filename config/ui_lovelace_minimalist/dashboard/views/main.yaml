@@ -37,11 +37,13 @@ cards:
     view_layout:
       grid-area: presence
     cards:
-      - type: custom:button-card
-        template: custom_card_paddy_welcome_with_weather
+      - type: "custom:button-card"
+        template: card_weather
+        entity: weather.dark_sky
         variables:
-          ulm_custom_card_paddy_welcome_time: sensor.time
-          ulm_custom_card_paddy_welcome_weather_provider: weather.dark_sky
+          ulm_card_weather_name: " "
+          ulm_card_weather_backdrop:
+            fade: true
 
       - type: custom:button-card
         template: card_title
