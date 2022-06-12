@@ -24,11 +24,11 @@ custom_card_paddy_welcome:
             let time = states[variables.ulm_custom_card_paddy_welcome_time].state;
             let welcome = '';
 
-            if (time > '18:00'){
+            if (time > '18:00') {
               welcome = variables.ulm_evening;
-            } else if (time > '12:00'){
+            } else if (time > '12:00') {
               welcome = variables.ulm_afternoon;
-            } else if (time > '05:00'){
+            } else if (time > '05:00') {
               welcome = variables.ulm_morning;
             } else {
               welcome = variables.ulm_hello;
@@ -71,14 +71,15 @@ custom_card_paddy_welcome_with_weather:
             let time = states[variables.ulm_custom_card_paddy_welcome_time].state;
             let welcome = '';
 
-            if (time > '18:00'){
+            if (time > '18:00') {
               welcome = variables.ulm_evening;
-            } else if (time > '12:00'){
+            } else if (time > '12:00') {
               welcome = variables.ulm_afternoon;
-            } else if (time > '05:00'){
+            } else if (time > '05:00') {
               welcome = variables.ulm_morning;
             } else {
               welcome = variables.ulm_hello;
+            }
 
             return welcome + ',<br>' + user.name + '!';
           ]]]
@@ -155,14 +156,15 @@ custom_card_paddy_welcome_with_news:
             let time = states[variables.ulm_custom_card_paddy_welcome_time].state;
             let welcome = '';
 
-            if (time > '18:00'){
+            if (time > '18:00') {
               welcome = variables.ulm_evening;
-            } else if (time > '12:00'){
+            } else if (time > '12:00') {
               welcome = variables.ulm_afternoon;
-            } else if (time > '05:00'){
+            } else if (time > '05:00') {
               welcome = variables.ulm_morning;
             } else {
               welcome = variables.ulm_hello;
+            }
 
             return welcome + ',<br>' + user.name + '!';
           ]]]

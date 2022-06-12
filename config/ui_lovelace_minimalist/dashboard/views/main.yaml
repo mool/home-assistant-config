@@ -27,7 +27,7 @@ cards:
     view_layout:
       grid-area: top
     cards:
-      - type: 'custom:button-card'
+      - type: custom:button-card
         template: chip_presence_detection
         variables:
           ulm_chip_presence_counter_residents: sensor.residents_counter
@@ -49,7 +49,7 @@ cards:
 
       - type: horizontal-stack
         cards:
-        - type: "custom:button-card"
+        - type: custom:button-card
           template: custom_card_imswel_person
           variables:
             ulm_card_imswel_person_entity: person.pablo
@@ -61,7 +61,7 @@ cards:
               - zone.natalia
               - zone.netlink
 
-        - type: 'custom:button-card'
+        - type: custom:button-card
           template: card_person
           variables:
             ulm_card_person_entity: person.natalia
