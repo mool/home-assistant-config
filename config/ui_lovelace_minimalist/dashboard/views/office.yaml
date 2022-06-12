@@ -5,12 +5,12 @@ icon: mdi:desktop-mac
 type: custom:grid-layout
 layout:
   grid-gap: var(--custom-layout-card-padding)
-  grid-template-columns: repeat(1, 1fr) 60%
+  grid-template-columns: repeat(2, 1fr)
   grid-template-rows: auto
   grid-template-areas: |
     "top     top"
     "lights  cameras"
-    "climate cameras"
+    "climate sensors"
   mediaquery:
     '(max-width: 800px)':
       grid-gap: calc(var(--custom-layout-card-padding) * 1.5)
@@ -20,6 +20,7 @@ layout:
         ". top     ."
         ". lights  ."
         ". climate ."
+        ". sensors ."
         ". cameras ."
 cards:
   - type: horizontal-stack
@@ -102,3 +103,31 @@ cards:
 
       - type: picture-entity
         entity: camera.street
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: sensors
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Sensors
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_binary_sensor
+            entity: binary_sensor.office_motion
+
+          - type: custom:button-card
+            template: card_generic_swap
+            entity: sensor.office_motion_power
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_generic_swap
+            entity: sensor.office_sensor_temperature
+
+          - type: custom:button-card
+            template: card_generic_swap
+            entity: sensor.office_sensor_power
