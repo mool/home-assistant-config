@@ -37,6 +37,16 @@ cards:
     view_layout:
       grid-area: presence
     cards:
+      - type: custom:button-card
+        template: custom_card_paddy_welcome_with_weather
+        variables:
+          ulm_custom_card_paddy_welcome_time: sensor.time
+          ulm_custom_card_paddy_welcome_weather_provider: weather.dark_sky
+
+      - type: custom:button-card
+        template: card_title
+        name: Presence
+
       - type: horizontal-stack
         cards:
         - type: "custom:button-card"
