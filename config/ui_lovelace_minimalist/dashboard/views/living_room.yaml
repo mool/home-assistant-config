@@ -1,0 +1,99 @@
+---
+title: Living Room
+path: living_room
+icon: mdi:sofa
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/main
+      - type: custom:button-card
+        template: chip_icon_state
+        variables:
+          ulm_chip_icon_state_icon: '🌡️'
+          ulm_chip_icon_state_entity: sensor.corridor_temperature
+      - type: custom:button-card
+        template: chip_presence_detection
+        variables:
+          ulm_chip_presence_counter_residents: sensor.residents_counter
+          ulm_chip_presence_counter_guests: sensor.guests_counter
+      - type: 'custom:button-card'
+        template: chip_alarm
+        entity: alarm_control_panel.home_alarm
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Lights
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_light
+            entity: light.living_room
+          - type: custom:button-card
+            template: card_light
+            entity: light.living_lamp
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Air Conditioner
+
+      - type: custom:button-card
+        template: card_thermostat
+        entity: climate.comedor
+        variables:
+          ulm_card_thermostat_name: Dining Room A/C
+          ulm_card_thermostat_enable_controls: true
+          ulm_card_thermostat_enable_hvac_modes: true
+          ulm_card_thermostat_enable_popup: true
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Media
+
+      - type: custom:button-card
+        template: card_media_player
+        entity: media_player.living_tv
+        name: TV
+        variables:
+          ulm_card_media_player_enable_popup: true
+
+      - type: custom:button-card
+        template: card_media_player
+        entity: media_player.nvidia_shield
+        name: Nvidia Shield
+        variables:
+          ulm_card_media_player_enable_controls: true
+          ulm_card_media_player_enable_popup: true
+
+      - type: custom:mini-media-player
+        artwork: cover
+        hide:
+          power: true
+          icon: true
+          shuffle: false
+        shortcuts:
+          columns: 4
+          buttons:
+            - icon: mdi:robot-excited
+              type: music
+              id: >-
+                https://open.spotify.com/playlist/0ZXVX604hmghJgqWCMsqcU?si=M2jfIBsMRiGLvdDzrSh7kg
+        speaker_group:
+          platform: sonos
+          show_group_count: true
+          entities:
+            - entity_id: media_player.oficina
+              name: Sonos Office
+            - entity_id: media_player.cocina
+              name: Sonos Kitchen
+        volume_stateless: false
+        entity: media_player.cocina

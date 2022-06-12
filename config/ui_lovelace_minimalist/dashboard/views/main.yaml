@@ -96,7 +96,7 @@ cards:
             icon: mdi:sofa
             tap_action:
               action: navigate
-              navigation_path: /lovelace-minimalist/living_room
+              navigation_path: /ui-lovelace-minimalist/living_room
             label: '[[[ return states["climate.comedor"].attributes.current_temperature + "°C" ]]]'
           - type: custom:button-card
             template:
@@ -107,7 +107,7 @@ cards:
             icon: mdi:table-chair
             tap_action:
               action: navigate
-              navigation_path: /lovelace-minimalist/dinig_room
+              navigation_path: /ui-lovelace-minimalist/dining_room
             label: '[[[ return states["climate.comedor"].attributes.current_temperature + "°C" ]]]'
 
       - type: horizontal-stack
