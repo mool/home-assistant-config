@@ -138,3 +138,13 @@ cards:
           - type: custom:button-card
             template: card_generic_swap
             entity: sensor.office_sensor_power
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_binary_sensor
+            entity: binary_sensor.office_door
+
+          - type: custom:button-card
+            template: card_generic_swap
+            entity: sensor.office_door_power
