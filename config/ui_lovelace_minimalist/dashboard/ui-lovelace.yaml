@@ -8,5 +8,6 @@ views:
   - !include views/living_room.yaml
   - !include views/dining_room.yaml
   - !include views/office.yaml
+  - !include views/bathroom.yaml
   - !include views/bedroom.yaml
   - !include views/backyard.yaml

@@ -1,0 +1,44 @@
+---
+title: Bathroom
+path: bathroom
+icon: mdi:toilet
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/main
+      - type: custom:button-card
+        template: chip_presence_detection
+        variables:
+          ulm_chip_presence_counter_residents: sensor.residents_counter
+          ulm_chip_presence_counter_guests: sensor.guests_counter
+      - type: 'custom:button-card'
+        template: chip_alarm
+        entity: alarm_control_panel.home_alarm
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Lights
+      - type: custom:button-card
+        template: card_light
+        entity: light.bathroom_bulb
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Sensors
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_binary_sensor
+            entity: binary_sensor.bathroom_motion
+
+          - type: custom:button-card
+            template: card_generic_swap
+            entity: sensor.bathroom_motion_power
