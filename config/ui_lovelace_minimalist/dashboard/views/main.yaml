@@ -121,7 +121,7 @@ cards:
             icon: mdi:knife
             tap_action:
               action: navigate
-              navigation_path: /lovelace-minimalist/kitchen
+              navigation_path: /ui-lovelace-minimalist/kitchen
             label: '[[[ return states["sensor.corridor_temperature"].state + "°C" ]]]'
           - type: custom:button-card
             template:
