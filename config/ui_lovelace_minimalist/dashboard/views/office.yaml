@@ -56,7 +56,7 @@ cards:
     cards:
       - type: custom:button-card
         template: card_title
-        name: Lights
+        name: Lights and Outlets
 
       - type: horizontal-stack
         cards:
@@ -70,11 +70,18 @@ cards:
       - type: horizontal-stack
         cards:
           - type: custom:button-card
-            template: card_light_slider_collapse
+            template: card_light
             entity: light.office_desk_light
+            variables:
+              ulm_card_light_enable_collapse: true
+              ulm_card_light_enable_slider: true
           - type: custom:button-card
-            template: card_light_slider_collapse_color
+            template: card_light
             entity: light.office_desk_color_light
+            variables:
+              ulm_card_light_enable_collapse: true
+              ulm_card_light_enable_color: true
+              ulm_card_light_enable_slider: true
 
   - type: vertical-stack
     view_layout:
