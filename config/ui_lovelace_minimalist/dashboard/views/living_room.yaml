@@ -96,4 +96,4 @@ cards:
             - entity_id: media_player.cocina
               name: Sonos Kitchen
         volume_stateless: false
-        entity: media_player.cocina
+        entity: media_player.oficina
