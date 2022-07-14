@@ -10,7 +10,7 @@ layout:
   grid-template-areas: |
     "top      top   top"
     "presence rooms cameras"
-    "modes    rooms cameras"
+    "modes    rooms media"
   mediaquery:
     '(max-width: 800px)':
       grid-gap: calc(var(--custom-layout-card-padding) * 1.5)
@@ -21,6 +21,7 @@ layout:
         ". presence ."
         ". rooms    ."
         ". cameras  ."
+        ". media    ."
         ". modes    ."
 cards:
   - type: horizontal-stack
@@ -189,6 +190,38 @@ cards:
             template: edge
       - type: picture-entity
         entity: camera.street
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: media
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Media
+
+      - type: custom:mini-media-player
+        artwork: cover
+        hide:
+          power: true
+          icon: true
+          shuffle: false
+        shortcuts:
+          columns: 4
+          buttons:
+            - icon: mdi:robot-excited
+              type: music
+              id: >-
+                https://open.spotify.com/playlist/0ZXVX604hmghJgqWCMsqcU?si=M2jfIBsMRiGLvdDzrSh7kg
+        speaker_group:
+          platform: sonos
+          show_group_count: true
+          entities:
+            - entity_id: media_player.oficina
+              name: Sonos Office
+            - entity_id: media_player.cocina
+              name: Sonos Kitchen
+        volume_stateless: false
+        entity: media_player.cocina
 
   - type: vertical-stack
     view_layout:
