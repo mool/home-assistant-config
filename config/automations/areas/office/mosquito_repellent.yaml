@@ -21,23 +21,28 @@ condition:
       entity_id: input_boolean.auto_mosquito_repellent
       state: 'on'
 action:
+  - repeat:
+      until:
+        - condition: state
+          entity_id: group.office_lights
+          state: 'off'
+          for:
+            minutes: 5
+      sequence:
+        - service: switch.turn_on
+          entity_id: switch.office_outlet_1
+        - delay:
+            minutes: 5
+        - service: switch.turn_off
+          entity_id: switch.office_outlet_1
+        - delay:
+            minutes: 10
   - choose:
       - conditions:
           - condition: state
             entity_id: switch.office_outlet_1
-            state: 'off'
+            state: 'on'
         sequence:
-          - service: switch.turn_on
+          - service: switch.turn_off
             entity_id: switch.office_outlet_1
-  - wait_for_trigger:
-      - platform: state
-        entity_id: group.office_lights
-        from: 'on'
-        to: 'off'
-        for:
-          hours: 0
-          minutes: 5
-          seconds: 0
-  - service: switch.turn_off
-    entity_id: switch.office_outlet_1
-mode: restart
+mode: single
