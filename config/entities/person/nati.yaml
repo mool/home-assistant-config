@@ -3,3 +3,4 @@ name: Natalia
 id: natalia
 device_trackers:
   - device_tracker.natidp
+  - device_tracker.iphone_de_nat
