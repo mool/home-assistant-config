@@ -130,7 +130,7 @@ cards:
               - yellow_on
             name: Office
             entity: light.office
-            icon: mdi:desktop-mac
+            icon: mdi:monitor
             tap_action:
               action: navigate
               navigation_path: /ui-lovelace-minimalist/office

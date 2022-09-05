@@ -1,7 +1,7 @@
 ---
 title: Office
 path: office
-icon: mdi:desktop-mac
+icon: mdi:monitor
 type: custom:grid-layout
 layout:
   grid-gap: var(--custom-layout-card-padding)

@@ -75,7 +75,7 @@ cards:
             variables:
               ulm_card_navigate_path: /lovelace-minimalist/office
               ulm_card_navigate_title: Office
-              ulm_card_navigate_icon: mdi:desktop-mac
+              ulm_card_navigate_icon: mdi:monitor
           - type: custom:button-card
             template: card_navigate
             variables:
