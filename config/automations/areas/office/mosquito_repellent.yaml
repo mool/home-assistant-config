@@ -32,7 +32,7 @@ action:
         - service: switch.turn_on
           entity_id: switch.office_outlet_1
         - delay:
-            minutes: 5
+            minutes: 10
         - service: switch.turn_off
           entity_id: switch.office_outlet_1
         - delay:
