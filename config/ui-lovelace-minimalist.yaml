@@ -1,9 +1,0 @@
----
-button_card_templates: !include_dir_merge_named minimalist-templates/
-views:
-  - !include lovelace/minimalist-views/main.yaml
-  - !include lovelace/minimalist-views/living-room.yaml
-  - !include lovelace/minimalist-views/office.yaml
-  - !include lovelace/minimalist-views/bedroom.yaml
-  - !include lovelace/minimalist-views/backyard.yaml
-  - !include lovelace/minimalist-views/metrics.yaml
