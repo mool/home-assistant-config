@@ -1,0 +1,81 @@
+---
+title: Dining Room
+path: dining_room
+icon: mdi:table-chair
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: custom:button-card
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/main
+      - type: custom:button-card
+        template: chip_icon_state
+        variables:
+          ulm_chip_icon_state_icon: '🌡️'
+          ulm_chip_icon_state_entity: sensor.corridor_temperature
+      - type: custom:button-card
+        template: chip_presence_detection
+        variables:
+          ulm_chip_presence_counter_residents: sensor.residents_counter
+          ulm_chip_presence_counter_guests: sensor.guests_counter
+      - type: 'custom:button-card'
+        template: chip_alarm
+        entity: alarm_control_panel.home_alarm
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Lights
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_light
+            entity: light.dining_room_1
+          - type: custom:button-card
+            template: card_light
+            entity: light.dining_room_2
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Air Conditioner
+
+      - type: custom:button-card
+        template: card_thermostat
+        entity: climate.comedor
+        variables:
+          ulm_card_thermostat_name: Dining Room A/C
+          ulm_card_thermostat_enable_controls: true
+          ulm_card_thermostat_enable_hvac_modes: true
+          ulm_card_thermostat_enable_popup: true
+
+  - type: vertical-stack
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Sensors
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_binary_sensor
+            entity: binary_sensor.comedor_motion
+
+          - type: custom:button-card
+            template: card_generic_swap
+            entity: sensor.comedor_battery
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: cameras
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Cameras
+
+      - type: picture-entity
+        entity: camera.comedor

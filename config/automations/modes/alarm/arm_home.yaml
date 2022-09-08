@@ -2,11 +2,11 @@
 id: alarm_arm_home
 alias: 'Arm alarm in Home mode'
 trigger:
-  - platform: event
-    event_type: xiaomi_aqara.click
-    event_data:
-      entity_id: binary_sensor.bedroom_switch
-      click_type: double
+  - device_id: 6ca70a5a3d435609413cf57bd7e87be5
+    domain: zha
+    platform: device
+    type: remote_button_double_press
+    subtype: remote_button_double_press
 action:
   - service: alarm_control_panel.alarm_arm_home
     data:

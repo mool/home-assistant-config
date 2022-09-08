@@ -1,0 +1,16 @@
+---
+id: garden_irrigation_disconnected
+alias: 'Garden Irrigation Disconnected'
+trigger:
+  - platform: device
+    type: not_connected
+    device_id: 233fe927cf497530f1a4e1b609a2e523
+    entity_id: binary_sensor.garden_irrigation_status
+    domain: binary_sensor
+    for:
+      minutes: 5
+action:
+  - service: notify.mobile_app_iphone_de_pablo
+    data:
+      title: 'Garden Irrigation - Disconnected'
+      message: "The garden irrigation switch has been disconnected for more than 5 minutes"

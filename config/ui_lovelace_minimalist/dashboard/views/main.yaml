@@ -1,0 +1,254 @@
+---
+title: Main
+path: main
+icon: mdi:home
+type: custom:grid-layout
+layout:
+  grid-gap: var(--custom-layout-card-padding)
+  grid-template-columns: repeat(2, 1fr) 40%
+  grid-template-rows: auto
+  grid-template-areas: |
+    "top      top   top"
+    "presence rooms cameras"
+    "modes    rooms media"
+  mediaquery:
+    '(max-width: 800px)':
+      grid-gap: calc(var(--custom-layout-card-padding) * 1.5)
+      grid-template-columns: 0 1fr 0
+      grid-template-rows: auto
+      grid-template-areas: |
+        ". top ."
+        ". presence ."
+        ". rooms    ."
+        ". cameras  ."
+        ". media    ."
+        ". modes    ."
+cards:
+  - type: horizontal-stack
+    view_layout:
+      grid-area: top
+    cards:
+      - type: custom:button-card
+        template: chip_presence_detection
+        variables:
+          ulm_chip_presence_counter_residents: sensor.residents_counter
+          ulm_chip_presence_counter_guests: sensor.guests_counter
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: presence
+    cards:
+      - type: "custom:button-card"
+        template: card_weather
+        entity: weather.dark_sky
+        variables:
+          ulm_card_weather_name: " "
+          ulm_card_weather_backdrop:
+            fade: true
+
+      - type: custom:button-card
+        template: card_title
+        name: Presence
+
+      - type: horizontal-stack
+        cards:
+        - type: custom:button-card
+          template: custom_card_imswel_person
+          variables:
+            ulm_card_imswel_person_entity: person.pablo
+            ulm_card_imswel_person_wifi_tracker: device_tracker.pablo
+            ulm_card_imswel_person_gps_tracker: device_tracker.iphone_de_pablo
+            ulm_card_imswel_person_findmy_script: script.find_my_phone_pablo
+            ulm_card_imswel_person_use_entity_picture: true
+            ulm_card_imswel_person_zones:
+              - zone.natalia
+              - zone.netlink
+
+        - type: custom:button-card
+          template: card_person
+          variables:
+            ulm_card_person_entity: person.natalia
+
+      - type: custom:mushroom-alarm-control-panel-card
+        entity: alarm_control_panel.home_alarm
+        states:
+          - armed_home
+          - armed_away
+        name: Alarm
+        icon: mdi:shield-home
+        layout: horizontal
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: rooms
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Rooms
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template:
+              - card_esh_room
+              - yellow_on
+            name: Living Room
+            entity: light.living_lamp
+            icon: mdi:sofa
+            tap_action:
+              action: navigate
+              navigation_path: /ui-lovelace-minimalist/living_room
+            label: '[[[ return states["climate.comedor"].attributes.current_temperature + "°C" ]]]'
+          - type: custom:button-card
+            template:
+              - card_esh_room
+              - yellow_on
+            name: Dining Room
+            entity: light.dining_room_1
+            icon: mdi:table-chair
+            tap_action:
+              action: navigate
+              navigation_path: /ui-lovelace-minimalist/dining_room
+            label: '[[[ return states["climate.comedor"].attributes.current_temperature + "°C" ]]]'
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template:
+              - card_esh_room
+              - yellow_on
+            name: Kitchen
+            entity: light.kitchen_2
+            icon: mdi:knife
+            tap_action:
+              action: navigate
+              navigation_path: /ui-lovelace-minimalist/kitchen
+            label: '[[[ return states["sensor.corridor_temperature"].state + "°C" ]]]'
+          - type: custom:button-card
+            template:
+              - card_esh_room
+              - yellow_on
+            name: Office
+            entity: light.office
+            icon: mdi:monitor
+            tap_action:
+              action: navigate
+              navigation_path: /ui-lovelace-minimalist/office
+            label: '[[[ return states["sensor.office_sensor_temperature"].state + "°C" ]]]'
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template:
+              - card_esh_room
+              - yellow_on
+            name: Bathroom
+            entity: light.bathroom_bulb
+            icon: mdi:toilet
+            tap_action:
+              action: navigate
+              navigation_path: /ui-lovelace-minimalist/bathroom
+            label: ''
+          - type: custom:button-card
+            template:
+              - card_esh_room
+              - yellow_on
+            name: Bedroom
+            entity: light.bedroom_lamp
+            icon: mdi:bed-empty
+            tap_action:
+              action: navigate
+              navigation_path: /ui-lovelace-minimalist/bedroom
+            label: '[[[ return states["sensor.esphome_bedroom_temperature"].state + "°C" ]]]'
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template:
+              - card_esh_room
+              - yellow_on
+            name: Backyard
+            entity: light.backyard
+            icon: mdi:flower
+            tap_action:
+              action: navigate
+              navigation_path: /ui-lovelace-minimalist/backyard
+            label: '[[[ return "Last irrigation: " + states["sensor.last_irrigated_time"].state ]]]'
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: cameras
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Cameras
+          - type: custom:button-card
+            template: edge
+      - type: picture-entity
+        entity: camera.street
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: media
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Media
+
+      - type: custom:mini-media-player
+        artwork: cover
+        hide:
+          power: true
+          icon: true
+          shuffle: false
+        shortcuts:
+          columns: 4
+          buttons:
+            - icon: mdi:robot-excited
+              type: music
+              id: >-
+                https://open.spotify.com/playlist/0ZXVX604hmghJgqWCMsqcU?si=M2jfIBsMRiGLvdDzrSh7kg
+        speaker_group:
+          platform: sonos
+          show_group_count: true
+          entities:
+            - entity_id: media_player.oficina
+              name: Sonos Office
+            - entity_id: media_player.cocina
+              name: Sonos Kitchen
+        volume_stateless: false
+        entity: media_player.cocina
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: modes
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: edge
+          - type: custom:button-card
+            template: title
+            name: Home Modes
+          - type: custom:button-card
+            template: edge
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_input_boolean
+            entity: input_boolean.auto_cooling
+          - type: custom:button-card
+            template: card_input_boolean
+            entity: input_boolean.auto_heating
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_input_boolean
+            entity: input_boolean.auto_mosquito_repellent
+          - type: custom:button-card
+            template: card_input_boolean
+            entity: input_boolean.vacation

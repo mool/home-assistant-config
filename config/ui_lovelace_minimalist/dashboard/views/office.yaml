@@ -1,0 +1,150 @@
+---
+title: Main
+path: office
+icon: mdi:monitor
+type: custom:grid-layout
+layout:
+  grid-gap: var(--custom-layout-card-padding)
+  grid-template-columns: repeat(2, 1fr)
+  grid-template-rows: auto
+  grid-template-areas: |
+    "top     top"
+    "lights  cameras"
+    "climate sensors"
+  mediaquery:
+    '(max-width: 800px)':
+      grid-gap: calc(var(--custom-layout-card-padding) * 1.5)
+      grid-template-columns: 0 1fr 0
+      grid-template-rows: auto
+      grid-template-areas: |
+        ". top     ."
+        ". lights  ."
+        ". climate ."
+        ". sensors ."
+        ". cameras ."
+cards:
+  - type: horizontal-stack
+    view_layout:
+      grid-area: top
+    cards:
+      - type: custom:button-card
+        template: chip_back
+        variables:
+          ulm_chip_back_path: /ui-lovelace-minimalist/main
+      - type: custom:button-card
+        template: chip_icon_state
+        variables:
+          ulm_chip_icon_state_icon: '🌡️'
+          ulm_chip_icon_state_entity: sensor.office_sensor_temperature
+      - type: custom:button-card
+        template: chip_icon_state
+        variables:
+          ulm_chip_icon_state_icon: '💧'
+          ulm_chip_icon_state_entity: sensor.office_sensor_humidity
+      - type: custom:button-card
+        template: chip_presence_detection
+        variables:
+          ulm_chip_presence_counter_residents: sensor.residents_counter
+          ulm_chip_presence_counter_guests: sensor.guests_counter
+      - type: 'custom:button-card'
+        template: chip_alarm
+        entity: alarm_control_panel.home_alarm
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: lights
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Lights and Outlets
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_light
+            entity: light.office
+          - type: custom:button-card
+            template: card_power_outlet
+            entity: switch.office_outlet_1
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_light
+            entity: light.office_desk_light
+            variables:
+              ulm_card_light_enable_collapse: true
+              ulm_card_light_enable_slider: true
+          - type: custom:button-card
+            template: card_light
+            entity: light.office_desk_color_light
+            variables:
+              ulm_card_light_enable_collapse: true
+              ulm_card_light_enable_color: true
+              ulm_card_light_enable_slider: true
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: climate
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Air Conditioner
+
+      - type: custom:button-card
+        template: card_thermostat
+        entity: climate.office_thermostat
+        variables:
+          ulm_card_thermostat_name: Office A/C
+          ulm_card_thermostat_enable_controls: true
+          ulm_card_thermostat_enable_hvac_modes: true
+          ulm_card_thermostat_enable_popup: true
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: cameras
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Cameras
+
+      - type: picture-entity
+        entity: camera.street
+
+  - type: vertical-stack
+    view_layout:
+      grid-area: sensors
+    cards:
+      - type: custom:button-card
+        template: card_title
+        name: Sensors
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_binary_sensor
+            entity: binary_sensor.office_motion
+
+          - type: custom:button-card
+            template: card_generic_swap
+            entity: sensor.office_motion_power
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_generic_swap
+            entity: sensor.office_sensor_temperature
+
+          - type: custom:button-card
+            template: card_generic_swap
+            entity: sensor.office_sensor_power
+
+      - type: horizontal-stack
+        cards:
+          - type: custom:button-card
+            template: card_binary_sensor
+            entity: binary_sensor.office_door
+
+          - type: custom:button-card
+            template: card_generic_swap
+            entity: sensor.office_door_power
