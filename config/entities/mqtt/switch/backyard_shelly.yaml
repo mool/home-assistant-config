@@ -1,5 +1,4 @@
 ---
-platform: mqtt
 name: "Backyard Light"
 state_topic: "shellies/shellyswitch-1F6AE3/relay/0"
 command_topic: "shellies/shellyswitch-1F6AE3/relay/0/command"

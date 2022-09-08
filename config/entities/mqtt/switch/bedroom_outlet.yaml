@@ -1,5 +1,4 @@
 ---
-platform: mqtt
 name: Bedroom Outlet
 state_topic: "stat/tasmota_7A80FD/RESULT"
 value_template: "{{ value_json.POWER }}"

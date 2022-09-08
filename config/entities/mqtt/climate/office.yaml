@@ -1,5 +1,4 @@
 ---
-platform: mqtt
 name: Office Thermostat
 min_temp: 17
 max_temp: 31
