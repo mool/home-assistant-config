@@ -1,10 +1,11 @@
+---
 sensor:
-- name: Guests Counter
-  unique_id: guests_counter
-  icon: mdi:account-clock
-  state: >
-    {% set guests = [
+  - name: Guests Counter
+    unique_id: guests_counter
+    icon: mdi:account-clock
+    state: >
+      {% set guests = [
         states.person.dad,
         states.person.housemaid,
         ] %}
-    {{ guests | selectattr('state','eq','home') | list | count }}
+      {{ guests | selectattr('state','eq','home') | list | count }}

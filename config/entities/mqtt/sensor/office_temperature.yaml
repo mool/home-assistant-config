@@ -1,5 +1,4 @@
 ---
-platform: mqtt
 name: Office Temperature
 unit_of_measurement: "°C"
 device_class: temperature

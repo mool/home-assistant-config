@@ -1,10 +1,11 @@
+---
 sensor:
-- name: Residents Counter
-  unique_id: residents_counter
-  icon: mdi:account-clock
-  state: >
-    {% set residents = [
+  - name: Residents Counter
+    unique_id: residents_counter
+    icon: mdi:account-clock
+    state: >
+      {% set residents = [
         states.person.pablo,
         states.person.natalia,
         ] %}
-    {{ residents | selectattr('state','eq','home') | list | count }}
+      {{ residents | selectattr('state','eq','home') | list | count }}
