@@ -1,9 +1,5 @@
 ---
 mqtt:
-  client_id: home-assistant-1
-  keepalive: 60
-  protocol: 3.1
-
   climate: !include_dir_list ../entities/mqtt/climate
   sensor: !include_dir_list ../entities/mqtt/sensor
   switch: !include_dir_list ../entities/mqtt/switch
