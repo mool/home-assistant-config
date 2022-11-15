@@ -40,7 +40,7 @@ cards:
     cards:
       - type: "custom:button-card"
         template: card_weather
-        entity: weather.dark_sky
+        entity: weather.home
         variables:
           ulm_card_weather_name: " "
           ulm_card_weather_backdrop:
