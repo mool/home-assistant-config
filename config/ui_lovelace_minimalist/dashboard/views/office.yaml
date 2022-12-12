@@ -35,12 +35,7 @@ cards:
         template: chip_icon_state
         variables:
           ulm_chip_icon_state_icon: '🌡️'
-          ulm_chip_icon_state_entity: sensor.office_sensor_temperature
-      - type: custom:button-card
-        template: chip_icon_state
-        variables:
-          ulm_chip_icon_state_icon: '💧'
-          ulm_chip_icon_state_entity: sensor.office_sensor_humidity
+          ulm_chip_icon_state_entity: sensor.office_temperature
       - type: custom:button-card
         template: chip_presence_detection
         variables:

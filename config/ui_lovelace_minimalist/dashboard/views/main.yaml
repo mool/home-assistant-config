@@ -123,7 +123,7 @@ cards:
             tap_action:
               action: navigate
               navigation_path: /ui-lovelace-minimalist/kitchen
-            label: '[[[ return states["sensor.corridor_temperature"].state + "°C" ]]]'
+            label: '[[[ return states["sensor.kitchen_temperature"].state + "°C" ]]]'
           - type: custom:button-card
             template:
               - card_esh_room
@@ -134,7 +134,7 @@ cards:
             tap_action:
               action: navigate
               navigation_path: /ui-lovelace-minimalist/office
-            label: '[[[ return states["sensor.office_sensor_temperature"].state + "°C" ]]]'
+            label: '[[[ return states["sensor.office_temperature"].state + "°C" ]]]'
 
       - type: horizontal-stack
         cards:

@@ -13,7 +13,12 @@ cards:
         template: chip_icon_state
         variables:
           ulm_chip_icon_state_icon: '🌡️'
-          ulm_chip_icon_state_entity: sensor.corridor_temperature
+          ulm_chip_icon_state_entity: sensor.kitchen_temperature
+      - type: custom:button-card
+        template: chip_icon_state
+        variables:
+          ulm_chip_icon_state_icon: '💧'
+          ulm_chip_icon_state_entity: sensor.kitchen_humidity
       - type: custom:button-card
         template: chip_presence_detection
         variables:
