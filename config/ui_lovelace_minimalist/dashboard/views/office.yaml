@@ -75,13 +75,6 @@ cards:
             variables:
               ulm_card_light_enable_collapse: true
               ulm_card_light_enable_slider: true
-          - type: custom:button-card
-            template: card_light
-            entity: light.office_desk_color_light
-            variables:
-              ulm_card_light_enable_collapse: true
-              ulm_card_light_enable_color: true
-              ulm_card_light_enable_slider: true
 
   - type: vertical-stack
     view_layout:
