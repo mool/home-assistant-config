@@ -115,13 +115,13 @@ cards:
 
           - type: custom:button-card
             template: card_generic_swap
-            entity: sensor.office_motion_power
+            entity: sensor.office_illuminance
 
       - type: horizontal-stack
         cards:
           - type: custom:button-card
             template: card_generic_swap
-            entity: sensor.office_sensor_temperature
+            entity: sensor.office_temperature
 
           - type: custom:button-card
             template: card_generic_swap
