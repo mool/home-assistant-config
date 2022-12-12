@@ -125,7 +125,7 @@ cards:
 
           - type: custom:button-card
             template: card_generic_swap
-            entity: sensor.office_sensor_power
+            entity: sensor.office_power
 
       - type: horizontal-stack
         cards:
