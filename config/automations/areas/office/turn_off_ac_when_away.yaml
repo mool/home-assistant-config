@@ -15,9 +15,9 @@ trigger:
       minutes: 20
 condition:
   condition: template
-  value_template: "{{ not is_state('climate.office_thermostat', 'off') }}"
+  value_template: "{{ not is_state('climate.office_ac', 'off') }}"
 action:
   - service: climate.set_hvac_mode
     data:
-      entity_id: climate.office_thermostat
+      entity_id: climate.office_ac
       hvac_mode: 'off'

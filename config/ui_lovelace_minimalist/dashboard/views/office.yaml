@@ -93,7 +93,7 @@ cards:
 
       - type: custom:button-card
         template: card_thermostat
-        entity: climate.office_thermostat
+        entity: climate.office_ac
         variables:
           ulm_card_thermostat_name: Office A/C
           ulm_card_thermostat_enable_controls: true

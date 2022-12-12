@@ -1,4 +1,4 @@
 ---
-climate.office_thermostat:
+climate.office_ac:
   name: Office Thermostat
   room: Office

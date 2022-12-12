@@ -24,12 +24,12 @@ action:
   - choose:
       - conditions:
           - condition: state
-            entity_id: climate.office_thermostat
+            entity_id: climate.office_ac
             state: 'off'
         sequence:
           - service: climate.set_temperature
             data:
-              entity_id: climate.office_thermostat
+              entity_id: climate.office_ac
               temperature: 30
               hvac_mode: heat
   - wait_for_trigger:
@@ -44,11 +44,11 @@ action:
   - choose:
       - conditions:
           - condition: state
-            entity_id: climate.office_thermostat
+            entity_id: climate.office_ac
             state: heat
         sequence:
           - service: climate.set_hvac_mode
             data:
-              entity_id: climate.office_thermostat
+              entity_id: climate.office_ac
               hvac_mode: 'off'
 mode: restart

@@ -38,7 +38,7 @@ cards:
         font_size: 75
         animate: true
   - type: custom:simple-thermostat
-    entity: climate.office_thermostat
+    entity: climate.office_ac
     decimals: 0
     step_size: 1
     hvac: true
