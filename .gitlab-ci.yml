@@ -29,7 +29,7 @@ homeassistant:
     - cp -R ./.stub/ssl /
     - cp -R ./.stub/android /config/
     - cp ./.stub/secrets.yaml ./config/
-    - touch config/automation.yaml
+    - touch config/automations.yaml
     - wget https://github.com/mool/home-assistant-bgh-smart/archive/master.zip -O bgh_smart.zip
     - unzip bgh_smart.zip
     - mv home-assistant-bgh-smart-master/custom_components/bgh_smart ./config/custom_components/
