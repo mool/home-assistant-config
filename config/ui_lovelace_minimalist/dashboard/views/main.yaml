@@ -61,11 +61,11 @@ cards:
               ulm_card_imswel_person_findmy_script: script.find_my_phone_pablo
               ulm_card_imswel_person_use_entity_picture: true
               ulm_card_imswel_person_zones:
-                - zone.natalia
                 - zone.netlink
 
           - type: custom:button-card
             template: card_person
+            entity: person.natalia
             variables:
               ulm_card_person_entity: person.natalia
 
