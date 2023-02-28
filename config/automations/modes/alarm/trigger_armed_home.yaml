@@ -5,6 +5,13 @@ trigger:
   - platform: state
     entity_id:
       - binary_sensor.balcon_oficina_motion
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 10
+  - platform: state
+    entity_id:
       - binary_sensor.jardin_trasero_motion
       - binary_sensor.techo_comedor_motion
       - binary_sensor.stair_window_1
